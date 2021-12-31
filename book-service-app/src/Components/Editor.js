@@ -51,6 +51,12 @@ const Editor = () => {
     setCode(e.target.value);
     element.current.style = e.target.value;
   };
+
+  const checkValue = () => {
+    const element = document.querySelector("#container");
+    const style = element.style;
+    console.log(style.border);
+  };
   return (
     <Container>
       <EditorWrapper>
@@ -60,6 +66,7 @@ const Editor = () => {
       <TargetElementWrapper>
         <TargetElement ref={element} id="container" />
       </TargetElementWrapper>
+      <button onClick={checkValue}>NEXT BUTTON</button>
     </Container>
   );
 };
