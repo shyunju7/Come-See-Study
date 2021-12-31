@@ -1,5 +1,10 @@
 import React from "react";
+import Editor from "../../Components/Editor";
 
-const MainPresenter = () => <div>main page</div>;
+const MainPresenter = () => (
+  <div>
+    <Editor />
+  </div>
+);
 
 export default MainPresenter;
