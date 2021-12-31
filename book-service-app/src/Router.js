@@ -1,16 +1,14 @@
 import React from "react";
-import { HashRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Intro from "../src/Route/Intro";
+import Main from "../src/Route/Main";
 const AppRouter = () => {
   return (
     <Router>
-      <div>
-        <Routes>
-          <>
-            <Route exact path="/" element={<Intro />} />
-          </>
-        </Routes>
-      </div>
+      <Routes>
+        <Route path="/" element={<Intro />} />
+        <Route path="/main/*" element={<Main />} />
+      </Routes>
     </Router>
   );
 };
