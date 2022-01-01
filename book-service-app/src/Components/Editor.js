@@ -6,11 +6,12 @@ const Container = styled.div`
   height: 100%;
   background-color: transparent;
   display: flex;
+  z-index: 1000;
 `;
 
 const TargetElementWrapper = styled.div`
   width: 50%;
-  height: 100vh;
+  height: 100%;
   background-color: #dddddd;
   display: flex;
   align-items: center;
@@ -25,7 +26,7 @@ const TargetElement = styled.div`
 
 const EditorWrapper = styled.div`
   width: 50%;
-  height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   background-color: #c4c4c4;
@@ -66,7 +67,7 @@ const Editor = () => {
       <TargetElementWrapper>
         <TargetElement ref={element} id="container" />
       </TargetElementWrapper>
-      <button onClick={checkValue}>NEXT BUTTON</button>
+      {/* <button onClick={checkValue}>NEXT BUTTON</button> */}
     </Container>
   );
 };
