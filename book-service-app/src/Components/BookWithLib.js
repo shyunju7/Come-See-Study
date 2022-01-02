@@ -2,7 +2,6 @@ import React, { useRef } from "react";
 import HTMLFlipBook from "react-pageflip";
 import styled from "styled-components";
 import image from "../../src/assets/test.png";
-import Book from "./Book";
 import Editor from "./Editor";
 
 const BookContainer = styled.div`
