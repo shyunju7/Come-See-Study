@@ -6,12 +6,14 @@ const Container = styled.div`
   height: 100%;
   background-color: transparent;
   display: flex;
-  z-index: 1000;
+  margin-top: 12px;
+  justify-content: center;
+  align-items: center;
 `;
 
 const TargetElementWrapper = styled.div`
-  width: 50%;
-  height: 100%;
+  width: 40%;
+  height: 90vh;
   background-color: #dddddd;
   display: flex;
   align-items: center;
@@ -25,11 +27,10 @@ const TargetElement = styled.div`
 `;
 
 const EditorWrapper = styled.div`
-  width: 50%;
-  height: 100%;
+  width: 40%;
+  height: 90vh;
   display: flex;
   flex-direction: column;
-  background-color: #c4c4c4;
 `;
 
 const QuestionWrapper = styled.div`
@@ -67,7 +68,6 @@ const Editor = () => {
       <TargetElementWrapper>
         <TargetElement ref={element} id="container" />
       </TargetElementWrapper>
-      {/* <button onClick={checkValue}>NEXT BUTTON</button> */}
     </Container>
   );
 };
