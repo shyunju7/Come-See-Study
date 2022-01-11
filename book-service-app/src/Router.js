@@ -5,7 +5,7 @@ const AppRouter = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/:id" element={<Main />} />
+        <Route path="/" element={<Main />} />
       </Routes>
     </Router>
   );

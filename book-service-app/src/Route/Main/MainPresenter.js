@@ -1,9 +1,9 @@
 import React from "react";
-import Editor from "../../Components/Editor";
+import Carousel from "../../Components/Carousel";
 
-const MainPresenter = () => (
+const MainPresenter = ({ attrInfo }) => (
   <div>
-    <Editor />
+    <button>menu</button>
   </div>
 );
 
