@@ -5,5 +5,10 @@ export const GlobalStyle = createGlobalStyle`
 
 
 ${reset}
-body {}
+
+ul li {
+    text-decoration : none;
+}
+body {
+}
 `;
