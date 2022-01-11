@@ -2,7 +2,7 @@ import React from "react";
 import Carousel from "../../Components/Carousel";
 import Menu from "../../Components/Menu";
 
-const MainPresenter = ({ attrInfo, show, setShow, textRef }) =>
+const MainPresenter = ({ show, setShow, textRef }) =>
   show ? (
     <Menu setShow={setShow} />
   ) : (
