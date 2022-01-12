@@ -1,5 +1,5 @@
 import React from "react";
 
-const PreviewPresenter = () => <div></div>;
+const PreviewPresenter = () => <div>pre</div>;
 
 export default PreviewPresenter;

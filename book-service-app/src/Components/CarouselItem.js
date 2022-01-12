@@ -1,4 +1,5 @@
 import react from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import MainSlideContents from "./MainSlideContents";
 
@@ -9,11 +10,18 @@ const Container = styled.div`
   background-color: ${(props) => (props.color ? props.color : "transparent")};
 `;
 
-const CarouselItem = ({ color, title, attrTitle }) => {
+const NavLink = styled(Link)`
+  text-decoration: none;
+  color: #000;
+`;
+
+const CarouselItem = ({ color, title, attrTitle, attrKey }) => {
   return (
-    <Container color={color}>
-      <MainSlideContents title={title} attrTitle={attrTitle} />
-    </Container>
+    <NavLink to={`/${attrKey}/preview`}>
+      <Container color={color}>
+        <MainSlideContents title={title} attrTitle={attrTitle} />
+      </Container>
+    </NavLink>
   );
 };
 
