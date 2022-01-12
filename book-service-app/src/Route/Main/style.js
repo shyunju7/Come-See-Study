@@ -1,6 +1,4 @@
 import styled from "styled-components";
-import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import { HiMenuAlt4 } from "react-icons/hi";
 
 export const Container = styled.div`
   width: 100vw;

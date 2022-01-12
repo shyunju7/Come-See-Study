@@ -15,7 +15,7 @@ const MainPresenter = ({ data, show, setShow, textRef }) =>
       <S.Menu onClick={() => setShow((prev) => !prev)}>
         <img src={MenuIcon} alt="menu" width="38px" />
       </S.Menu>
-      <S.CursorDescription ref={textRef} />
+      <S.CursorDescription ref={textRef} id="custom-cursor" />
       <MainSlider>
         <CarouselItem color="#fef6c9" />
         <CarouselItem color="#C9C197" />

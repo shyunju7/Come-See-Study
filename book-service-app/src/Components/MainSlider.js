@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import styled from "styled-components";
 import PrevIcon from "../assets/prev-icon.png";
 import NextIcon from "../assets/next-icon.png";
+import PrevImg from "../assets/prev-button-bg.png";
 const Container = styled.div`
   width: 100%;
 `;
@@ -15,6 +16,8 @@ export const PrevButton = styled.button`
   left: 50px;
   z-index: 1000;
   background-color: transparent;
+  &:hover {
+  }
 `;
 
 export const NextButton = styled.button`
@@ -40,7 +43,7 @@ const settings = {
 };
 const MainSlider = ({ children }) => {
   const sliderRef = useRef(null);
-
+  const cursor = document.querySelector("#custom-cursor");
   const handlePrevPage = () => {
     if (sliderRef.current) {
       sliderRef.current.slickPrev();
@@ -68,7 +71,7 @@ const MainSlider = ({ children }) => {
       <Slider ref={sliderRef} {...settings}>
         {children}
       </Slider>
-      <PrevButton onClick={handlePrevPage}>
+      <PrevButton onClick={handlePrevPage} id="slide-prev-btn">
         <img src={PrevIcon} alt="Prev" width="32px" />
       </PrevButton>
       <NextButton onClick={handleNextPage}>
