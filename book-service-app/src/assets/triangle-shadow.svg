@@ -1,7 +1,7 @@
 <svg width="155" height="149" viewBox="0 0 155 149" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M84.5 8L145.555 113.75H23.4452L84.5 8Z" fill="#143109" fill-opacity="0.5"/>
+<path d="M84.5 8L145.555 113.75H23.4452L84.5 8Z" fill="current" fill-opacity="0.5"/>
 <g filter="url(#filter0_d_94_997)">
-<path d="M70.5 0L131.555 105.75H9.44521L70.5 0Z" fill="#143109"/>
+<path d="M70.5 0L131.555 105.75H9.44521L70.5 0Z" fill="current"/>
 </g>
 <g filter="url(#filter1_d_94_997)">
 <circle cx="45" cy="71" r="4" fill="white"/>
