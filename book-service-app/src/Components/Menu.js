@@ -37,7 +37,7 @@ const MenuList = styled.ul`
 `;
 
 const MenuItemContainer = styled.li`
-  padding: 4rem 2rem;
+  padding: 4rem 0.8rem;
   font-size: 1.4rem;
   font-weight: bold;
   margin-left: 2rem;
