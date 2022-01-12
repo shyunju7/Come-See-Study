@@ -17,6 +17,9 @@ export const PrevButton = styled.button`
   z-index: 1000;
   background-color: transparent;
   &:hover {
+    img {
+      src: ${(props) => (props.hoverImg ? props.hoverImg : "")};
+    }
   }
 `;
 
@@ -28,6 +31,17 @@ export const NextButton = styled.button`
   right: 50px;
   z-index: 1000;
   background-color: transparent;
+
+  &:hover {
+    img {
+      display: none;
+    }
+    border-radius: 4px;
+    border-left: 30px solid #102542;
+    border-top: 26px solid transparent;
+    border-bottom: 26px solid transparent;
+    border-right: 30px solid none;
+  }
 `;
 const settings = {
   dots: true,
@@ -41,9 +55,9 @@ const settings = {
   slidesToShow: 1,
   slidesToScroll: 1,
 };
+
 const MainSlider = ({ children }) => {
   const sliderRef = useRef(null);
-  const cursor = document.querySelector("#custom-cursor");
   const handlePrevPage = () => {
     if (sliderRef.current) {
       sliderRef.current.slickPrev();
@@ -71,7 +85,11 @@ const MainSlider = ({ children }) => {
       <Slider ref={sliderRef} {...settings}>
         {children}
       </Slider>
-      <PrevButton onClick={handlePrevPage} id="slide-prev-btn">
+      <PrevButton
+        onClick={handlePrevPage}
+        id="slide-prev-btn"
+        hoverImg={PrevImg}
+      >
         <img src={PrevIcon} alt="Prev" width="32px" />
       </PrevButton>
       <NextButton onClick={handleNextPage}>

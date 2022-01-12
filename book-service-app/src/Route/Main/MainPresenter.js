@@ -17,9 +17,11 @@ const MainPresenter = ({ data, show, setShow, textRef }) =>
       </S.Menu>
       <S.CursorDescription ref={textRef} id="custom-cursor" />
       <MainSlider>
-        <CarouselItem color="#fef6c9" />
-        <CarouselItem color="#C9C197" />
-        <CarouselItem color="#806D40" />
+        <CarouselItem color="#fef6c9" attrTitle="COLOR" title="CSS #1" />
+        <CarouselItem color="#C9C197" attrTitle="BACKGROUND" title="CSS #2" />
+        <CarouselItem color="#806D40" attrTitle="TEXT" title="CSS #3" />
+        <CarouselItem color="#dddddd" attrTitle="BORDER" title="CSS #4" />
+        <CarouselItem color="#ffffff" attrTitle="TRANSITION" title="CSS #5" />
       </MainSlider>
     </S.Container>
   );

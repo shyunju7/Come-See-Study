@@ -9,10 +9,10 @@ const Container = styled.div`
   background-color: ${(props) => (props.color ? props.color : "transparent")};
 `;
 
-const CarouselItem = ({ color }) => {
+const CarouselItem = ({ color, title, attrTitle }) => {
   return (
     <Container color={color}>
-      <MainSlideContents />
+      <MainSlideContents title={title} attrTitle={attrTitle} />
     </Container>
   );
 };

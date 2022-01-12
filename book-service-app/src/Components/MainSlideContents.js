@@ -47,18 +47,18 @@ const AttrTitle = styled.h1`
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 `;
 
-const MainSlideContents = () => {
+const MainSlideContents = ({ title, attrTitle }) => {
   const eyes = document.querySelectorAll(".eye");
 
   return (
     <Container>
-      <Title>CSS #01</Title>
+      <Title>{title}</Title>
       <CharacterWrapper>
         <RoundCharacter />
         <RectCharacter />
         <TriangleChracter />
       </CharacterWrapper>
-      <AttrTitle>COLOR</AttrTitle>
+      <AttrTitle>{attrTitle}</AttrTitle>
     </Container>
   );
 };
