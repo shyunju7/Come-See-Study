@@ -1,12 +1,15 @@
 import react, { useRef } from "react";
 import styled from "styled-components";
-
+import { IoIosClose } from "react-icons/io";
 const Container = styled.div`
   width: 100vw;
   height: 100vh;
-  background-color: red;
+  background-color: black;
   animation: fadein 2s;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
   @keyframes fadein {
     from {
       opacity: 0;
@@ -28,8 +31,9 @@ const Container = styled.div`
 
 const MenuList = styled.ul`
   display: flex;
-  background-color: teal;
+  background-color: transparent;
   overflow-x: scroll;
+  color: #fef6c9;
 `;
 
 const MenuItemContainer = styled.li`
@@ -43,9 +47,22 @@ const MenuItemContainer = styled.li`
   }
 `;
 const MenuItem = styled.div`
-  width: 200px;
   font-weight: 400;
   font-size: 1rem;
+  line-height: 28px;
+  &:first-child {
+    margin-top: 12px;
+  }
+`;
+
+const Button = styled.button`
+  outline: none;
+  border: none;
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  background-color: transparent;
+  color: #fff;
 `;
 
 const Menu = ({ setShow }) => {
@@ -56,15 +73,17 @@ const Menu = ({ setShow }) => {
   };
   return (
     <Container ref={menuRef}>
-      <button onClick={closeMenu}>x</button>
+      <Button onClick={closeMenu}>
+        <IoIosClose size="60px" color="#fef6c9" />
+      </Button>
       <MenuList>
         <MenuItemContainer>
-          color
+          COLOR
           <MenuItem>rgba</MenuItem>
           <MenuItem>hex</MenuItem>
         </MenuItemContainer>
         <MenuItemContainer>
-          Background
+          BACKGROUND
           <MenuItem>background-color</MenuItem>
           <MenuItem>background-image</MenuItem>
           <MenuItem>background-repeat</MenuItem>
@@ -72,7 +91,7 @@ const Menu = ({ setShow }) => {
           <MenuItem>background-attachment</MenuItem>
         </MenuItemContainer>
         <MenuItemContainer>
-          Text<MenuItem>color</MenuItem>
+          TEXT<MenuItem>color</MenuItem>
           <MenuItem>direction</MenuItem>
           <MenuItem>letter-spacing</MenuItem>
           <MenuItem>word-spacing</MenuItem>
@@ -84,13 +103,13 @@ const Menu = ({ setShow }) => {
           <MenuItem>text-shadow</MenuItem>
         </MenuItemContainer>
         <MenuItemContainer>
-          Border
+          BORDER
           <MenuItem>border-style</MenuItem>
           <MenuItem>border-width</MenuItem>
           <MenuItem>border-color</MenuItem>
         </MenuItemContainer>
         <MenuItemContainer>
-          Transition
+          TRANSITION
           <MenuItem>transition</MenuItem>
           <MenuItem>transition-delay</MenuItem>
           <MenuItem>transition-duration</MenuItem>
