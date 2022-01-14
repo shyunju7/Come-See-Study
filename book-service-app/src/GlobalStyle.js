@@ -5,7 +5,7 @@ export const GlobalStyle = createGlobalStyle`
 
 
 ${reset}
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 ul li {
     text-decoration : none;
 }
