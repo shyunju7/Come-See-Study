@@ -18,8 +18,13 @@ export const PrevButton = styled.button`
   background-color: transparent;
   &:hover {
     img {
-      src: ${(props) => (props.hoverImg ? props.hoverImg : "")};
+      display: none;
     }
+    border-radius: 4px;
+    border-left: 30px solid none;
+    border-top: 26px solid transparent;
+    border-bottom: 26px solid transparent;
+    border-right: 30px solid #102542;
   }
 `;
 
