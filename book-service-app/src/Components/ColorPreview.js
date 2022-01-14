@@ -10,13 +10,36 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: #fef6c9;
+`;
+
+const Chapter = styled.p`
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 12px;
+`;
+
+const GuideText = styled.h2`
+  font-size: 1.25rem;
+  font-weight: bold;
+`;
+
+const RoundCharacter = styled(Round)`
+  margin-right: 30px;
+`;
+
+const RectCharacter = styled(Rect)`
+  margin-right: 30px;
+`;
+
+const TriangleChracter = styled(Triangle)`
+  margin-top: 10px;
 `;
 
 const ImageWrapper = styled.div`
-  width: 34%;
-  height: 180px;
   display: flex;
   justify-content: space-between;
+  margin-top: 100px;
 `;
 
 const RangeSliderWrapper = styled.div`
@@ -31,6 +54,7 @@ const RGBASliderList = styled.div`
 
 const RGBASlider = styled.input`
   display: inline;
+  cursor: pointer;
 `;
 
 const ColorPreview = () => {
@@ -57,14 +81,16 @@ const ColorPreview = () => {
 
   return (
     <Container>
+      <Chapter>CSS #2</Chapter>
+      <GuideText>Change your color</GuideText>
       <ImageWrapper>
-        <Round
+        <RoundCharacter
           fill={`rgba(${circleRgba.r},${circleRgba.g}, ${circleRgba.b}, ${circleRgba.a})`}
         />
-        <Rect
+        <RectCharacter
           fill={`rgba(${rectRgba.r},${rectRgba.g}, ${rectRgba.b}, ${rectRgba.a})`}
         />
-        <Triangle
+        <TriangleChracter
           fill={`rgba(${triangleRgba.r},${triangleRgba.g}, ${triangleRgba.b}, ${triangleRgba.a})`}
         />
       </ImageWrapper>
