@@ -3,9 +3,9 @@
 <g filter="url(#filter0_d_94_997)">
 <path d="M70.5 0L131.555 105.75H9.44521L70.5 0Z" fill="current"/>
 </g>
+<circle id="triangle-left-eye" cx="45" cy="71" r="4" fill="white"/>
+<circle id="triangle-right-eye" cx="84" cy="71" r="4" fill="white"/>
 <g filter="url(#filter1_d_94_997)">
-<circle cx="45" cy="71" r="4" fill="white"/>
-<circle cx="84" cy="71" r="4" fill="white"/>
 <rect x="75" y="80" width="5" height="23" transform="rotate(90 75 80)" fill="#FEFEFE"/>
 </g>
 <defs>
