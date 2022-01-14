@@ -1,6 +1,8 @@
 import react, { useRef } from "react";
 import styled from "styled-components";
 import { IoIosClose } from "react-icons/io";
+import { Link } from "react-router-dom";
+
 const Container = styled.div`
   width: 100vw;
   height: 100vh;
@@ -27,6 +29,10 @@ const Container = styled.div`
       opacity: 0;
     }
   }
+`;
+const NavLink = styled(Link)`
+  text-decoration: none;
+  color: #fef6c9;
 `;
 
 const MenuList = styled.ul`
@@ -77,11 +83,13 @@ const Menu = ({ setShow }) => {
         <IoIosClose size="60px" color="#fef6c9" />
       </Button>
       <MenuList>
-        <MenuItemContainer>
-          COLOR
-          <MenuItem>rgba</MenuItem>
-          <MenuItem>hex</MenuItem>
-        </MenuItemContainer>
+        <NavLink to={`/1-color/preview`}>
+          <MenuItemContainer>
+            COLOR
+            <MenuItem>rgba</MenuItem>
+            <MenuItem>hex</MenuItem>
+          </MenuItemContainer>
+        </NavLink>
         <MenuItemContainer>
           BACKGROUND
           <MenuItem>background-color</MenuItem>
