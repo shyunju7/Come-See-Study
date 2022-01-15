@@ -1,6 +1,6 @@
 <svg width="130" height="130" viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g filter="url(#filter0_d_160_600)">
-<rect x="125" width="120" height="120" transform="rotate(90 125 0)" fill="#F87060"/>s
+<rect x="125" width="120" height="120" transform="rotate(90 125 0)" fill="current"/>
 <circle id="rect-left-eye" cx="40" cy="54" r="4" fill="white"/>
 <circle id="rect-right-eye" cx="90" cy="54" r="4" fill="white"/>
 <g filter="url(#filter1_d_160_600)">
