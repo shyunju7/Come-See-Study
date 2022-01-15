@@ -95,20 +95,12 @@ const Menu = ({ setShow }) => {
           <MenuItem>background-color</MenuItem>
           <MenuItem>background-image</MenuItem>
           <MenuItem>background-repeat</MenuItem>
-          <MenuItem>background-position</MenuItem>
-          <MenuItem>background-attachment</MenuItem>
         </MenuItemContainer>
         <MenuItemContainer>
           TEXT<MenuItem>color</MenuItem>
-          <MenuItem>direction</MenuItem>
-          <MenuItem>letter-spacing</MenuItem>
-          <MenuItem>word-spacing</MenuItem>
-          <MenuItem>text-indent</MenuItem>
           <MenuItem>text-align</MenuItem>
           <MenuItem>text-decoration</MenuItem>
           <MenuItem>text-transform</MenuItem>
-          <MenuItem>line-height</MenuItem>
-          <MenuItem>text-shadow</MenuItem>
         </MenuItemContainer>
         <MenuItemContainer>
           BORDER
@@ -119,9 +111,7 @@ const Menu = ({ setShow }) => {
         <MenuItemContainer>
           TRANSITION
           <MenuItem>transition</MenuItem>
-          <MenuItem>transition-delay</MenuItem>
           <MenuItem>transition-duration</MenuItem>
-          <MenuItem>transition-property</MenuItem>
           <MenuItem>transition-timing-function</MenuItem>
         </MenuItemContainer>
       </MenuList>
