@@ -1,8 +1,9 @@
 import react, { useEffect } from "react";
 import styled from "styled-components";
-import { ReactComponent as Rect } from "../assets/rect-shadow.svg";
-import { ReactComponent as Triangle } from "../assets/triangle-shadow.svg";
-import { ReactComponent as Round } from "../assets/round-shadow.svg";
+import { ReactComponent as Rect } from "../assets/rect-img.svg";
+import { ReactComponent as Triangle } from "../assets/triangle-img.svg";
+import { ReactComponent as Round } from "../assets/round-img.svg";
+
 const Container = styled.div`
   width: 100%;
   height: 100%;
@@ -31,18 +32,83 @@ const CharacterWrapper = styled.div`
 
 const RoundCharacter = styled(Round)`
   margin-right: 30px;
-  fill: #102542;
+  fill: #0e438b;
+  animation-name: changeFillColorRound;
+  animation-duration: 8s;
+  animation-delay: now;
+  animation-iteration-count: infinite;
+
+  @keyframes changeFillColorRound {
+    0% {
+      fill: #0e438b;
+    }
+    25% {
+      fill: #0bd953;
+    }
+    50% {
+      fill: #fba794;
+    }
+    75% {
+      fill: #143109;
+    }
+    100% {
+      fill: #61c0f5;
+    }
+  }
 `;
 
 const RectCharacter = styled(Rect)`
   margin-right: 30px;
   fill: #f87060;
+  animation-name: changeFillColorRect;
+  animation-duration: 8s;
+  animation-delay: now;
+  animation-iteration-count: infinite;
+  @keyframes changeFillColorRect {
+    0% {
+      fill: #f87060;
+    }
+    25% {
+      fill: #481ca7;
+    }
+    50% {
+      fill: #ffe600;
+    }
+    75% {
+      fill: #c9c197;
+    }
+    100% {
+      fill: #39f1ba;
+    }
+  }
 `;
 
 const TriangleChracter = styled(Triangle)`
   margin-top: 40px;
   fill: #143109;
+  animation-name: changeFillColorTriangle;
+  animation-duration: 10s;
+  animation-delay: now;
+  animation-iteration-count: infinite;
+  @keyframes changeFillColorTriangle {
+    0% {
+      fill: #24942f;
+    }
+    25% {
+      fill: #ffb800;
+    }
+    50% {
+      fill: #0553f1;
+    }
+    75% {
+      fill: #102542;
+    }
+    100% {
+      fill: #df3737;
+    }
+  }
 `;
+
 const AttrTitle = styled.h1`
   font-size: 36px;
   font-weight: bold;
@@ -79,12 +145,12 @@ const MainSlideContents = ({ title, attrTitle }) => {
     const handleMoveRoundEyes = (e) => {
       let x;
       let y;
-      if ((e.clientX * 100) / window.innerWidth < 23) x = 23;
+      if ((e.clientX * 100) / window.innerWidth < 32) x = 32;
       else if ((e.clientX * 100) / window.innerWidth > 64) x = 64;
       else x = (e.clientX * 100) / window.innerWidth;
 
-      if ((e.clientY * 100) / window.innerHeight < 23) y = 23;
-      else if ((e.clientY * 100) / window.innerHeight > 43) y = 43;
+      if ((e.clientY * 100) / window.innerHeight < 25) y = 25;
+      else if ((e.clientY * 100) / window.innerHeight > 50) y = 50;
       else y = (e.clientY * 100) / window.innerHeight;
 
       roundLeftEye.setAttribute("cx", x);
@@ -96,12 +162,12 @@ const MainSlideContents = ({ title, attrTitle }) => {
     const handleMoveRectEyes = (e) => {
       let x;
       let y;
-      if ((e.clientX * 100) / window.innerWidth < 12) x = 12;
+      if ((e.clientX * 100) / window.innerWidth < 18) x = 18;
       else if ((e.clientX * 100) / window.innerWidth > 68) x = 68;
       else x = (e.clientX * 100) / window.innerWidth;
 
-      if ((e.clientY * 100) / window.innerHeight < 27) y = 27;
-      else if ((e.clientY * 100) / window.innerHeight > 35) y = 35;
+      if ((e.clientY * 100) / window.innerHeight < 22) y = 22;
+      else if ((e.clientY * 100) / window.innerHeight > 50) y = 50;
       else y = (e.clientY * 100) / window.innerHeight;
 
       rectLeftEye.setAttribute("cx", x);
@@ -114,8 +180,8 @@ const MainSlideContents = ({ title, attrTitle }) => {
       let x = (e.clientX * 100) / window.innerWidth;
       let y = (e.clientY * 100) / window.innerHeight;
 
-      if ((e.clientX * 100) / window.innerWidth < 48) x = 48;
-      else if ((e.clientX * 100) / window.innerWidth > 60) x = 60;
+      if ((e.clientX * 100) / window.innerWidth < 54) x = 54;
+      else if ((e.clientX * 100) / window.innerWidth > 69) x = 69;
       else x = (e.clientX * 100) / window.innerWidth;
 
       if ((e.clientY * 100) / window.innerHeight < 59) y = 59;
