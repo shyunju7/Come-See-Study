@@ -25,6 +25,7 @@ const Title = styled.h2`
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 114px;
+  z-index: 1000;
 `;
 
 const AttrTitle = styled.h1`
@@ -35,6 +36,7 @@ const AttrTitle = styled.h1`
   font-size: 36px;
   font-weight: bold;
   margin-top: 94px;
+  z-index: 1000;
 `;
 
 const NavLink = styled(Link)`
@@ -44,17 +46,17 @@ const NavLink = styled(Link)`
 
 const SlideItem = ({ title, attrTitle }) => {
   return (
-    <NavLink to={`/${attrTitle}/preview`}>
-      <Container>
-        <Title>{title}</Title>
-        {attrTitle === "color" ? <MainSlideContents /> : null}
-        {attrTitle === "background" ? <MainSlideBackgroundContents /> : null}
-        {attrTitle === "text" ? <MainSlideTextContents /> : null}
-        {attrTitle === "border" ? <MainSlideBorderContents /> : null}
-        {attrTitle === "transition" ? <MainSlideTransitionContents /> : null}
-        <AttrTitle>{attrTitle}</AttrTitle>
-      </Container>
-    </NavLink>
+    // <NavLink to={`/${attrTitle}/preview`}>
+    <Container>
+      <Title>{title}</Title>
+      {attrTitle === "color" ? <MainSlideContents /> : null}
+      {attrTitle === "background" ? <MainSlideBackgroundContents /> : null}
+      {attrTitle === "text" ? <MainSlideTextContents /> : null}
+      {attrTitle === "border" ? <MainSlideBorderContents /> : null}
+      {attrTitle === "transition" ? <MainSlideTransitionContents /> : null}
+      <AttrTitle>{attrTitle}</AttrTitle>
+    </Container>
+    // </NavLink>
   );
 };
 
