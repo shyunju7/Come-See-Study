@@ -8,23 +8,53 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
 `;
 
 const Bubble = styled.div`
+  position: absolute;
+  top: 90px;
+  right: 28%;
   width: 250px;
   height: 200px;
   background-repeat: no-repeat;
-  background-image: url("http://localhost:3000/static/media/bubble-bg.df18892407e8836242cb.png");
+  background-image: url("/img/bg-bubble.png");
   background-size: 250px 193px;
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 100;
 `;
 
 const BubbleText = styled.p`
   width: 200px;
   background-color: transparent;
   text-align: center;
+  animation-name: changeFillColorTriangle;
+  animation-duration: 20s;
+  animation-delay: now;
+  animation-iteration-count: infinite;
+  line-height: 25px;
+  @keyframes changeFillColorTriangle {
+    0% {
+      text-decoration: none;
+    }
+    25% {
+      text-transform: uppercase;
+    }
+    50% {
+      text-decoration: line-through;
+    }
+    65% {
+      text-decoration: none;
+    }
+    75% {
+      text-transform: lowercase;
+    }
+    100% {
+      text-decoration: green wavy underline;
+    }
+  }
 `;
 
 const RectCharacter = styled(Rect)`
@@ -34,6 +64,11 @@ const RectCharacter = styled(Rect)`
 const MainSlideTextContents = () => {
   return (
     <Container>
+      <Bubble>
+        <BubbleText>
+          lorem ipsum dolor sit amet, consectetur adipiscing eli
+        </BubbleText>
+      </Bubble>
       <RectCharacter />
     </Container>
   );
