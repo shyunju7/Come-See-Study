@@ -15,6 +15,7 @@ const Container = styled.div`
   position: relative;
   display: flex;
   justify-content: center;
+  align-items: center;
 `;
 
 const Title = styled.h2`
