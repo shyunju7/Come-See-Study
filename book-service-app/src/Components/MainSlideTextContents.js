@@ -13,7 +13,7 @@ const Container = styled.div`
 const Bubble = styled.div`
   position: absolute;
   top: 90px;
-  right: 28%;
+  right: 25%;
   width: 250px;
   height: 200px;
   background-repeat: no-repeat;
@@ -27,6 +27,7 @@ const Bubble = styled.div`
 
 const BubbleText = styled.p`
   width: 200px;
+  font-size: 1rem;
   background-color: transparent;
   text-align: center;
   animation-name: changeTextDeco;

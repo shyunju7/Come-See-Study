@@ -22,8 +22,8 @@ const Title = styled.h2`
   left: 50%;
   top: 180px;
   transform: translate(-50%, -50%);
-  font-size: 24px;
-  font-weight: bold;
+  font-size: 1.1rem;
+  font-weight: 600;
   margin-bottom: 114px;
   z-index: 1000;
 `;
@@ -33,7 +33,7 @@ const AttrTitle = styled.h1`
   bottom: 185px;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 36px;
+  font-size: 1.4rem;
   font-weight: bold;
   margin-top: 94px;
   z-index: 1000;
