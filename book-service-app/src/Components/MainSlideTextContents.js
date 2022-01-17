@@ -34,9 +34,6 @@ const RectCharacter = styled(Rect)`
 const MainSlideTextContents = () => {
   return (
     <Container>
-      <Bubble>
-        <BubbleText>welcome to our service!!</BubbleText>
-      </Bubble>
       <RectCharacter />
     </Container>
   );

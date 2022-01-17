@@ -13,6 +13,8 @@ const Container = styled.div`
   transform: translateX(-50%, -50%);
   background-color: #fef6c9;
   position: relative;
+  display: flex;
+  justify-content: center;
 `;
 
 const Title = styled.h2`

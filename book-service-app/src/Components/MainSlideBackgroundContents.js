@@ -1,16 +1,18 @@
 import react from "react";
 import styled from "styled-components";
-import bgImg from "../assets/bg-triangle.gif";
 const ImageBackground = styled.div`
-  width: 100%;
-  height: 100%;
-  background-image: url("http://localhost:3000/static/media/bg-triangle.d85687510a9fd150efc7.gif");
+  width: 96%;
+  height: 90%;
+  background-image: url("/img/bg-triangle.gif");
   background-size: 138px;
   background-repeat: repeat;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  opacity: 0.45;
+  justify-self: center;
+  place-self: center;
 `;
 
 const Title = styled.h2`
