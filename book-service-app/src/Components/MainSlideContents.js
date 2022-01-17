@@ -37,7 +37,6 @@ const RoundCharacter = styled(Round)`
   animation-duration: 8s;
   animation-delay: now;
   animation-iteration-count: infinite;
-
   @keyframes changeFillColorRound {
     0% {
       fill: #0e438b;

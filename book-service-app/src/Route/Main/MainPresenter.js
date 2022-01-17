@@ -4,8 +4,6 @@ import MainSlider from "../../Components/MainSlider";
 import Menu from "../../Components/Menu";
 import * as S from "../Main/style";
 import MenuIcon from "../../assets/menu-icon.png";
-import PrevIcon from "../../assets/prev-icon.png";
-import NextIcon from "../../assets/next-icon.png";
 
 const MainPresenter = ({ data, show, setShow, textRef }) =>
   show ? (
@@ -24,25 +22,25 @@ const MainPresenter = ({ data, show, setShow, textRef }) =>
           attrKey="1-color"
         />
         <CarouselItem
-          color="#C9C197"
+          color="#fef6c9"
           attrTitle="BACKGROUND"
           title="CSS #2"
           attrKey="2-background"
         />
         <CarouselItem
-          color="#806D40"
+          color="#fef6c9"
           attrTitle="TEXT"
           title="CSS #3"
           attrKey="3-text"
         />
         <CarouselItem
-          color="#dddddd"
+          color="#fef6c9"
           attrTitle="BORDER"
           title="CSS #4"
           attrKey="4-border"
         />
         <CarouselItem
-          color="#ffffff"
+          color="#fef6c9"
           attrTitle="TRANSITION"
           title="CSS #5"
           attrKey="5-transition"

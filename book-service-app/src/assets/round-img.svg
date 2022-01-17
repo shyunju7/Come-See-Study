@@ -1,12 +1,8 @@
 <svg width="130" height="130" viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g filter="url(#filter0_d_160_592)">
 <circle cx="65" cy="60" r="60" fill="currnet"/>
-<g filter="url(#filter1_d_160_592)">
 <rect x="75" y="65" width="5" height="23" transform="rotate(90 75 65)" fill="#FEFEFE"/>
-</g>
 <circle id="round-left-eye" cx="43" cy="55" r="4" fill="white"/>
 <circle id="round-right-eye" cx="86" cy="55" r="4" fill="white"/>
-</g>
 <defs>
 <filter id="filter0_d_160_592" x="0" y="0" width="130" height="130" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>

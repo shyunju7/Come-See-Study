@@ -1,6 +1,7 @@
 import react from "react";
-import { ReactComponent as Rect } from "../assets/rect-shadow.svg";
+import { ReactComponent as Rect } from "../assets/rect-img.svg";
 import styled from "styled-components";
+import bubbleImg from "../assets/bubble-bg.png";
 const Container = styled.div`
   width: 100%;
   height: 100%;
@@ -16,6 +17,15 @@ const Bubble = styled.div`
   background-repeat: no-repeat;
   background-image: url("http://localhost:3000/static/media/bubble-bg.df18892407e8836242cb.png");
   background-size: 250px 193px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const BubbleText = styled.p`
+  width: 200px;
+  background-color: transparent;
+  text-align: center;
 `;
 
 const RectCharacter = styled(Rect)`
@@ -25,7 +35,9 @@ const RectCharacter = styled(Rect)`
 const MainSlideTextContents = () => {
   return (
     <Container>
-      <Bubble></Bubble>
+      <Bubble>
+        <BubbleText>welcome to our service!!</BubbleText>
+      </Bubble>
       <RectCharacter />
     </Container>
   );

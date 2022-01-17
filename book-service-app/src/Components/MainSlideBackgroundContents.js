@@ -4,7 +4,6 @@ import bgImg from "../assets/bg-triangle.gif";
 const ImageBackground = styled.div`
   width: 100%;
   height: 100%;
-  //background-image: url("http://localhost:3000/static/media/background-img-bg.d70dfe3cb5933176cc85.png");
   background-image: url("http://localhost:3000/static/media/bg-triangle.d85687510a9fd150efc7.gif");
   background-size: 138px;
   background-repeat: repeat;

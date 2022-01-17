@@ -23,6 +23,7 @@ export const Menu = styled.div`
   top: 50px;
   left: 50px;
   z-index: 1000;
+
   &:hover + ${CursorDescription} {
     ::before {
       content: "";
@@ -30,9 +31,10 @@ export const Menu = styled.div`
     ::after {
       content: "menu";
     }
-    background-color: #102542;
+    /* background-color: #102542;
     color: #fff;
     border-radius: 50%;
-    padding: 21px 10px;
+    padding: 22px 10px;
+    font-size: 12px; */
   }
 `;

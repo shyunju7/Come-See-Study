@@ -63,6 +63,30 @@ const settings = {
 
 const MainSlider = ({ children }) => {
   const sliderRef = useRef(null);
+
+  useEffect(() => {
+    const cursor = document.querySelector("#custom-cursor");
+    const prevButton = document.querySelector("#slide-prev-btn");
+    // prevButton.addEventListener("mouseover", function (e) {
+    //   cursor.style.background = "#102542";
+    //   cursor.style.color = "#ffffff";
+    //   cursor.style.borderRadius = "50%";
+    //   cursor.style.contents = "prev";
+    //   cursor.style.padding = "22px 10px";
+
+    //   console.log(cursor.style);
+    // });
+    // prevButton.addEventListener("mouseout", function (e) {
+    //   cursor.style.background = "transparent";
+    //   cursor.style.color = "#000000";
+    //   cursor.style.borderRadius = "0%";
+    //   cursor.style.contents = "click";
+    //   cursor.style.padding = "0px";
+
+    //   console.log(cursor.style);
+    // });
+  }, []);
+
   const handlePrevPage = () => {
     if (sliderRef.current) {
       sliderRef.current.slickPrev();
