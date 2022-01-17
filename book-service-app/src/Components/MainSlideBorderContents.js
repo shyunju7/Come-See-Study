@@ -20,7 +20,7 @@ const RoundCharacter = styled(Round)`
   animation-name: changeBorderWidth;
   animation-duration: 8s;
   animation-delay: now;
-  filter: drop-shadow(6px 10px 4px rgba(0, 0, 0, 0.25));
+  //filter: drop-shadow(6px 10px 4px rgba(0, 0, 0, 0.25));
   animation-iteration-count: infinite;
   @keyframes changeBorderWidth {
     0% {

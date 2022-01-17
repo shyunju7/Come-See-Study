@@ -38,6 +38,7 @@ const AttrTitle = styled.h1`
   font-weight: bold;
   margin-top: 94px;
   z-index: 1000;
+  text-transform: uppercase;
 `;
 
 const NavLink = styled(Link)`
