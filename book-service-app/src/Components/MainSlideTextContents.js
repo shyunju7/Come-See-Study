@@ -1,7 +1,6 @@
 import react from "react";
 import { ReactComponent as Rect } from "../assets/rect-img.svg";
 import styled from "styled-components";
-import bubbleImg from "../assets/bubble-bg.png";
 const Container = styled.div`
   width: 100%;
   height: 100%;

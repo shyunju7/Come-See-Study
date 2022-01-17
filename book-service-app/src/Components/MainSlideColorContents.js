@@ -14,12 +14,6 @@ const Container = styled.div`
   align-items: center;
 `;
 
-const Title = styled.h2`
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 114px;
-`;
-
 const CharacterWrapper = styled.div`
   width: 100%;
   height: 150px;
@@ -107,12 +101,6 @@ const TriangleChracter = styled(Triangle)`
   }
 `;
 
-const AttrTitle = styled.h1`
-  font-size: 36px;
-  font-weight: bold;
-  margin-top: 94px;
-`;
-
 const MainSlideContents = ({ title, attrTitle }) => {
   useEffect(() => {
     const roundLeftEye = document.querySelector("#round-left-eye");
@@ -198,13 +186,11 @@ const MainSlideContents = ({ title, attrTitle }) => {
 
   return (
     <Container>
-      <Title>{title}</Title>
       <CharacterWrapper>
         <RoundCharacter />
         <RectCharacter />
         <TriangleChracter />
       </CharacterWrapper>
-      <AttrTitle>{attrTitle}</AttrTitle>
     </Container>
   );
 };
