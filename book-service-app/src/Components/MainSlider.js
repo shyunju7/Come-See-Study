@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import Slider from "react-slick";
 import styled from "styled-components";
 import PrevIcon from "../assets/prev-icon.png";
@@ -16,16 +16,6 @@ export const PrevButton = styled.button`
   left: 50px;
   z-index: 1000;
   background-color: transparent;
-  &:hover {
-    img {
-      display: none;
-    }
-    border-radius: 4px;
-    border-left: 30px solid none;
-    border-top: 26px solid transparent;
-    border-bottom: 26px solid transparent;
-    border-right: 30px solid #102542;
-  }
 `;
 
 export const NextButton = styled.button`
@@ -36,17 +26,6 @@ export const NextButton = styled.button`
   right: 50px;
   z-index: 1000;
   background-color: transparent;
-
-  &:hover {
-    img {
-      display: none;
-    }
-    border-radius: 4px;
-    border-left: 30px solid #102542;
-    border-top: 26px solid transparent;
-    border-bottom: 26px solid transparent;
-    border-right: 30px solid none;
-  }
 `;
 const settings = {
   dots: false,
@@ -63,29 +42,6 @@ const settings = {
 
 const MainSlider = ({ children }) => {
   const sliderRef = useRef(null);
-
-  useEffect(() => {
-    const cursor = document.querySelector("#custom-cursor");
-    const prevButton = document.querySelector("#slide-prev-btn");
-    // prevButton.addEventListener("mouseover", function (e) {
-    //   cursor.style.background = "#102542";
-    //   cursor.style.color = "#ffffff";
-    //   cursor.style.borderRadius = "50%";
-    //   cursor.style.contents = "prev";
-    //   cursor.style.padding = "22px 10px";
-
-    //   console.log(cursor.style);
-    // });
-    // prevButton.addEventListener("mouseout", function (e) {
-    //   cursor.style.background = "transparent";
-    //   cursor.style.color = "#000000";
-    //   cursor.style.borderRadius = "0%";
-    //   cursor.style.contents = "click";
-    //   cursor.style.padding = "0px";
-
-    //   console.log(cursor.style);
-    // });
-  }, []);
 
   const handlePrevPage = () => {
     if (sliderRef.current) {
