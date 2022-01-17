@@ -40,6 +40,10 @@ const MenuList = styled.ul`
   background-color: transparent;
   overflow-x: scroll;
   color: #fef6c9;
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 const MenuItemContainer = styled.li`
