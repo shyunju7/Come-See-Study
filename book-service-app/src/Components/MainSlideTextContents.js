@@ -1,4 +1,3 @@
-import react from "react";
 import { ReactComponent as Rect } from "../assets/rect-img.svg";
 import styled from "styled-components";
 const Container = styled.div`

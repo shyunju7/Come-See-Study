@@ -101,7 +101,7 @@ const TriangleChracter = styled(Triangle)`
   }
 `;
 
-const MainSlideContents = ({ title, attrTitle }) => {
+const MainSlideContents = () => {
   useEffect(() => {
     const roundLeftEye = document.querySelector("#round-left-eye");
     const roundRightEye = document.querySelector("#round-right-eye");
@@ -121,8 +121,6 @@ const MainSlideContents = ({ title, attrTitle }) => {
         triangleLeftEye &&
         triangleRightEye
       ) {
-        console.log(`x:`, (e.clientX * 100) / window.innerWidth);
-        console.log(`y:`, (e.clientY * 100) / window.innerHeight);
         handleMoveRoundEyes(e);
         handleMoveRectEyes(e);
         handleMoveTriangleEyes(e);
