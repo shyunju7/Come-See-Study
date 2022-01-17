@@ -197,7 +197,7 @@ const ColorPreview = () => {
             min="0"
             max="256"
             step="1"
-            defaultValue={rectRgba.r}
+            defaultValue={triangleRgba.r}
             onChange={(e) =>
               settriangleRgba({ ...triangleRgba, r: Number(e.target.value) })
             }
@@ -207,7 +207,7 @@ const ColorPreview = () => {
             min="0"
             max="256"
             step="1"
-            defaultValue={rectRgba.g}
+            defaultValue={triangleRgba.g}
             onChange={(e) =>
               settriangleRgba({ ...triangleRgba, g: Number(e.target.value) })
             }
@@ -217,7 +217,7 @@ const ColorPreview = () => {
             min="0"
             max="256"
             step="1"
-            defaultValue={rectRgba.b}
+            defaultValue={triangleRgba.b}
             onChange={(e) =>
               settriangleRgba({ ...triangleRgba, b: Number(e.target.value) })
             }
@@ -227,7 +227,7 @@ const ColorPreview = () => {
             min="0"
             max="1"
             step="0.1"
-            defaultValue={rectRgba.a}
+            defaultValue={triangleRgba.a}
             onChange={(e) =>
               settriangleRgba({ ...triangleRgba, a: Number(e.target.value) })
             }
