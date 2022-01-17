@@ -30,12 +30,12 @@ const BubbleText = styled.p`
   width: 200px;
   background-color: transparent;
   text-align: center;
-  animation-name: changeFillColorTriangle;
+  animation-name: changeTextDeco;
   animation-duration: 20s;
   animation-delay: now;
   animation-iteration-count: infinite;
   line-height: 25px;
-  @keyframes changeFillColorTriangle {
+  @keyframes changeTextDeco {
     0% {
       text-decoration: none;
     }
