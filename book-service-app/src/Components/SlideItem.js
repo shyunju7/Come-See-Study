@@ -9,7 +9,7 @@ const Container = styled.div`
   width: 100%;
   height: 100vh;
   transform: translateX(-50%, -50%);
-  background-color: ${(props) => (props.color ? props.color : "transparent")};
+  background-color: #fef6c9;
 `;
 
 const NavLink = styled(Link)`
@@ -17,20 +17,20 @@ const NavLink = styled(Link)`
   color: #000;
 `;
 
-const CarouselItem = ({ color, title, attrTitle, attrKey }) => {
+const SlideItem = ({ title, attrTitle }) => {
   return (
-    <NavLink to={`/${attrKey}/preview`}>
-      <Container color={color}>
-        {attrKey === "1-color" ? (
+    <NavLink to={`/${attrTitle}/preview`}>
+      <Container>
+        {attrTitle === "color" ? (
           <MainSlideContents title={title} attrTitle={attrTitle} />
         ) : null}
-        {attrKey === "2-background" ? (
+        {attrTitle === "background" ? (
           <MainSlideBackgroundContents title={title} attrTitle={attrTitle} />
         ) : null}
-        {attrKey === "3-text" ? <MainSlideTextContents /> : null}
+        {attrTitle === "text" ? <MainSlideTextContents /> : null}
       </Container>
     </NavLink>
   );
 };
 
-export default CarouselItem;
+export default SlideItem;

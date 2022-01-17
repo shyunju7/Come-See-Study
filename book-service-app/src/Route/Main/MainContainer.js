@@ -2,10 +2,26 @@ import React, { useEffect, useRef, useState } from "react";
 import MainPresenter from "./MainPresenter";
 
 const testInfo = [
-  { color: "red" },
-  { color: "yellow" },
-  { color: "green" },
-  { color: "blue" },
+  {
+    attrTitle: "color",
+    title: "CSS #1",
+  },
+  {
+    attrTitle: "text",
+    title: "CSS #2",
+  },
+  {
+    attrTitle: "background",
+    title: "CSS #3",
+  },
+  {
+    attrTitle: "border",
+    title: "CSS #4",
+  },
+  {
+    attrTitle: "transition",
+    title: "CSS #5",
+  },
 ];
 
 const MainContainer = () => {
