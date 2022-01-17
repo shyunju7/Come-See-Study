@@ -37,9 +37,10 @@ const NavLink = styled(Link)`
 
 const MenuList = styled.ul`
   display: flex;
-  background-color: transparent;
+  background-color: red;
   overflow-x: scroll;
   color: #fef6c9;
+  -ms-overflow-style: none;
 
   ::-webkit-scrollbar {
     display: none;
@@ -47,6 +48,7 @@ const MenuList = styled.ul`
 `;
 
 const MenuItemContainer = styled.li`
+  width: 400px;
   padding: 4rem 0.8rem;
   font-size: 1.4rem;
   font-weight: bold;
