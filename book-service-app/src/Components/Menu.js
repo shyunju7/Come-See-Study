@@ -1,4 +1,4 @@
-import react, { useRef } from "react";
+import { useRef } from "react";
 import styled from "styled-components";
 import { IoIosClose } from "react-icons/io";
 import { Link } from "react-router-dom";
@@ -37,7 +37,7 @@ const NavLink = styled(Link)`
 
 const MenuList = styled.ul`
   display: flex;
-  background-color: red;
+  background-color: transparent;
   overflow-x: scroll;
   color: #fef6c9;
   -ms-overflow-style: none;
@@ -48,7 +48,6 @@ const MenuList = styled.ul`
 `;
 
 const MenuItemContainer = styled.li`
-  width: 400px;
   padding: 4rem 0.8rem;
   font-size: 1.4rem;
   font-weight: bold;
