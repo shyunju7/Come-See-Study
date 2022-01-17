@@ -135,6 +135,8 @@ const MainSlideContents = ({ title, attrTitle }) => {
         triangleLeftEye &&
         triangleRightEye
       ) {
+        console.log(`x:`, (e.clientX * 100) / window.innerWidth);
+        console.log(`y:`, (e.clientY * 100) / window.innerHeight);
         handleMoveRoundEyes(e);
         handleMoveRectEyes(e);
         handleMoveTriangleEyes(e);
@@ -144,12 +146,12 @@ const MainSlideContents = ({ title, attrTitle }) => {
     const handleMoveRoundEyes = (e) => {
       let x;
       let y;
-      if ((e.clientX * 100) / window.innerWidth < 32) x = 32;
-      else if ((e.clientX * 100) / window.innerWidth > 64) x = 64;
+      if ((e.clientX * 100) / window.innerWidth < 30) x = 30;
+      else if ((e.clientX * 100) / window.innerWidth > 51) x = 51;
       else x = (e.clientX * 100) / window.innerWidth;
 
-      if ((e.clientY * 100) / window.innerHeight < 25) y = 25;
-      else if ((e.clientY * 100) / window.innerHeight > 50) y = 50;
+      if ((e.clientY * 100) / window.innerHeight < 44) y = 44;
+      else if ((e.clientY * 100) / window.innerHeight > 48) y = 48;
       else y = (e.clientY * 100) / window.innerHeight;
 
       roundLeftEye.setAttribute("cx", x);

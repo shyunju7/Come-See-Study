@@ -49,7 +49,7 @@ export const NextButton = styled.button`
   }
 `;
 const settings = {
-  dots: true,
+  dots: false,
   arrows: false,
   infinite: true,
   speed: 300,
