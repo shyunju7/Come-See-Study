@@ -163,11 +163,11 @@ const MainSlideContents = ({ title, attrTitle }) => {
     const handleMoveRectEyes = (e) => {
       let x;
       let y;
-      if ((e.clientX * 100) / window.innerWidth < 18) x = 18;
-      else if ((e.clientX * 100) / window.innerWidth > 68) x = 68;
+      if ((e.clientX * 100) / window.innerWidth < 34) x = 34;
+      else if ((e.clientX * 100) / window.innerWidth > 56) x = 56;
       else x = (e.clientX * 100) / window.innerWidth;
 
-      if ((e.clientY * 100) / window.innerHeight < 22) y = 22;
+      if ((e.clientY * 100) / window.innerHeight < 45) y = 45;
       else if ((e.clientY * 100) / window.innerHeight > 50) y = 50;
       else y = (e.clientY * 100) / window.innerHeight;
 
