@@ -5,7 +5,7 @@ const ImageBackground = styled.div`
   height: 90%;
   background-image: url("/img/bg-triangle.gif");
   background-size: 138px;
-  background-repeat: space;
+  background-repeat: repeat;
   display: flex;
   flex-direction: column;
   justify-content: center;
