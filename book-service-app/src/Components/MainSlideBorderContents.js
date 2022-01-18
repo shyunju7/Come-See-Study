@@ -11,7 +11,6 @@ const Container = styled.div`
 `;
 
 const RoundCharacter = styled(Round)`
-  margin-right: 30px;
   fill: #0e438b;
   display: flex;
   background-color: transparent;

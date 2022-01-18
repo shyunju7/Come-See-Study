@@ -58,7 +58,6 @@ const BubbleText = styled.p`
 `;
 
 const RectCharacter = styled(Rect)`
-  margin-right: 30px;
   fill: #f87060;
 `;
 const MainSlideTextContents = () => {

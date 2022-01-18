@@ -10,7 +10,6 @@ const Container = styled.div`
 `;
 
 const RectCharacter = styled(Rect)`
-  margin-right: 30px;
   fill: #f87060;
   animation-name: changeLocation;
   animation-duration: 10s;
