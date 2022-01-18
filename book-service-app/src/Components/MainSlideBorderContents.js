@@ -14,7 +14,7 @@ const RoundCharacter = styled(Round)`
   fill: #0e438b;
   display: flex;
   background-color: transparent;
-  border: 1px solid;
+  border: 6px solid;
   border-radius: 50%;
   animation-name: changeBorderWidth;
   animation-duration: 8s;
@@ -23,27 +23,27 @@ const RoundCharacter = styled(Round)`
   animation-iteration-count: infinite;
   @keyframes changeBorderWidth {
     0% {
-      border-width: 20px;
+      border-width: 6px;
       border-color: #f87060;
+      padding: 30px;
     }
     25% {
-      padding: 30px;
-      border-width: 220px;
+      border-width: 295px;
       border-color: #f87060;
+      padding: 0px;
     }
     50% {
-      padding: 0px;
-      border-width: 20px;
+      border-width: 6px;
       border-color: #f87060;
+      padding: 30px;
     }
     75% {
-      padding: 30px;
-      border-width: 220px;
+      border-width: 295;
       border-color: #f87060;
+      padding: 0px;
     }
     100% {
-      padding: 0px;
-      border-width: 20px;
+      border-width: 6px;
       border-color: #f87060;
     }
   }
