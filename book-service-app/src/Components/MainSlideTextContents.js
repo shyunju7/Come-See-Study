@@ -31,7 +31,7 @@ const BubbleText = styled.p`
   background-color: transparent;
   text-align: center;
   animation-name: changeTextDeco;
-  animation-duration: 20s;
+  animation-duration: 15s;
   animation-delay: now;
   animation-iteration-count: infinite;
   line-height: 25px;
