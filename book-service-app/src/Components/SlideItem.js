@@ -1,5 +1,5 @@
 import react from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import styled from "styled-components";
 import MainSlideBackgroundContents from "./MainSlideBackgroundContents";
 import MainSlideBorderContents from "./MainSlideBorderContents";
@@ -47,18 +47,34 @@ const NavLink = styled(Link)`
 `;
 
 const SlideItem = ({ title, attrTitle }) => {
+  console.log(`title : ${title}, attrTitle: ${attrTitle}`);
+  const { attrId } = useParams();
+
+  const handlePageContents = () => {
+    switch (attrId) {
+      case "color":
+        return <MainSlideContents />;
+      case "text":
+        return <MainSlideTextContents />;
+      case "background":
+        return <MainSlideBackgroundContents />;
+      case "border":
+        return <MainSlideBorderContents />;
+      case "transition":
+        return <MainSlideTransitionContents />;
+      default:
+        return <MainSlideContents />;
+    }
+  };
+
   return (
-    // <NavLink to={`/${attrTitle}/preview`}>
-    <Container>
-      <Title>{title}</Title>
-      {attrTitle === "color" ? <MainSlideContents /> : null}
-      {attrTitle === "background" ? <MainSlideBackgroundContents /> : null}
-      {attrTitle === "text" ? <MainSlideTextContents /> : null}
-      {attrTitle === "border" ? <MainSlideBorderContents /> : null}
-      {attrTitle === "transition" ? <MainSlideTransitionContents /> : null}
-      <AttrTitle>{attrTitle}</AttrTitle>
-    </Container>
-    // </NavLink>
+    <NavLink to={`/${attrId}/preview`}>
+      <Container>
+        <Title>{title}</Title>
+        {handlePageContents()}
+        <AttrTitle>{attrTitle}</AttrTitle>
+      </Container>
+    </NavLink>
   );
 };
 
