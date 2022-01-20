@@ -53,8 +53,78 @@ const RGBASliderList = styled.div`
 `;
 
 const RGBASlider = styled.input`
-  display: inline;
+  -webkit-appearance: none;
+  height: 12px;
+  width: 143px;
+  overflow: hidden;
   cursor: pointer;
+  border-radius: 50px;
+  margin-bottom: 20px;
+  background: #d5d4d3;
+  transition: background 450ms ease-in;
+
+  ::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 12px;
+    height: 12px;
+    background: #102542;
+    box-shadow: -100vw 0 0 100vw #ffffff;
+    border: 3px solid #fff;
+    border-radius: 50%;
+  }
+
+  ::-moz-range-track {
+    height: 40px;
+    // background: #c4c4c4;
+  }
+
+  ::-webkit-slider-runnable-track {
+    background: #c4c4c4;
+  }
+
+  ::-ms-thumb {
+    background: #000;
+    border: 2px solid teal;
+    height: 18px;
+    width: 18px;
+    box-sizing: border-box;
+  }
+
+  ::-moz-range-thumb {
+    background: #fff;
+    height: 18px;
+    width: 18px;
+    border: 3px solid #999;
+    border-radius: 0 !important;
+    box-shadow: -100vw 0 0 100vw #ffffff;
+    box-sizing: border-box;
+  }
+
+  ::-ms-fill-lower {
+    background: #fff;
+  }
+
+  ::-ms-fill-upper {
+    background: #c4c4c4;
+  }
+
+  ::-ms-ticks-after {
+    display: none;
+  }
+
+  ::-ms-ticks-before {
+    display: none;
+  }
+  ::-ms-track {
+    background: #c4c4c4;
+    color: transparent;
+    height: 40px;
+    border: none;
+  }
+
+  ::-ms-tooltip {
+    display: none;
+  }
 `;
 
 const ColorPreview = () => {
