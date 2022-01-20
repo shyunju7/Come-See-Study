@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import MainPresenter from "./MainPresenter";
-
+import { useParams } from "react-router-dom";
 const MainContainer = () => {
   const [show, setShow] = useState(false);
   const textRef = useRef();
@@ -10,6 +10,9 @@ const MainContainer = () => {
     prevAttr: "transition",
     nextAttr: "text",
   });
+
+  const { attrId } = useParams();
+
   const handleMouseMove = (e) => {
     if (textRef.current) {
       textRef.current.style.left = e.clientX + 20 + "px";
@@ -38,6 +41,7 @@ const MainContainer = () => {
 
   return (
     <MainPresenter
+      attrId={attrId}
       data={data}
       show={show}
       setShow={setShow}
