@@ -6,10 +6,36 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
 `;
 
+const GridContainer = styled.div`
+  display: flex;
+  height: 143px;
+  border: 5px solid rgba(248, 110, 100, 0.6);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const GridItem = styled.div`
+  border-right: 5px solid rgba(248, 110, 100, 0.6);
+  width: 125px;
+  height: 100%;
+  line-height: 125px;
+  font-size: 3.5rem;
+  color: rgba(0, 0, 0, 0.6);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:last-child {
+    border-right: none;
+  }
+`;
 const RectCharacter = styled(Rect)`
+  position: absolute;
   fill: #f87060;
   animation-name: changeLocation;
   animation-duration: 10s;
@@ -18,23 +44,23 @@ const RectCharacter = styled(Rect)`
   line-height: 25px;
   @keyframes changeLocation {
     0% {
-      transform: translateX(0px);
+      transform: translateX(5px);
       transition-timing-function: linear;
     }
     25% {
-      transform: translateX(1000px);
+      transform: translateX(650px);
       transition-timing-function: linear;
     }
     50% {
-      transform: translateX(0px);
+      transform: translateX(5px);
       transition-timing-function: ease;
     }
     75% {
-      transform: translateX(1000px);
+      transform: translateX(650px);
       transition-timing-function: ease;
     }
     100% {
-      transform: translateX(0px);
+      transform: translateX(5px);
       transition-timing-function: steps(2, end);
     }
   }
@@ -43,7 +69,17 @@ const RectCharacter = styled(Rect)`
 const MainSlideTransitionContents = () => {
   return (
     <Container>
-      <RectCharacter />
+      <GridContainer>
+        <GridItem>
+          l
+          <RectCharacter />
+        </GridItem>
+        <GridItem>i</GridItem>
+        <GridItem>n</GridItem>
+        <GridItem>e</GridItem>
+        <GridItem>a</GridItem>
+        <GridItem>r</GridItem>
+      </GridContainer>
     </Container>
   );
 };
