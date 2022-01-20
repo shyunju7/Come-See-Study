@@ -68,14 +68,14 @@ const RGBASlider = styled.input`
     width: 12px;
     height: 12px;
     background: #102542;
-    box-shadow: -100vw 0 0 100vw #ffffff;
-    border: 3px solid #fff;
+    box-shadow: -100vw 0 0px 99.5vw #ffffff;
+    border: 1px solid #102542;
     border-radius: 50%;
   }
 
   ::-moz-range-track {
     height: 40px;
-    // background: #c4c4c4;
+    background: #c4c4c4;
   }
 
   ::-webkit-slider-runnable-track {
