@@ -95,30 +95,38 @@ const Menu = ({ setShow }) => {
             <MenuItem>hex</MenuItem>
           </MenuItemContainer>
         </NavLink>
-        <MenuItemContainer>
-          BACKGROUND
-          <MenuItem>background-color</MenuItem>
-          <MenuItem>background-image</MenuItem>
-          <MenuItem>background-repeat</MenuItem>
-        </MenuItemContainer>
-        <MenuItemContainer>
-          TEXT<MenuItem>color</MenuItem>
-          <MenuItem>text-align</MenuItem>
-          <MenuItem>text-decoration</MenuItem>
-          <MenuItem>text-transform</MenuItem>
-        </MenuItemContainer>
-        <MenuItemContainer>
-          BORDER
-          <MenuItem>border-style</MenuItem>
-          <MenuItem>border-width</MenuItem>
-          <MenuItem>border-color</MenuItem>
-        </MenuItemContainer>
-        <MenuItemContainer>
-          TRANSITION
-          <MenuItem>transition</MenuItem>
-          <MenuItem>transition-duration</MenuItem>
-          <MenuItem>transition-timing-function</MenuItem>
-        </MenuItemContainer>
+        <NavLink to={`/text`} onClick={closeMenu}>
+          <MenuItemContainer>
+            TEXT<MenuItem>color</MenuItem>
+            <MenuItem>text-align</MenuItem>
+            <MenuItem>text-decoration</MenuItem>
+            <MenuItem>text-transform</MenuItem>
+          </MenuItemContainer>
+        </NavLink>
+        <NavLink to={`/background`} onClick={closeMenu}>
+          <MenuItemContainer>
+            BACKGROUND
+            <MenuItem>background-color</MenuItem>
+            <MenuItem>background-image</MenuItem>
+            <MenuItem>background-repeat</MenuItem>
+          </MenuItemContainer>
+        </NavLink>
+        <NavLink to={`/border`} onClick={closeMenu}>
+          <MenuItemContainer>
+            BORDER
+            <MenuItem>border-style</MenuItem>
+            <MenuItem>border-width</MenuItem>
+            <MenuItem>border-color</MenuItem>
+          </MenuItemContainer>
+        </NavLink>
+        <NavLink to={`/transition`} onClick={closeMenu}>
+          <MenuItemContainer>
+            TRANSITION
+            <MenuItem>transition</MenuItem>
+            <MenuItem>transition-duration</MenuItem>
+            <MenuItem>transition-timing-function</MenuItem>
+          </MenuItemContainer>
+        </NavLink>
       </MenuList>
     </Container>
   );
