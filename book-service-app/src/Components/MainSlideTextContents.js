@@ -1,5 +1,6 @@
 import { ReactComponent as Rect } from "../assets/rect-img.svg";
 import styled from "styled-components";
+import { useEffect } from "react";
 const Container = styled.div`
   width: 100%;
   height: 100%;
@@ -61,6 +62,36 @@ const RectCharacter = styled(Rect)`
   fill: #f87060;
 `;
 const MainSlideTextContents = () => {
+  useEffect(() => {
+    const rectLeftEye = document.querySelector("#rect-left-eye");
+    const rectRightEye = document.querySelector("#rect-right-eye");
+
+    const moveToEyes = (e) => {
+      if (rectLeftEye && rectRightEye) {
+        handleMoveRectEyes(e);
+      }
+    };
+
+    const handleMoveRectEyes = (e) => {
+      let x;
+      let y;
+      if ((e.clientX * 100) / window.innerWidth < 34) x = 34;
+      else if ((e.clientX * 100) / window.innerWidth > 56) x = 56;
+      else x = (e.clientX * 100) / window.innerWidth;
+
+      if ((e.clientY * 100) / window.innerHeight < 45) y = 45;
+      else if ((e.clientY * 100) / window.innerHeight > 50) y = 50;
+      else y = (e.clientY * 100) / window.innerHeight;
+
+      rectLeftEye.setAttribute("cx", x);
+      rectRightEye.setAttribute("cx", x + 40);
+      rectLeftEye.setAttribute("cy", y);
+      rectRightEye.setAttribute("cy", y);
+    };
+
+    document.addEventListener("mousemove", moveToEyes);
+  }, []);
+
   return (
     <Container>
       <Bubble>

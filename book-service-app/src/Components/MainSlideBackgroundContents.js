@@ -1,9 +1,9 @@
-import react from "react";
+import react, { useEffect } from "react";
 import styled from "styled-components";
 const ImageBackground = styled.div`
   width: 96%;
   height: 90%;
-  background-image: url("/img/bg-triangle.gif");
+  background-image: url("/img/bg-main.gif");
   background-size: 138px;
   background-repeat: round;
   display: flex;
