@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import PreviewPresenter from "./PreviewPresenter";
 
-const PreviewContainer = () => {
+const PreviewContainer = ({ textRef }) => {
   const { attrId } = useParams();
-  return <PreviewPresenter attrId={attrId} />;
+  const [cursorValue, setCursorValue] = useState("");
+
+  return (
+    <PreviewPresenter
+      attrId={attrId}
+      textRef={textRef}
+      setCursorValue={setCursorValue}
+      cursorValue={cursorValue}
+    />
+  );
 };
 
 export default PreviewContainer;

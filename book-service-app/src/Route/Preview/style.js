@@ -7,6 +7,13 @@ export const Container = styled.div`
   background-color: transparent;
 `;
 
+export const CursorDescription = styled.div`
+  position: absolute;
+  z-index: 1000;
+  cursor: default;
+  font-size: 18px;
+`;
+
 export const PrevButton = styled(Link)`
   border: none;
   outline: none;

@@ -17,16 +17,25 @@ const pagePreview = {
   transition: <PreviewTransition />,
 };
 
-const PreviewPresenter = ({ attrId }) =>
+const PreviewPresenter = ({ attrId, textRef, setCursorValue, cursorValue }) =>
   !pagePreview[attrId] ? (
     <NotFound />
   ) : (
     <div>
       {pagePreview[attrId]}
-      <S.PrevButton to={`/${attrId}`}>
+      <S.CursorDescription ref={textRef}>{cursorValue}</S.CursorDescription>
+      <S.PrevButton
+        to={`/${attrId}`}
+        onMouseEnter={() => setCursorValue("prev")}
+        onMouseLeave={() => setCursorValue("")}
+      >
         <img src={PrevIcon} alt="Prev" width="32px" />
       </S.PrevButton>
-      <S.NextButton to={`/${attrId}/lecture/1`}>
+      <S.NextButton
+        to={`/${attrId}/lecture/1`}
+        onMouseEnter={() => setCursorValue("next")}
+        onMouseLeave={() => setCursorValue("")}
+      >
         <img src={NextIcon} alt="Next" width="32px" />
       </S.NextButton>
     </div>
