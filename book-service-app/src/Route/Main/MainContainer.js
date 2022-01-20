@@ -3,7 +3,8 @@ import MainPresenter from "./MainPresenter";
 import { useParams } from "react-router-dom";
 const MainContainer = () => {
   const [show, setShow] = useState(false);
-  const textRef = useRef();
+  const textRef = useRef(null);
+  const [cursorValue, setCursorValue] = useState("click");
   const [data, setData] = useState({
     attrTitle: "color",
     title: "CSS #1",
@@ -36,7 +37,6 @@ const MainContainer = () => {
       prevAttr: "color",
       nextAttr: "background",
     });
-    console.log("setting!!!");
   };
 
   return (
@@ -47,6 +47,8 @@ const MainContainer = () => {
       setShow={setShow}
       textRef={textRef}
       getAttrSettings={getAttrSettings}
+      setCursorValue={setCursorValue}
+      cursorValue={cursorValue}
     />
   );
 };

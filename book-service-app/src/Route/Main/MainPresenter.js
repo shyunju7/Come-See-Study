@@ -27,6 +27,8 @@ const MainPresenter = ({
   setShow,
   textRef,
   getAttrSettings,
+  setCursorValue,
+  cursorValue,
 }) =>
   !pageContents[attrId] ? (
     <NotFound />
@@ -35,14 +37,30 @@ const MainPresenter = ({
   ) : (
     <S.Container>
       {show ? <Menu setShow={setShow} /> : null}
-      <S.Menu onClick={() => setShow((prev) => !prev)}>
+      <S.Menu
+        onClick={() => setShow((prev) => !prev)}
+        onMouseEnter={() => setCursorValue("menu")}
+        onMouseLeave={() => setCursorValue("click")}
+      >
         <img src={MenuIcon} alt="menu" width="38px" />
       </S.Menu>
-      <S.CursorDescription ref={textRef} id="custom-cursor" />
-      <S.PrevButton to={`/${data.prevAttr}`} onClick={getAttrSettings}>
+      <S.CursorDescription ref={textRef} id="custom-cursor">
+        {cursorValue}
+      </S.CursorDescription>
+      <S.PrevButton
+        to={`/${data.prevAttr}`}
+        onClick={getAttrSettings}
+        onMouseEnter={() => setCursorValue("prev")}
+        onMouseLeave={() => setCursorValue("click")}
+      >
         <img src={PrevIcon} alt="Prev" width="32px" />
       </S.PrevButton>
-      <S.NextButton to={`/${data.nextAttr}`} onClick={getAttrSettings}>
+      <S.NextButton
+        to={`/${data.nextAttr}`}
+        onClick={getAttrSettings}
+        onMouseEnter={() => setCursorValue("next")}
+        onMouseLeave={() => setCursorValue("click")}
+      >
         <img src={NextIcon} alt="Next" width="32px" />
       </S.NextButton>
       <S.NavLink to={`/${attrId}/preview`}>
