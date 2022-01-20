@@ -77,7 +77,7 @@ const RectCharacter = styled(Rect)`
 
 const TriangleChracter = styled(Triangle)`
   margin-top: 40px;
-  fill: #143109;
+  fill: #24942f;
   animation-name: changeFillColorTriangle;
   animation-duration: 10s;
   animation-delay: now;

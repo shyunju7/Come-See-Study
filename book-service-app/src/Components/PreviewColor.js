@@ -141,8 +141,8 @@ const RGBASlider = styled.input`
 const PreviewColor = () => {
   const [circleRgba, setCircleRgba] = useState({
     r: 16,
-    g: 37,
-    b: 66,
+    g: 67,
+    b: 139,
     a: 1,
   });
 
@@ -154,9 +154,9 @@ const PreviewColor = () => {
   });
 
   const [triangleRgba, settriangleRgba] = useState({
-    r: 20,
-    g: 49,
-    b: 9,
+    r: 36,
+    g: 148,
+    b: 47,
     a: 1,
   });
 
