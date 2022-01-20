@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -37,4 +38,24 @@ export const Menu = styled.div`
     padding: 22px 10px;
     font-size: 12px; */
   }
+`;
+
+export const PrevButton = styled(Link)`
+  border: none;
+  outline: none;
+  position: absolute;
+  top: 50%;
+  left: 50px;
+  z-index: 1000;
+  background-color: transparent;
+`;
+
+export const NextButton = styled(Link)`
+  border: none;
+  outline: none;
+  position: absolute;
+  top: 50%;
+  right: 50px;
+  z-index: 1000;
+  background-color: transparent;
 `;

@@ -1,11 +1,12 @@
 import React from "react";
 import SlideItem from "../../Components/SlideItem";
-import MainSlider from "../../Components/MainSlider";
 import Menu from "../../Components/Menu";
 import * as S from "../Main/style";
 import MenuIcon from "../../assets/menu-icon.png";
-
-const MainPresenter = ({ data, show, setShow, textRef }) =>
+import PrevIcon from "../../assets/prev-icon.png";
+import NextIcon from "../../assets/next-icon.png";
+import { PrevButton, NextButton } from "../Main/style";
+const MainPresenter = ({ data, show, setShow, textRef, getAttrSettings }) =>
   show ? (
     <Menu setShow={setShow} />
   ) : (
@@ -14,17 +15,13 @@ const MainPresenter = ({ data, show, setShow, textRef }) =>
         <img src={MenuIcon} alt="menu" width="38px" />
       </S.Menu>
       <S.CursorDescription ref={textRef} id="custom-cursor" />
-      {data.length > 0 && data && (
-        <MainSlider>
-          {data.map((item) => (
-            <SlideItem
-              attrTitle={item.attrTitle}
-              title={item.title}
-              key={item.attrTitle}
-            />
-          ))}
-        </MainSlider>
-      )}
+      <PrevButton to={`/${data.prevAttr}`} onClick={getAttrSettings}>
+        <img src={PrevIcon} alt="Prev" width="32px" />
+      </PrevButton>
+      <NextButton to={`/${data.nextAttr}`} onClick={getAttrSettings}>
+        <img src={NextIcon} alt="Next" width="32px" />
+      </NextButton>
+      <SlideItem attrTitle={data.attrTitle} title={data.title} />
     </S.Container>
   );
 
