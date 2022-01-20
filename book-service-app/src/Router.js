@@ -8,6 +8,7 @@ const AppRouter = () => {
     <Router>
       <Routes>
         <Route path="/" element={<Main />} />
+        <Route path="/:attrId" element={<Main />} />
         <Route path="/:attrId/preview/*" element={<Preview />} />
         <Route path="/:attrId/lecture/:lectureNum" element={<Lecture />} />
       </Routes>
