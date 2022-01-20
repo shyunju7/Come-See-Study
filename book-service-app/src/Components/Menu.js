@@ -88,7 +88,7 @@ const Menu = ({ setShow }) => {
         <IoIosClose size="60px" color="#fef6c9" />
       </Button>
       <MenuList>
-        <NavLink to={`/1-color/preview`}>
+        <NavLink to={`/color`} onClick={closeMenu}>
           <MenuItemContainer>
             COLOR
             <MenuItem>rgba</MenuItem>
