@@ -9,7 +9,7 @@ const PreviewContainer = ({ textRef }) => {
 
   setTimeout(() => {
     setLoading(false);
-  }, 600);
+  }, 300);
   return (
     <PreviewPresenter
       attrId={attrId}
