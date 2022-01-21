@@ -83,24 +83,49 @@ const Text = styled.label`
   font-weight: 600;
 `;
 
-const Button = styled.button`
-  outline: none;
-  border: none;
+const RadioLabel = styled.label`
+  background: #fcd270;
   width: 42px;
-  font-size: 14px;
-  line-height: 14px;
   height: 28px;
   border-radius: 8px;
-  background-color: #ffc640;
-
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   &:hover {
-    background-color: #ffd05b;
+    background: #ffd05b;
   }
 `;
+const RadioButton = styled.input`
+  display: none;
+
+  &:checked + ${RadioLabel} {
+    background-color: #ffb300;
+    color: #fff;
+    border-color: #ffc640;
+  }
+`;
+
 const PreviewText = () => {
   const [textTransform, setTextTransform] = useState("none");
   const [textDecoration, setTextDecoration] = useState("none");
   const [textAlign, setTextAlign] = useState("center");
+
+  const handleChangeRadioButton = (e) => {
+    const { value, name } = e.target;
+    if (name === "align") {
+      setTextAlign(value);
+    } else if (name === "deco") {
+      setTextDecoration(value);
+    } else if (name === "transform") {
+      setTextTransform(value);
+    } else {
+      return;
+    }
+  };
+
   return (
     <Container>
       <Chapter>CSS #2</Chapter>
@@ -123,45 +148,117 @@ const PreviewText = () => {
           <LineWrapper>
             <Text>TEXT-ALIGN</Text>
             <ButtonWrapper>
-              <Button onClick={() => setTextAlign("start")}>
-                <AiOutlineAlignLeft size="18px" />
-              </Button>
-              <Button onClick={() => setTextAlign("center")}>
-                <AiOutlineAlignCenter size="18px" />
-              </Button>
-              <Button onClick={() => setTextAlign("end")}>
-                <AiOutlineAlignRight size="18px" />
-              </Button>
+              <div>
+                <RadioButton
+                  type="radio"
+                  id="alignStart"
+                  name="align"
+                  value="start"
+                  onChange={handleChangeRadioButton}
+                />
+                <RadioLabel htmlFor="alignStart">
+                  <AiOutlineAlignLeft size="18px" />
+                </RadioLabel>
+              </div>
+              <div>
+                <RadioButton
+                  type="radio"
+                  id="alignCenter"
+                  name="align"
+                  value="center"
+                  onChange={handleChangeRadioButton}
+                />
+                <RadioLabel htmlFor="alignCenter">
+                  <AiOutlineAlignCenter size="18px" />
+                </RadioLabel>
+              </div>
+              <div>
+                <RadioButton
+                  type="radio"
+                  id="alignEnd"
+                  name="align"
+                  value="end"
+                  onChange={handleChangeRadioButton}
+                />
+                <RadioLabel htmlFor="alignEnd">
+                  <AiOutlineAlignRight size="18px" />
+                </RadioLabel>
+              </div>
             </ButtonWrapper>
           </LineWrapper>
           <LineWrapper>
             <Text>TEXT-DECORATION</Text>
             <ButtonWrapper>
-              <Button
-                style={{ textDecoration: "underline" }}
-                onClick={() => setTextDecoration("underline")}
-              >
-                Ab
-              </Button>
-              <Button
-                style={{ textDecoration: "line-through" }}
-                onClick={() => setTextDecoration("line-through")}
-              >
-                Ab
-              </Button>
-              <Button
-                style={{ textDecoration: "overline" }}
-                onClick={() => setTextDecoration("overline")}
-              >
-                Ab
-              </Button>
+              <div>
+                <RadioButton
+                  type="radio"
+                  id="underline"
+                  name="deco"
+                  value="underline"
+                  onChange={handleChangeRadioButton}
+                />
+                <RadioLabel
+                  htmlFor="underline"
+                  style={{ textDecoration: "underline" }}
+                >
+                  Ab
+                </RadioLabel>
+              </div>
+              <div>
+                <RadioButton
+                  type="radio"
+                  id="line-through"
+                  name="deco"
+                  value="line-through"
+                  onChange={handleChangeRadioButton}
+                />
+                <RadioLabel
+                  htmlFor="line-through"
+                  style={{ textDecoration: "line-through" }}
+                >
+                  Ab
+                </RadioLabel>
+              </div>
+              <div>
+                <RadioButton
+                  type="radio"
+                  id="overline"
+                  name="deco"
+                  value="overline"
+                  onChange={handleChangeRadioButton}
+                />
+                <RadioLabel
+                  htmlFor="overline"
+                  style={{ textDecoration: "overline" }}
+                >
+                  Ab
+                </RadioLabel>
+              </div>
             </ButtonWrapper>
           </LineWrapper>
           <LineWrapper>
             <Text>TEXT-TRANSFORM</Text>
             <ButtonWrapper>
-              <Button onClick={() => setTextTransform("uppercase")}>AB</Button>
-              <Button onClick={() => setTextTransform("lowercase")}>ab</Button>
+              <div>
+                <RadioButton
+                  type="radio"
+                  id="uppercase"
+                  name="transform"
+                  value="uppercase"
+                  onChange={handleChangeRadioButton}
+                />
+                <RadioLabel htmlFor="uppercase">AB</RadioLabel>
+              </div>
+              <div>
+                <RadioButton
+                  type="radio"
+                  id="lowercase"
+                  name="transform"
+                  value="lowercase"
+                  onChange={handleChangeRadioButton}
+                />
+                <RadioLabel htmlFor="lowercase">ab</RadioLabel>
+              </div>
             </ButtonWrapper>
           </LineWrapper>
         </ButtonContainer>
