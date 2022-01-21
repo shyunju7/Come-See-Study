@@ -1,6 +1,7 @@
 import react, { useState } from "react";
 import { ReactComponent as Rect } from "../assets/rect-img.svg";
 import styled from "styled-components";
+import bubble from "../assets/bg-bubble-preview-text.png";
 import {
   AiOutlineAlignLeft,
   AiOutlineAlignCenter,
@@ -25,7 +26,7 @@ const Bubble = styled.div`
   width: 100%;
   max-width: 834px;
   height: 428px;
-  background-image: url("/img/bg-bubble-preview-text.png");
+  background-image: url(${bubble});
   background-position: center center;
   background-size: 100% 100%;
   background-repeat: no-repeat;
