@@ -54,8 +54,9 @@ const RectCharacter = styled(Rect)`
   margin-left: 80px;
 `;
 const ContentsWrapper = styled.div`
-  width: 78%;
+  width: 68%;
   display: flex;
+  margin-top: 8px;
 `;
 const ButtonContainer = styled.div`
   display: flex;
@@ -64,7 +65,7 @@ const ButtonContainer = styled.div`
 
 const LineWrapper = styled.div`
   display: flex;
-  margin-left: 100px;
+  margin-left: 200px;
 `;
 
 const ButtonWrapper = styled.div`
@@ -85,10 +86,15 @@ const Button = styled.button`
   outline: none;
   border: none;
   width: 42px;
-  font-size: 18px;
+  font-size: 14px;
+  line-height: 14px;
   height: 28px;
   border-radius: 8px;
   background-color: #ffc640;
+
+  &:hover {
+    background-color: #ffd05b;
+  }
 `;
 const PreviewText = () => {
   const [textTransform, setTextTransform] = useState("none");
@@ -114,7 +120,7 @@ const PreviewText = () => {
         <RectCharacter />
         <ButtonContainer>
           <LineWrapper>
-            <Text>TEXT - ALIGN</Text>
+            <Text>TEXT-ALIGN</Text>
             <ButtonWrapper>
               <Button onClick={() => setTextAlign("start")}>
                 <AiOutlineAlignLeft size="18px" />
@@ -128,7 +134,7 @@ const PreviewText = () => {
             </ButtonWrapper>
           </LineWrapper>
           <LineWrapper>
-            <Text>TEXT - DECORATION</Text>
+            <Text>TEXT-DECORATION</Text>
             <ButtonWrapper>
               <Button
                 style={{ textDecoration: "underline" }}
@@ -151,7 +157,7 @@ const PreviewText = () => {
             </ButtonWrapper>
           </LineWrapper>
           <LineWrapper>
-            <Text>TEXT - TRANSFORM</Text>
+            <Text>TEXT-TRANSFORM</Text>
             <ButtonWrapper>
               <Button onClick={() => setTextTransform("uppercase")}>AB</Button>
               <Button onClick={() => setTextTransform("lowercase")}>ab</Button>
