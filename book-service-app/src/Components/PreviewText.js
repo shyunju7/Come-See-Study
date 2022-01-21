@@ -159,8 +159,9 @@ const PreviewText = () => {
                 name="deco"
                 value="underline"
                 handleChangeRadioButton={handleChangeRadioButton}
+                textStyle={{ textDecoration: "underline" }}
               >
-                <label style={{ textDecoration: "underline" }}>Ab</label>
+                Ab
               </RadioButton>
               <RadioButton
                 type="radio"
@@ -168,8 +169,9 @@ const PreviewText = () => {
                 name="deco"
                 value="line-through"
                 handleChangeRadioButton={handleChangeRadioButton}
+                textStyle={{ textDecoration: "line-through" }}
               >
-                <label style={{ textDecoration: "line-through" }}>Ab</label>
+                Ab
               </RadioButton>
               <RadioButton
                 type="radio"
@@ -177,8 +179,9 @@ const PreviewText = () => {
                 name="deco"
                 value="overline"
                 handleChangeRadioButton={handleChangeRadioButton}
+                textStyle={{ textDecoration: "overline" }}
               >
-                <label style={{ textDecoration: "overline" }}>Ab</label>
+                Ab
               </RadioButton>
             </ButtonWrapper>
           </LineWrapper>
