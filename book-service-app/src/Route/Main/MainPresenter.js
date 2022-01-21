@@ -38,7 +38,10 @@ const MainPresenter = ({
     <S.Container>
       {show ? <Menu setShow={setShow} /> : null}
       <S.Menu
-        onClick={() => setShow((prev) => !prev)}
+        onClick={() => {
+          setShow((prev) => !prev);
+          setCursorValue("click");
+        }}
         onMouseEnter={() => setCursorValue("menu")}
         onMouseLeave={() => setCursorValue("click")}
       >

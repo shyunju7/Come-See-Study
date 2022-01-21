@@ -10,6 +10,7 @@ export const CursorDescription = styled.div`
 
 export const Menu = styled.div`
   position: absolute;
+  padding: 12px;
   top: 50px;
   left: 50px;
   z-index: 1000;
@@ -23,6 +24,7 @@ export const PrevButton = styled(Link)`
   left: 50px;
   background-color: transparent;
   z-index: 1000;
+  padding: 12px;
 `;
 
 export const NextButton = styled(Link)`
@@ -33,6 +35,7 @@ export const NextButton = styled(Link)`
   right: 50px;
   background-color: transparent;
   z-index: 1000;
+  padding: 12px;
 `;
 
 export const Container = styled.div`
