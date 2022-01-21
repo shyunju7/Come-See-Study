@@ -2,8 +2,8 @@ import React from "react";
 import styled from "styled-components";
 const RadioLabel = styled.label`
   background: #fcd270;
-  width: 42px;
   height: 28px;
+  min-width: 48px;
   border-radius: 8px;
   font-size: 14px;
   font-weight: 600;
@@ -17,7 +17,6 @@ const RadioLabel = styled.label`
 `;
 const Radio = styled.input`
   display: none;
-
   &:checked + ${RadioLabel} {
     background-color: #ffb300;
     color: #fff;
@@ -34,7 +33,7 @@ const RadioButton = ({
   textStyle,
 }) => {
   return (
-    <div>
+    <div style={{ zIndex: 1000 }}>
       <Radio
         type="radio"
         id={id}
