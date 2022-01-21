@@ -13,7 +13,7 @@ const Container = styled.div`
 
 const Bubble = styled.div`
   position: absolute;
-  top: 90px;
+  top: 20%;
   right: 25%;
   width: 250px;
   height: 200px;
