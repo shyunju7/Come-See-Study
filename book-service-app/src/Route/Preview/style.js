@@ -20,6 +20,7 @@ export const PrevButton = styled(Link)`
   position: absolute;
   top: 50%;
   left: 50px;
+  padding: 12px;
   background-color: transparent;
   z-index: 1000;
 `;
@@ -30,6 +31,7 @@ export const NextButton = styled(Link)`
   position: absolute;
   top: 50%;
   right: 50px;
+  padding: 12px;
   background-color: transparent;
   z-index: 1000;
 `;

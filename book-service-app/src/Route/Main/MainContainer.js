@@ -12,13 +12,8 @@ const MainContainer = ({ textRef }) => {
 
   useEffect(() => {
     getAttrName();
-  }, []);
-
-  useEffect(() => {
-    getAttrName();
   }, [attrId]);
 
-  // api 호출 및 데이터 변경
   const getAttrName = () => {
     attrApi
       .getAttrName(attrId)
