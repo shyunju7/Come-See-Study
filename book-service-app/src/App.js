@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { GlobalStyle } from "./GlobalStyle";
 import AppRouter from "./Router";
 

@@ -1,4 +1,4 @@
-import react, { useEffect } from "react";
+import React, { useEffect } from "react";
 import { ReactComponent as Round } from "../assets/round-img.svg";
 import styled from "styled-components";
 const Container = styled.div`

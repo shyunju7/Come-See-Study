@@ -1,4 +1,4 @@
-import react from "react";
+import React from "react";
 import styled from "styled-components";
 import loadingImg from "../assets/loading.gif";
 const Container = styled.div`

@@ -1,4 +1,4 @@
-import react, { useState } from "react";
+import React, { useState } from "react";
 import { ReactComponent as Rect } from "../assets/rect-img.svg";
 import styled from "styled-components";
 import bubble from "../assets/bg-bubble-preview-text.png";

@@ -1,6 +1,8 @@
-import { ReactComponent as Rect } from "../assets/rect-img.svg";
+import React, { ReactComponent as Rect } from "../assets/rect-img.svg";
 import styled from "styled-components";
 import { useEffect } from "react";
+import bubble from "../assets/bg-bubble.png";
+
 const Container = styled.div`
   width: 100%;
   height: 100%;
@@ -18,7 +20,7 @@ const Bubble = styled.div`
   width: 250px;
   height: 200px;
   background-repeat: no-repeat;
-  background-image: url("/img/bg-bubble.png");
+  background-image: url(${bubble});
   background-size: 250px 193px;
   display: flex;
   justify-content: center;

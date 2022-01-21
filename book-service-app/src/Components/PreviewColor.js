@@ -1,4 +1,4 @@
-import react, { useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { ReactComponent as Rect } from "../assets/rect-img.svg";
 import { ReactComponent as Triangle } from "../assets/triangle-img.svg";

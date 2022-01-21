@@ -1,4 +1,4 @@
-import react from "react";
+import React from "react";
 import styled from "styled-components";
 import notFoundImg from "../assets/not-found.png";
 import bubble from "../assets/not-found-bubble.png";
