@@ -23,7 +23,7 @@ const GridContainer = styled.div`
 const GridItem = styled.div`
   border-right: 5px solid rgba(248, 110, 100, 0.6);
   width: 125px;
-  height: 100%;
+  height: 101%;
   line-height: 125px;
   font-size: 3.5rem;
   color: rgba(0, 0, 0, 0.6);
