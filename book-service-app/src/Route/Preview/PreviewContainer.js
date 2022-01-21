@@ -5,13 +5,18 @@ import PreviewPresenter from "./PreviewPresenter";
 const PreviewContainer = ({ textRef }) => {
   const { attrId } = useParams();
   const [cursorValue, setCursorValue] = useState("");
+  const [isLoading, setLoading] = useState(true);
 
+  setTimeout(() => {
+    setLoading(false);
+  }, 600);
   return (
     <PreviewPresenter
       attrId={attrId}
       textRef={textRef}
       setCursorValue={setCursorValue}
       cursorValue={cursorValue}
+      isLoading={isLoading}
     />
   );
 };

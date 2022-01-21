@@ -15,6 +15,7 @@ const MainContainer = ({ textRef }) => {
   }, [attrId]);
 
   const getAttrName = () => {
+    setLoading(true);
     attrApi
       .getAttrName(attrId)
       .then((value) => {
@@ -23,7 +24,11 @@ const MainContainer = ({ textRef }) => {
       .catch(function (e) {
         console.log("error! ", e);
       })
-      .finally(setLoading(false));
+      .finally(
+        setTimeout(() => {
+          setLoading(false);
+        }, 300)
+      );
   };
 
   return (

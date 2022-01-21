@@ -11,6 +11,7 @@ import MainSlideBackgroundContents from "../../Components/MainSlideBackgroundCon
 import MainSlideBorderContents from "../../Components/MainSlideBorderContents";
 import MainSlideTransitionContents from "../../Components/MainSlideTransitionContents";
 import NotFound from "../../Pages/NotFound";
+import Loader from "../../Components/Loader";
 
 const pageContents = {
   color: <MainSlideColorContents />,
@@ -29,9 +30,12 @@ const MainPresenter = ({
   getAttrName,
   setCursorValue,
   cursorValue,
+  isLoading,
 }) =>
   !pageContents[attrId] ? (
     <NotFound />
+  ) : isLoading ? (
+    <Loader />
   ) : show ? (
     <Menu setShow={setShow} />
   ) : (

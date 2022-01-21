@@ -8,7 +8,7 @@ import * as S from "./style";
 import PrevIcon from "../../assets/prev-icon.png";
 import NextIcon from "../../assets/next-icon.png";
 import NotFound from "../../Pages/NotFound";
-
+import Loader from "../../Components/Loader";
 const pagePreview = {
   color: <ColorPreview />,
   text: <TextPreview />,
@@ -17,9 +17,17 @@ const pagePreview = {
   transition: <PreviewTransition />,
 };
 
-const PreviewPresenter = ({ attrId, textRef, setCursorValue, cursorValue }) =>
+const PreviewPresenter = ({
+  attrId,
+  textRef,
+  setCursorValue,
+  cursorValue,
+  isLoading,
+}) =>
   !pagePreview[attrId] ? (
     <NotFound />
+  ) : isLoading ? (
+    <Loader />
   ) : (
     <div>
       {pagePreview[attrId]}
