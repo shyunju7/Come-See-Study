@@ -1,26 +1,34 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import MainPresenter from "./MainPresenter";
 import { useParams } from "react-router-dom";
+import { attrApi } from "../../api";
 const MainContainer = ({ textRef }) => {
   const [show, setShow] = useState(false);
   const [cursorValue, setCursorValue] = useState("click");
-  const [data, setData] = useState({
-    attrTitle: "color",
-    title: "CSS #1",
-    prevAttr: "transition",
-    nextAttr: "text",
-  });
+  const [isLoading, setLoading] = useState(true);
+  const [data, setData] = useState({});
 
   const { attrId } = useParams();
 
+  useEffect(() => {
+    getAttrName();
+  }, []);
+
+  useEffect(() => {
+    getAttrName();
+  }, [attrId]);
+
   // api 호출 및 데이터 변경
-  const getAttrSettings = () => {
-    setData({
-      attrTitle: "text",
-      title: "CSS #2",
-      prevAttr: "color",
-      nextAttr: "background",
-    });
+  const getAttrName = () => {
+    attrApi
+      .getAttrName(attrId)
+      .then((value) => {
+        setData(value.data);
+      })
+      .catch(function (e) {
+        console.log("error! ", e);
+      })
+      .finally(setLoading(false));
   };
 
   return (
@@ -30,7 +38,7 @@ const MainContainer = ({ textRef }) => {
       show={show}
       setShow={setShow}
       textRef={textRef}
-      getAttrSettings={getAttrSettings}
+      getAttrName={getAttrName}
       setCursorValue={setCursorValue}
       cursorValue={cursorValue}
     />

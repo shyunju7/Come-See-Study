@@ -26,7 +26,7 @@ const MainPresenter = ({
   show,
   setShow,
   textRef,
-  getAttrSettings,
+  getAttrName,
   setCursorValue,
   cursorValue,
 }) =>
@@ -52,7 +52,6 @@ const MainPresenter = ({
       </S.CursorDescription>
       <S.PrevButton
         to={`/${data.prevAttr}`}
-        onClick={getAttrSettings}
         onMouseEnter={() => setCursorValue("prev")}
         onMouseLeave={() => setCursorValue("click")}
       >
@@ -60,7 +59,6 @@ const MainPresenter = ({
       </S.PrevButton>
       <S.NextButton
         to={`/${data.nextAttr}`}
-        onClick={getAttrSettings}
         onMouseEnter={() => setCursorValue("next")}
         onMouseLeave={() => setCursorValue("click")}
       >
@@ -68,9 +66,9 @@ const MainPresenter = ({
       </S.NextButton>
       <S.NavLink to={`/${attrId}/preview`}>
         <S.ContentsContainer>
-          <S.Title>{data.title}</S.Title>
+          <S.Title>{data.attrMainTitle}</S.Title>
           {pageContents[attrId]}
-          <S.AttrTitle>{data.attrTitle}</S.AttrTitle>
+          <S.AttrTitle>{data.attrName}</S.AttrTitle>
         </S.ContentsContainer>
       </S.NavLink>
     </S.Container>
