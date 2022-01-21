@@ -36,6 +36,7 @@ const MainContainer = ({ textRef }) => {
       getAttrName={getAttrName}
       setCursorValue={setCursorValue}
       cursorValue={cursorValue}
+      isLoading={isLoading}
     />
   );
 };
