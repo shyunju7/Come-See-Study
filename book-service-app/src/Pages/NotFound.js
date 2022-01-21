@@ -1,11 +1,14 @@
 import react from "react";
 import styled from "styled-components";
+import notFoundImg from "../assets/not-found.png";
+import bubble from "../assets/not-found-bubble.png";
 
 const Container = styled.div`
   width: 100%;
   height: 100vh;
-  background: #ffffff;
+  background: #fef6c9;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 `;
@@ -13,11 +16,37 @@ const Container = styled.div`
 const Text = styled.h2`
   font-size: 1.5rem;
   font-weight: bold;
-  color: red;
+  color: #ff6250;
+  margin-top: 24px;
 `;
+
+const Bubble = styled.div`
+  width: 180px;
+  height: 128px;
+  background-image: url(${bubble});
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+`;
+
+const BubbleText = styled.p`
+  width: 50%;
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 24px;
+`;
+
 const NotFound = () => (
   <Container>
-    <Text>Not Found Page...!</Text>
+    <Bubble img={bubble}>
+      <BubbleText>OOPS</BubbleText>
+    </Bubble>
+    <img src={notFoundImg} alt="notFoundImg" width="120px" />
+    <Text>NOT FOUND</Text>
   </Container>
 );
 
