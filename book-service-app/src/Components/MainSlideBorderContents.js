@@ -37,7 +37,7 @@ const RoundCharacter = styled(Round)`
       padding: 30px;
     }
     75% {
-      border-width: 295;
+      border-width: 295px;
       border-color: #f87060;
       padding: 0px;
     }
