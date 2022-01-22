@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { ReactComponent as Round } from "../assets/round-img.svg";
+import CustomSelect from "./CustomSelect";
 const Container = styled.div`
   width: 100%;
   height: 100vh;
@@ -44,6 +45,14 @@ const Text = styled.label`
   font-weight: 600;
 `;
 
+const BorderStyleOptions = [
+  { key: "solid", value: "solid" },
+  { key: "dotted", value: "dotted" },
+  { key: "dashed", value: "dashed" },
+  { key: "double", value: "double" },
+  { key: "none", value: "none" },
+];
+
 const PreviewBorder = () => {
   const [borderStyle, setBorderStyle] = useState("solid");
 
@@ -54,15 +63,10 @@ const PreviewBorder = () => {
       <RoundCharacter borderStyle={borderStyle} />
       <LineWrapper>
         <Text>BORDER-STYLE</Text>
-        <select onChange={(e) => setBorderStyle(e.target.value)}>
-          <option value="solid" defaultChecked>
-            solid
-          </option>
-          <option value="dotted">dotted</option>
-          <option value="dashed">dashed</option>
-          <option value="double">double</option>
-          <option value="none">none</option>
-        </select>
+        <CustomSelect
+          optionValue={BorderStyleOptions}
+          setValue={setBorderStyle}
+        />
       </LineWrapper>
       <LineWrapper>
         <Text>BORDER-WIDTH</Text>
