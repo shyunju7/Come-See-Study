@@ -8,7 +8,6 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   background-color: #fef6c9;
   position: relative;
 `;
@@ -24,6 +23,7 @@ const BackgroundDiv = styled.div`
     props.position ? props.position : "unset"};
   z-index: 0;
   position: absolute;
+  top: 56px;
 `;
 
 const Chapter = styled.p`
@@ -37,7 +37,7 @@ const GuideText = styled.h2`
   font-size: 1.12rem;
   font-weight: 600;
   margin-top: 100px;
-  margin-bottom: 100px;
+  margin-bottom: 200px;
   z-index: 1000;
 `;
 const ButtonContainer = styled.div`

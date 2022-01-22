@@ -4,6 +4,7 @@ const RadioLabel = styled.label`
   background: #fcd270;
   height: 28px;
   min-width: 48px;
+  padding: 0px 2px;
   border-radius: 8px;
   font-size: 14px;
   font-weight: 600;
