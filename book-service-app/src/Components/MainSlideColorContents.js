@@ -180,6 +180,8 @@ const MainSlideContents = () => {
     };
 
     document.addEventListener("mousemove", moveToEyes);
+
+    return () => document.removeEventListener("mousemove", moveToEyes);
   }, []);
 
   return (

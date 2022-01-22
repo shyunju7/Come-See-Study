@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { ReactComponent as Round } from "../assets/round-img.svg";
 import CustomSelect from "./CustomSelect";
@@ -157,10 +157,6 @@ const PreviewBorder = () => {
   const [borderStyle, setBorderStyle] = useState("solid");
   const [borderWidth, setBorderWidth] = useState(24);
   const [borderColor, setBorderColor] = useState("#F87060");
-
-  useEffect(() => {
-    console.log(borderWidth);
-  }, [borderWidth]);
 
   return (
     <Container>

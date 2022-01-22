@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import PreviewPresenter from "./PreviewPresenter";
 
@@ -7,9 +7,12 @@ const PreviewContainer = ({ textRef }) => {
   const [cursorValue, setCursorValue] = useState("");
   const [isLoading, setLoading] = useState(true);
 
-  setTimeout(() => {
-    setLoading(false);
-  }, 500);
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 500);
+  }, []);
+
   return (
     <PreviewPresenter
       attrId={attrId}
