@@ -42,6 +42,10 @@ const SelectOption = styled.ul`
   overflow: hidden;
   height: 100px;
   overflow-y: scroll;
+  -ms-overflow-style: none;
+  ::-webkit-scrollbar {
+    display: none;
+  }
   max-height: ${(props) => (props.show ? "none" : 0)};
   padding: 0;
   border-radius: 8px;

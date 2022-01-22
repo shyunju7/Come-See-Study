@@ -42,7 +42,6 @@ const MenuList = styled.ul`
   overflow-x: scroll;
   color: #fef6c9;
   -ms-overflow-style: none;
-
   ::-webkit-scrollbar {
     display: none;
   }
@@ -53,7 +52,7 @@ const MenuItemContainer = styled.li`
   font-size: 1.4rem;
   font-weight: bold;
   margin-left: 2rem;
-  cursor: default;
+  cursor: pointer;
   &:hover {
     color: greenyellow;
   }
@@ -75,6 +74,7 @@ const Button = styled.button`
   left: 50px;
   background-color: transparent;
   color: #fff;
+  cursor: pointer;
 `;
 
 const Menu = ({ setShow }) => {
