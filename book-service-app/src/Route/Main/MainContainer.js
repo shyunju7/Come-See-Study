@@ -24,11 +24,7 @@ const MainContainer = ({ textRef }) => {
       .catch(function (e) {
         console.log("error! ", e);
       })
-      .finally(
-        setTimeout(() => {
-          setLoading(false);
-        }, 300)
-      );
+      .finally(setLoading(false));
   };
 
   return (
