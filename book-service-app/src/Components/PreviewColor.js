@@ -16,13 +16,17 @@ const Chapter = styled.p`
   font-size: 1rem;
   margin-top: 45px;
   font-weight: 600;
+  line-height: 21.45px;
+  font-style: normal;
 `;
 
 const GuideText = styled.h2`
   font-size: 1.12rem;
   font-weight: 600;
+  line-height: 27.31px;
   margin-top: 100px;
   margin-bottom: 100px;
+  font-style: normal;
 `;
 
 const RoundCharacter = styled(Round)`

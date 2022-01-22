@@ -59,8 +59,10 @@ const Line = styled.div`
 const Text = styled.label`
   width: 156px;
   margin-right: 42px;
-  font-size: 17.6px;
-  font-weight: 600;
+  font-size: 18px;
+  line-height: 25px;
+  font-style: normal;
+  font-weight: 400;
 `;
 
 const RangeSlider = styled.input`

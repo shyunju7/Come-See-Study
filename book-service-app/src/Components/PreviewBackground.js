@@ -30,6 +30,7 @@ const Chapter = styled.p`
   font-size: 1rem;
   margin-top: 45px;
   font-weight: 600;
+  z-index: 1000;
 `;
 
 const GuideText = styled.h2`
@@ -37,6 +38,7 @@ const GuideText = styled.h2`
   font-weight: 600;
   margin-top: 100px;
   margin-bottom: 100px;
+  z-index: 1000;
 `;
 const ButtonContainer = styled.div`
   display: flex;
@@ -46,6 +48,7 @@ const ButtonContainer = styled.div`
 const LineWrapper = styled.div`
   display: flex;
   justify-content: center;
+  z-index: 1000;
 `;
 
 const ButtonWrapper = styled.div`
@@ -58,8 +61,10 @@ const ButtonWrapper = styled.div`
 
 const Text = styled.label`
   width: 300px;
-  font-size: 17.6px;
-  font-weight: 600;
+  font-size: 18px;
+  line-height: 25px;
+  font-style: normal;
+  font-weight: 400;
 `;
 
 const PreviewBackground = () => {
