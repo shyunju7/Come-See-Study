@@ -20,6 +20,8 @@ const BackgroundDiv = styled.div`
   background-image: url(${triangle});
   background-size: 138px;
   background-repeat: ${(props) => (props.repeat ? props.repeat : "no-repeat")};
+  background-position: ${(props) =>
+    props.position ? props.position : "unset"};
   z-index: 0;
   position: absolute;
 `;
@@ -162,7 +164,7 @@ const PreviewBackground = () => {
           </ButtonWrapper>
         </LineWrapper>
       </ButtonContainer>
-      <BackgroundDiv repeat={repeat} />
+      <BackgroundDiv repeat={repeat} position={position} />
     </Container>
   );
 };
