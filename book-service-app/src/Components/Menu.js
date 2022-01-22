@@ -54,7 +54,7 @@ const MenuItemContainer = styled.li`
   margin-left: 2rem;
   cursor: pointer;
   &:hover {
-    color: greenyellow;
+    color: #fff09c;
   }
 `;
 const MenuItem = styled.div`
