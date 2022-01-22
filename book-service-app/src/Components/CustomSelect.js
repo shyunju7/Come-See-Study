@@ -1,8 +1,9 @@
 import styled from "styled-components";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const Container = styled.div`
-  width: 100%;
+  width: 174px;
+
   background-color: transparent;
   display: flex;
   justify-content: center;
@@ -27,6 +28,7 @@ const SelectBox = styled.div`
 `;
 
 const Label = styled.label`
+  font-size: 14px;
   margin-left: 4px;
   text-align: center;
 `;
@@ -38,12 +40,15 @@ const SelectOption = styled.ul`
   left: 0;
   width: 100%;
   overflow: hidden;
+  height: 100px;
+  overflow-y: scroll;
   max-height: ${(props) => (props.show ? "none" : 0)};
   padding: 0;
   border-radius: 8px;
   background: #222222;
   color: #ffffff;
   transition: 0.5s ease-in;
+  z-index: 1001;
 `;
 
 const OptionItem = styled.li`
@@ -58,12 +63,12 @@ const OptionItem = styled.li`
 const CustomSelect = ({ optionValue, setValue }) => {
   const [showOption, setShowOption] = useState(false);
 
-  const [currentOption, setCurrentOption] = useState(optionValue[0].value);
+  const [currentOption, setCurrentOption] = useState(optionValue[0].key);
 
   const handleChangeOption = (e) => {
     setCurrentOption(e.target.innerText);
     setShowOption(!showOption);
-    setValue(e.target.innerText);
+    setValue(e.target.getAttribute("value"));
   };
 
   return (
