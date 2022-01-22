@@ -66,6 +66,7 @@ export const Title = styled.h2`
   font-weight: 600;
   margin-bottom: 114px;
   z-index: 1000;
+  color: #333333;
 `;
 
 export const AttrTitle = styled.h1`
@@ -78,6 +79,7 @@ export const AttrTitle = styled.h1`
   margin-top: 94px;
   z-index: 1000;
   text-transform: uppercase;
+  color: #333333;
 `;
 
 export const NavLink = styled(Link)`
