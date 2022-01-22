@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import triangle from "../assets/triangle-img.png";
-import RadioButton from "./RadioButton";
+import RadioButton from "./CustomRadioButton";
 const Container = styled.div`
   width: 100%;
   height: 100vh;
