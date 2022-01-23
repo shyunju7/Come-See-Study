@@ -31,8 +31,9 @@ const GuideText = styled.h2`
 
 const LineWrapper = styled.div`
   display: flex;
+  height: 100%;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   margin-top: 140px;
 `;
@@ -143,7 +144,7 @@ const PreviewTransition = () => {
           <RadioButton
             id="steps"
             name="repeat"
-            value="steps"
+            value="steps(6, end)"
             handleChangeRadioButton={handleChangeRadioButton}
           >
             STEPS
