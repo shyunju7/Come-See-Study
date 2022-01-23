@@ -8,7 +8,6 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   background-color: #fef6c9;
 `;
 
@@ -16,19 +15,25 @@ const Chapter = styled.p`
   font-size: 1rem;
   margin-top: 45px;
   font-weight: 600;
+  line-height: 21.45px;
+  font-style: normal;
   z-index: 1000;
 `;
 
 const GuideText = styled.h2`
   font-size: 1.12rem;
   font-weight: 600;
+  line-height: 27.31px;
   margin-top: 100px;
   margin-bottom: 100px;
+  font-style: normal;
   z-index: 1000;
 `;
 
 const RoundCharacter = styled(Round)`
   position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   fill: #0e438b;
   display: flex;
   background-color: transparent;

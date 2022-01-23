@@ -40,7 +40,7 @@ export const NextButton = styled(Link)`
 
 export const Container = styled.div`
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   background-color: transparent;
   position: relative;
   overflow: hidden;
@@ -73,7 +73,7 @@ export const Title = styled.h2`
 
 export const AttrTitle = styled.h1`
   position: absolute;
-  bottom: 185px;
+  bottom: 85px;
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 1.4rem;

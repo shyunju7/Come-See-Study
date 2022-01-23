@@ -19,8 +19,20 @@ const Container = styled.div`
 const Chapter = styled.p`
   font-size: 1rem;
   margin-top: 45px;
+  margin-bottom: 68px;
   font-weight: 600;
-  margin-bottom: 65px;
+  line-height: 21.45px;
+  font-style: normal;
+`;
+
+const GuideText = styled.h2`
+  font-size: 1.12rem;
+  font-weight: 600;
+  line-height: 27.31px;
+  font-style: normal;
+  position: absolute;
+  z-index: 1000;
+  top: 173px;
 `;
 
 const Bubble = styled.div`
@@ -107,6 +119,7 @@ const PreviewText = () => {
   return (
     <Container>
       <Chapter>CSS #2</Chapter>
+      <GuideText>Text Styling!</GuideText>
       <Bubble>
         <BubbleText
           textTransform={textTransform}

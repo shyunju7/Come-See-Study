@@ -12,11 +12,12 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: absolute;
+  top: 5%;
 `;
 
 const CharacterWrapper = styled.div`
   width: 100%;
-  height: 150px;
   background-color: transparent;
   display: flex;
   justify-content: center;

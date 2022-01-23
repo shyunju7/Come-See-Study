@@ -43,6 +43,7 @@ const TriangleChracter = styled(Triangle)`
 
 const RangeSliderWrapper = styled.div`
   display: flex;
+  margin-top: 86px;
 `;
 
 const RGBASliderList = styled.div`
@@ -61,6 +62,7 @@ const RGBTextWrapper = styled.div`
   display: flex;
   flex-direction: column;
   place-self: end;
+  align-self: flex-end;
   height: 120px;
   justify-content: space-between;
   margin-bottom: 20px;
