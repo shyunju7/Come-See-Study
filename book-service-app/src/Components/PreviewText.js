@@ -83,7 +83,7 @@ const LineWrapper = styled.div`
 `;
 
 const ButtonWrapper = styled.div`
-  width: 160px;
+  width: 200px;
   display: flex;
   justify-content: space-between;
   margin-bottom: 28px;
