@@ -8,6 +8,8 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: absolute;
+  top: 5%;
 `;
 
 const RoundCharacter = styled(Round)`

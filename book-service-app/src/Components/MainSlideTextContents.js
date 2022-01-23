@@ -10,13 +10,14 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: relative;
+  position: absolute;
+  top: 5%;
 `;
 
 const Bubble = styled.div`
   position: absolute;
   top: 20%;
-  right: 25%;
+  right: 28%;
   width: 250px;
   height: 200px;
   background-repeat: no-repeat;
