@@ -14,10 +14,10 @@ const Container = styled.div`
 `;
 
 const Text = styled.h2`
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #ff6250;
-  margin-top: 24px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.6);
+  margin-top: 56px;
 `;
 
 const Bubble = styled.div`
