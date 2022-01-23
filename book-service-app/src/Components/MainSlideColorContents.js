@@ -17,15 +17,14 @@ const Container = styled.div`
 `;
 
 const CharacterWrapper = styled.div`
-  width: 100%;
+  width: 485px;
   background-color: transparent;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 `;
 
 const RoundCharacter = styled(Round)`
-  margin-right: 30px;
   fill: #0e438b;
   animation-name: changeFillColorRound;
   animation-duration: 8s;
@@ -51,7 +50,6 @@ const RoundCharacter = styled(Round)`
 `;
 
 const RectCharacter = styled(Rect)`
-  margin-right: 30px;
   fill: #f87060;
   animation-name: changeFillColorRect;
   animation-duration: 8s;
