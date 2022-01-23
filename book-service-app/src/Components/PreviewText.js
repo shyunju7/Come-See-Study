@@ -38,7 +38,7 @@ const GuideText = styled.h2`
 const Bubble = styled.div`
   width: 100%;
   max-width: 834px;
-  height: 428px;
+  height: 400px;
   background-image: url(${bubble});
   background-position: center center;
   background-size: 100% 100%;
@@ -119,7 +119,7 @@ const PreviewText = () => {
   return (
     <Container>
       <Chapter>CSS #2</Chapter>
-      <GuideText>Text Styling!</GuideText>
+      <GuideText>Text styling!</GuideText>
       <Bubble>
         <BubbleText
           textTransform={textTransform}

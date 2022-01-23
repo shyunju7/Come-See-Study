@@ -103,7 +103,7 @@ const PreviewTransition = () => {
   return (
     <Container>
       <Chapter>CSS #5</Chapter>
-      <GuideText>Control Timing!</GuideText>
+      <GuideText>Control timing!</GuideText>
       <RectCharacter ref={rectRef} transitiontiming={transitionTiming} />
       <IceCream src={IceCreamImg} alt="ice-cream" />
       <LineWrapper>

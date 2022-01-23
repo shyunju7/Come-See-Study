@@ -84,7 +84,7 @@ const PreviewBackground = () => {
   return (
     <Container>
       <Chapter>CSS #3</Chapter>
-      <GuideText>change background attributes</GuideText>
+      <GuideText>Change background attributes!</GuideText>
       <ButtonContainer>
         <LineWrapper>
           <Text>BACKGROUND-REPEAT</Text>

@@ -168,7 +168,7 @@ const PreviewColor = () => {
   return (
     <Container>
       <Chapter>CSS #1</Chapter>
-      <GuideText>Change your color</GuideText>
+      <GuideText>Change your color!</GuideText>
 
       <RangeSliderWrapper>
         <RGBTextWrapper>

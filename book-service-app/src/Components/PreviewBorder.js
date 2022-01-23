@@ -50,8 +50,8 @@ const LineWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   z-index: 1000;
-  margin-top: 280px;
-  margin-bottom: 85px;
+  position: absolute;
+  bottom: 85px;
 `;
 
 const Line = styled.div`
@@ -168,7 +168,7 @@ const PreviewBorder = () => {
   return (
     <Container>
       <Chapter>CSS #4</Chapter>
-      <GuideText>Border!</GuideText>
+      <GuideText>Border styling!</GuideText>
       <RoundCharacter
         borderstyle={borderStyle}
         borderwidth={borderWidth}
