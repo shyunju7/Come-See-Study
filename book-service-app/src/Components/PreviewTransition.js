@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import RadioButton from "./CustomRadioButton";
 import { ReactComponent as Rect } from "../assets/rect-img.svg";
+import IceCreamImg from "../assets/transition-ice.png";
 const Container = styled.div`
   width: 100%;
   height: 100vh;
@@ -57,22 +58,53 @@ const RectCharacter = styled(Rect)`
   position: absolute;
   top: 50%;
   left: 160px;
-  transform: translateY(-25px);
+  transform: translateY(-50%);
+  transition: transform 2s;
+  transition-timing-function: ${(props) =>
+    props.transitiontiming ? props.transitiontiming : "linear"};
+`;
+
+const IceCream = styled.img`
+  width: 74px;
+  position: absolute;
+  top: 50%;
+  right: 160px;
+  transform: translateY(-50%);
 `;
 
 const PreviewTransition = () => {
   const [transitionTiming, setTransitionTiming] = useState("");
+  const rectRef = useRef();
   const handleChangeRadioButton = (e) => {
     const { value } = e.target;
 
     setTransitionTiming(value);
+
+    if (rectRef) {
+      rectRef.current.style.transform = `translate(70vw, -50%)`;
+    }
   };
+
+  useEffect(() => {
+    const resetPosition = (e) => {
+      rectRef.current.style.transform = `translate(0vw, -50%)`;
+    };
+
+    if (rectRef && rectRef.current) {
+      rectRef.current.addEventListener("transitionend", resetPosition);
+    }
+
+    return () => {
+      rectRef.current.removeEventListener("transitionend", resetPosition);
+    };
+  }, []);
 
   return (
     <Container>
       <Chapter>CSS #5</Chapter>
       <GuideText>Control Timing!</GuideText>
-      <RectCharacter />
+      <RectCharacter ref={rectRef} transitiontiming={transitionTiming} />
+      <IceCream src={IceCreamImg} alt="ice-cream" />
       <LineWrapper>
         <Text>TRANSITION-TIMING-FUNCTION</Text>
         <ButtonWrapper>
