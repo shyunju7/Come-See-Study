@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import MainPresenter from "./MainPresenter";
 import { useParams } from "react-router-dom";
 import { attrApi } from "../../api";
@@ -10,11 +10,7 @@ const MainContainer = ({ textRef }) => {
 
   const { attrId } = useParams();
 
-  useEffect(() => {
-    getAttrName();
-  }, [attrId]);
-
-  const getAttrName = () => {
+  const getAttrName = useCallback(() => {
     setLoading(true);
     attrApi
       .getAttrName(attrId)
@@ -25,7 +21,11 @@ const MainContainer = ({ textRef }) => {
         console.log("error! ", e);
       })
       .finally(setLoading(false));
-  };
+  }, [attrId]);
+
+  useEffect(() => {
+    getAttrName();
+  }, [attrId, getAttrName]);
 
   return (
     <MainPresenter
