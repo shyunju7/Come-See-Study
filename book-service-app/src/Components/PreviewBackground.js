@@ -94,6 +94,7 @@ const PreviewBackground = () => {
               name="repeat"
               value="repeat-x"
               handleChangeRadioButton={handleChangeRadioButton}
+              defaultCheck={false}
             >
               x
             </RadioButton>
@@ -102,6 +103,7 @@ const PreviewBackground = () => {
               name="repeat"
               value="repeat-y"
               handleChangeRadioButton={handleChangeRadioButton}
+              defaultCheck={false}
             >
               y
             </RadioButton>
@@ -110,6 +112,7 @@ const PreviewBackground = () => {
               name="repeat"
               value="repeat"
               handleChangeRadioButton={handleChangeRadioButton}
+              defaultCheck={false}
             >
               all
             </RadioButton>
@@ -118,6 +121,7 @@ const PreviewBackground = () => {
               name="repeat"
               value="no-repeat"
               handleChangeRadioButton={handleChangeRadioButton}
+              defaultCheck={true}
             >
               none
             </RadioButton>
@@ -131,6 +135,7 @@ const PreviewBackground = () => {
               name="position"
               value="right"
               handleChangeRadioButton={handleChangeRadioButton}
+              defaultCheck={false}
             >
               right
             </RadioButton>
@@ -139,6 +144,7 @@ const PreviewBackground = () => {
               name="position"
               value="left"
               handleChangeRadioButton={handleChangeRadioButton}
+              defaultCheck={false}
             >
               left
             </RadioButton>
@@ -147,6 +153,7 @@ const PreviewBackground = () => {
               name="position"
               value="top"
               handleChangeRadioButton={handleChangeRadioButton}
+              defaultCheck={false}
             >
               top
             </RadioButton>
@@ -155,6 +162,7 @@ const PreviewBackground = () => {
               name="position"
               value="center"
               handleChangeRadioButton={handleChangeRadioButton}
+              defaultCheck={false}
             >
               center
             </RadioButton>
@@ -163,6 +171,7 @@ const PreviewBackground = () => {
               name="position"
               value="bottom"
               handleChangeRadioButton={handleChangeRadioButton}
+              defaultCheck={false}
             >
               bottom
             </RadioButton>
