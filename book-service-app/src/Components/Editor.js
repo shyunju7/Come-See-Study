@@ -11,16 +11,6 @@ const Container = styled.div`
   align-items: center;
 `;
 
-const TargetElementWrapper = styled.div`
-  width: 40%;
-  height: 90vh;
-  background-color: #dddddd;
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-`;
-
 const TargetElement = styled.div`
   width: 250px;
   height: 250px;
@@ -107,11 +97,11 @@ const Editor = () => {
     }
   }, []);
 
-  const checkValue = () => {
-    const element = document.querySelector("#container");
-    const style = element.style;
-    console.log(style.border);
-  };
+  // const checkValue = () => {
+  //   const element = document.querySelector("#container");
+  //   const style = element.style;
+  //   console.log(style.border);
+  // };
   return (
     <Container>
       <EditorWrapper>
@@ -138,13 +128,6 @@ const Editor = () => {
           <TargetElement ref={element} id="container" />
         </AnswerImgWrapper>
       </QuizWrapper>
-      {/* <EditorWrapper>
-        <QuestionWrapper>ddd</QuestionWrapper>
-        <EditorInput value={code} onChange={onChangeCode} />
-      </EditorWrapper>
-      <TargetElementWrapper>
-        <TargetElement ref={element} id="container" />
-      </TargetElementWrapper> */}
     </Container>
   );
 };
