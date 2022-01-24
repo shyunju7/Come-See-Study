@@ -95,7 +95,7 @@ const PreviewBackground = () => {
               value="repeat-x"
               handleChangeRadioButton={handleChangeRadioButton}
             >
-              X
+              x
             </RadioButton>
             <RadioButton
               id="repeat-y"
@@ -103,7 +103,7 @@ const PreviewBackground = () => {
               value="repeat-y"
               handleChangeRadioButton={handleChangeRadioButton}
             >
-              Y
+              y
             </RadioButton>
             <RadioButton
               id="repeat"
@@ -111,7 +111,7 @@ const PreviewBackground = () => {
               value="repeat"
               handleChangeRadioButton={handleChangeRadioButton}
             >
-              ALL
+              all
             </RadioButton>
             <RadioButton
               id="no-repeat"
@@ -119,7 +119,7 @@ const PreviewBackground = () => {
               value="no-repeat"
               handleChangeRadioButton={handleChangeRadioButton}
             >
-              NONE
+              none
             </RadioButton>
           </ButtonWrapper>
         </LineWrapper>
@@ -132,7 +132,7 @@ const PreviewBackground = () => {
               value="right"
               handleChangeRadioButton={handleChangeRadioButton}
             >
-              RIGHT
+              right
             </RadioButton>
             <RadioButton
               id="left"
@@ -140,7 +140,7 @@ const PreviewBackground = () => {
               value="left"
               handleChangeRadioButton={handleChangeRadioButton}
             >
-              LEFT
+              left
             </RadioButton>
             <RadioButton
               id="top"
@@ -148,7 +148,7 @@ const PreviewBackground = () => {
               value="top"
               handleChangeRadioButton={handleChangeRadioButton}
             >
-              TOP
+              top
             </RadioButton>
             <RadioButton
               id="center"
@@ -156,7 +156,7 @@ const PreviewBackground = () => {
               value="center"
               handleChangeRadioButton={handleChangeRadioButton}
             >
-              CENTER
+              center
             </RadioButton>
             <RadioButton
               id="bottom"
@@ -164,7 +164,7 @@ const PreviewBackground = () => {
               value="bottom"
               handleChangeRadioButton={handleChangeRadioButton}
             >
-              BOTTOM
+              bottom
             </RadioButton>
           </ButtonWrapper>
         </LineWrapper>

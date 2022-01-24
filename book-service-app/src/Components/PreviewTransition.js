@@ -115,7 +115,7 @@ const PreviewTransition = () => {
             value="ease"
             handleChangeRadioButton={handleChangeRadioButton}
           >
-            EASE
+            ease
           </RadioButton>
           <RadioButton
             id="linear"
@@ -123,7 +123,7 @@ const PreviewTransition = () => {
             value="linear"
             handleChangeRadioButton={handleChangeRadioButton}
           >
-            LINEAR
+            linear
           </RadioButton>
           <RadioButton
             id="ease-in"
@@ -131,7 +131,7 @@ const PreviewTransition = () => {
             value="ease-in"
             handleChangeRadioButton={handleChangeRadioButton}
           >
-            EASE-IN
+            ease-in
           </RadioButton>
           <RadioButton
             id="ease-out"
@@ -139,7 +139,7 @@ const PreviewTransition = () => {
             value="ease-out"
             handleChangeRadioButton={handleChangeRadioButton}
           >
-            EASE-OUT
+            ease-out
           </RadioButton>
           <RadioButton
             id="steps"
@@ -147,7 +147,7 @@ const PreviewTransition = () => {
             value="steps(6, end)"
             handleChangeRadioButton={handleChangeRadioButton}
           >
-            STEPS
+            steps
           </RadioButton>
         </ButtonWrapper>
       </LineWrapper>
