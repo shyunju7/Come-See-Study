@@ -96,7 +96,9 @@ const PreviewTransition = () => {
     }
 
     return () => {
-      rectRef.current.removeEventListener("transitionend", resetPosition);
+      if (rectRef && rectRef.current) {
+        rectRef.current.removeEventListener("transitionend", resetPosition);
+      }
     };
   }, []);
 
