@@ -144,6 +144,7 @@ const PreviewText = () => {
                 name="align"
                 value="start"
                 handleChangeRadioButton={handleChangeRadioButton}
+                defaultCheck={false}
               >
                 <AiOutlineAlignLeft size="18px" />
               </RadioButton>
@@ -152,6 +153,7 @@ const PreviewText = () => {
                 name="align"
                 value="center"
                 handleChangeRadioButton={handleChangeRadioButton}
+                defaultCheck={true}
               >
                 <AiOutlineAlignCenter size="18px" />
               </RadioButton>
@@ -160,6 +162,7 @@ const PreviewText = () => {
                 name="align"
                 value="end"
                 handleChangeRadioButton={handleChangeRadioButton}
+                defaultCheck={false}
               >
                 <AiOutlineAlignRight size="18px" />
               </RadioButton>
@@ -175,6 +178,7 @@ const PreviewText = () => {
                 value="underline"
                 handleChangeRadioButton={handleChangeRadioButton}
                 textStyle={{ textDecoration: "underline" }}
+                defaultCheck={false}
               >
                 Ab
               </RadioButton>
@@ -185,6 +189,7 @@ const PreviewText = () => {
                 value="line-through"
                 handleChangeRadioButton={handleChangeRadioButton}
                 textStyle={{ textDecoration: "line-through" }}
+                defaultCheck={false}
               >
                 Ab
               </RadioButton>
@@ -195,6 +200,7 @@ const PreviewText = () => {
                 value="overline"
                 handleChangeRadioButton={handleChangeRadioButton}
                 textStyle={{ textDecoration: "overline" }}
+                defaultCheck={false}
               >
                 Ab
               </RadioButton>
@@ -209,6 +215,7 @@ const PreviewText = () => {
                 name="transform"
                 value="uppercase"
                 handleChangeRadioButton={handleChangeRadioButton}
+                defaultCheck={false}
               >
                 AB
               </RadioButton>
@@ -218,6 +225,7 @@ const PreviewText = () => {
                 name="transform"
                 value="none"
                 handleChangeRadioButton={handleChangeRadioButton}
+                defaultCheck={true}
               >
                 Ab
               </RadioButton>
@@ -227,6 +235,7 @@ const PreviewText = () => {
                 name="transform"
                 value="lowercase"
                 handleChangeRadioButton={handleChangeRadioButton}
+                defaultCheck={false}
               >
                 ab
               </RadioButton>

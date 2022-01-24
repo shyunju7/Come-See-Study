@@ -32,6 +32,7 @@ const RadioButton = ({
   children,
   handleChangeRadioButton,
   textStyle,
+  defaultCheck,
 }) => {
   return (
     <div style={{ zIndex: 1000 }}>
@@ -41,6 +42,7 @@ const RadioButton = ({
         name={name}
         value={value}
         onChange={handleChangeRadioButton}
+        defaultChecked={defaultCheck}
       />
       <RadioLabel htmlFor={id} style={textStyle}>
         {children}
