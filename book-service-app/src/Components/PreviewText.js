@@ -214,6 +214,15 @@ const PreviewText = () => {
               </RadioButton>
               <RadioButton
                 type="radio"
+                id="transform-none"
+                name="transform"
+                value="none"
+                handleChangeRadioButton={handleChangeRadioButton}
+              >
+                Ab
+              </RadioButton>
+              <RadioButton
+                type="radio"
                 id="lowercase"
                 name="transform"
                 value="lowercase"
