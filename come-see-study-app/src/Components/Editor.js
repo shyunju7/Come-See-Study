@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
+import StateButton from "./StateButton";
 
 const Container = styled.div`
   width: 100%;
@@ -83,9 +84,12 @@ const AnswerImgWrapper = styled.div`
 
 const Editor = () => {
   const [code, setCode] = useState("");
+  const [buttonState, setButtonState] = useState("check");
+  const [isCorrect, setCorrect] = useState(false);
   let element = useRef();
   let answerElement = useRef();
   const onChangeCode = (e) => {
+    setButtonState("check");
     setCode(e.target.value);
     element.current.style = e.target.value;
   };
@@ -97,11 +101,13 @@ const Editor = () => {
     }
   }, []);
 
-  // const checkValue = () => {
-  //   const element = document.querySelector("#container");
-  //   const style = element.style;
-  //   console.log(style.border);
-  // };
+  const handleCheckedValue = () => {
+    console.log("handleCheckedValue");
+    isCorrect ? setButtonState("correct") : setButtonState("wrong");
+    // const element = document.querySelector("#container");
+    // const style = element.style;
+    // console.log(style.border);
+  };
   return (
     <Container>
       <EditorWrapper>
@@ -123,6 +129,10 @@ const Editor = () => {
       <QuizWrapper>
         <QuizContentWrapper>
           <EditorInput value={code} onChange={onChangeCode} />
+          <StateButton
+            stateText={buttonState}
+            handleCheckedValue={handleCheckedValue}
+          />
         </QuizContentWrapper>
         <AnswerImgWrapper>
           <TargetElement ref={element} id="container" />
