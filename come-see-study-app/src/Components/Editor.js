@@ -15,7 +15,8 @@ const Container = styled.div`
 const TargetElement = styled.div`
   width: 250px;
   height: 250px;
-  background-color: whitesmoke;
+  background-color: #757575;
+  border-radius: 50%;
 `;
 
 const EditorWrapper = styled.div`
@@ -31,12 +32,15 @@ const QuizWrapper = styled.div`
   height: 45vh;
   display: flex;
   flex-direction: row;
+  background-color: #806d40;
 `;
 
 const EditorInput = styled.textarea`
   resize: none;
   width: 90%;
   height: 25%;
+  margin-bottom: 12px;
+  outline: none;
 `;
 
 const EditorContentWrapper = styled.div`
@@ -44,7 +48,7 @@ const EditorContentWrapper = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
-  background-color: violet;
+  background-color: transparent;
 `;
 
 const QuizContentWrapper = styled.div`
@@ -54,29 +58,33 @@ const QuizContentWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: violet;
+  background-color: transparent;
 `;
 
 const Title = styled.h2`
   font-size: 1.125rem;
   font-weight: 600;
   margin-bottom: 36px;
+  margin-left: 24px;
+  margin-top: 24px;
 `;
 
 const Description = styled.label`
   font-size: 16px;
   margin-bottom: 12px;
   line-height: 24px;
+  margin-left: 24px;
 `;
 
 const Question = styled.label`
   font-size: 16px;
+  margin-left: 24px;
 `;
 
 const AnswerImgWrapper = styled.div`
   width: 50%;
   height: 100%;
-  background-color: skyblue;
+  background-color: transparent;
   display: flex;
   justify-content: center;
   align-items: center;
