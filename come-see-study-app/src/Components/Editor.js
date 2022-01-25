@@ -103,11 +103,13 @@ const Editor = () => {
 
   const handleCheckedValue = () => {
     // 정답 체크 API 호출
-    //setCorrect(true);
-    isCorrect ? setButtonState("correct") : setButtonState("wrong");
-    // const element = document.querySelector("#container");
-    // const style = element.style;
-    // console.log(style.border);
+    const answer = "border";
+    const element = document.querySelector("#container");
+    const style = element.style;
+    console.log(style);
+    style.cssText === "background-color: rgb(248, 112, 96);"
+      ? setButtonState("correct")
+      : setButtonState("wrong");
   };
   return (
     <Container>
