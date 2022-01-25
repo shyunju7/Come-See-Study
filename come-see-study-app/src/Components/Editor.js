@@ -85,7 +85,8 @@ const AnswerImgWrapper = styled.div`
 const Editor = () => {
   const [code, setCode] = useState("");
   const [buttonState, setButtonState] = useState("check");
-  const [isCorrect, setCorrect] = useState(false);
+  const [readOnly, setreadOnly] = useState(false);
+
   let element = useRef();
   let answerElement = useRef();
   const onChangeCode = (e) => {
@@ -101,12 +102,15 @@ const Editor = () => {
     }
   }, []);
 
+  useEffect(() => {
+    buttonState === "correct" ? setreadOnly(true) : setreadOnly(false);
+  }, [buttonState]);
+
   const handleCheckedValue = () => {
     // 정답 체크 API 호출
     const answer = "border";
     const element = document.querySelector("#container");
     const style = element.style;
-    console.log(style);
     style.cssText === "background-color: rgb(248, 112, 96);"
       ? setButtonState("correct")
       : setButtonState("wrong");
@@ -131,7 +135,11 @@ const Editor = () => {
       </EditorWrapper>
       <QuizWrapper>
         <QuizContentWrapper>
-          <EditorInput value={code} onChange={onChangeCode} />
+          <EditorInput
+            value={code}
+            onChange={onChangeCode}
+            readOnly={readOnly}
+          />
           <StateButton
             stateText={buttonState}
             handleCheckedValue={handleCheckedValue}
