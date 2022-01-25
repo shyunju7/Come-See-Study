@@ -65,12 +65,11 @@ const BubbleText = styled.p`
 
 const RectCharacter = styled(Rect)`
   fill: #f87060;
-  margin-left: 80px;
 `;
 const ContentsWrapper = styled.div`
-  width: 68%;
   display: flex;
   margin-top: 8px;
+  padding-right: 48px;
 `;
 const ButtonContainer = styled.div`
   display: flex;
