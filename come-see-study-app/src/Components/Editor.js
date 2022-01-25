@@ -102,7 +102,8 @@ const Editor = () => {
   }, []);
 
   const handleCheckedValue = () => {
-    console.log("handleCheckedValue");
+    // 정답 체크 API 호출
+    //setCorrect(true);
     isCorrect ? setButtonState("correct") : setButtonState("wrong");
     // const element = document.querySelector("#container");
     // const style = element.style;
