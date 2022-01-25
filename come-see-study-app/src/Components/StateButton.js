@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-
+import { IoCheckmark, IoClose } from "react-icons/io5";
 const Container = styled.div`
   width: 64px;
   height: 30px;
@@ -8,6 +8,9 @@ const Container = styled.div`
   border-radius: 8px;
   text-align: center;
   vertical-align: middle;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 14px;
   font-weight: 500;
   line-height: 30px;
@@ -28,7 +31,7 @@ const StateButton = ({ stateText, handleCheckedValue }) => {
       case "correct":
         setTextColor("#ADFF2F");
         break;
-      case "wrong":
+      case "try-again":
         setTextColor("#F87060");
         break;
       default:
@@ -39,7 +42,13 @@ const StateButton = ({ stateText, handleCheckedValue }) => {
 
   return (
     <Container color={textColor} onClick={handleCheckedValue}>
-      {stateText}
+      {stateText === "check" ? (
+        "click"
+      ) : stateText === "correct" ? (
+        <IoCheckmark size="24px" />
+      ) : (
+        <IoClose size="24px" />
+      )}
     </Container>
   );
 };

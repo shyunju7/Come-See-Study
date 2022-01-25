@@ -90,6 +90,18 @@ const AnswerImgWrapper = styled.div`
   align-items: center;
 `;
 
+const StateGuide = styled.label`
+  color: #fef6c9;
+  margin-right: 12px;
+  font-size: 18px;
+`;
+const StateWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+`;
+
 const Editor = () => {
   const [code, setCode] = useState("");
   const [buttonState, setButtonState] = useState("check");
@@ -115,13 +127,11 @@ const Editor = () => {
   }, [buttonState]);
 
   const handleCheckedValue = () => {
-    // 정답 체크 API 호출
-    const answer = "border";
     const element = document.querySelector("#container");
     const style = element.style;
     style.cssText === "background-color: rgb(248, 112, 96);"
       ? setButtonState("correct")
-      : setButtonState("wrong");
+      : setButtonState("try-again");
   };
   return (
     <Container>
@@ -148,10 +158,16 @@ const Editor = () => {
             onChange={onChangeCode}
             readOnly={readOnly}
           />
-          <StateButton
-            stateText={buttonState}
-            handleCheckedValue={handleCheckedValue}
-          />
+
+          <StateWrapper>
+            <StateGuide>
+              {buttonState === "check" ? "" : buttonState}
+            </StateGuide>
+            <StateButton
+              stateText={buttonState}
+              handleCheckedValue={handleCheckedValue}
+            />
+          </StateWrapper>
         </QuizContentWrapper>
         <AnswerImgWrapper>
           <TargetElement ref={element} id="container" />
