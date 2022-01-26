@@ -62,7 +62,7 @@ export const Title = styled.h2`
   left: 50%;
   top: 180px;
   transform: translate(-50%, -50%);
-  font-size: 1.1rem;
+  font-size: 1.64rem;
   line-height: 29px;
   font-style: normal;
   font-weight: 600;
@@ -76,7 +76,7 @@ export const AttrTitle = styled.h1`
   bottom: 85px;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 1.4rem;
+  font-size: 2.2rem;
   font-weight: 600;
   line-height: 43.88px;
   font-style: normal;

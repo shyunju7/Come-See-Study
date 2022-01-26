@@ -21,7 +21,7 @@ const Chapter = styled.p`
 `;
 
 const GuideText = styled.h2`
-  font-size: 1.12rem;
+  font-size: 1.65rem;
   font-weight: 600;
   line-height: 27.31px;
   margin-top: 100px;
