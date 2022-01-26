@@ -13,8 +13,8 @@ const Container = styled.div`
 `;
 
 const Chapter = styled.p`
-  font-size: 1rem;
-  margin-top: 45px;
+  font-size: 1.4rem;
+  margin-top: 60px;
   font-weight: 600;
   line-height: 21.45px;
   font-style: normal;
@@ -104,7 +104,7 @@ const PreviewTransition = () => {
 
   return (
     <Container>
-      <Chapter>CSS #5</Chapter>
+      <Chapter>#5 TRANSITION</Chapter>
       <GuideText>Control timing!</GuideText>
       <RectCharacter ref={rectRef} transitiontiming={transitionTiming} />
       <IceCream src={IceCreamImg} alt="ice-cream" />

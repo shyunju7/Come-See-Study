@@ -12,8 +12,8 @@ const Container = styled.div`
 `;
 
 const Chapter = styled.p`
-  font-size: 1rem;
-  margin-top: 45px;
+  font-size: 1.4rem;
+  margin-top: 60px;
   font-weight: 600;
   line-height: 21.45px;
   font-style: normal;
@@ -167,7 +167,7 @@ const PreviewBorder = () => {
 
   return (
     <Container>
-      <Chapter>CSS #4</Chapter>
+      <Chapter>#4 BORDER</Chapter>
       <GuideText>Border styling!</GuideText>
       <RoundCharacter
         borderstyle={borderStyle}

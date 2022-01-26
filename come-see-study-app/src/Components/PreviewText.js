@@ -17,8 +17,8 @@ const Container = styled.div`
   background: #fef6c9;
 `;
 const Chapter = styled.p`
-  font-size: 1rem;
-  margin-top: 45px;
+  font-size: 1.4rem;
+  margin-top: 55px;
   margin-bottom: 68px;
   font-weight: 600;
   line-height: 21.45px;
@@ -117,7 +117,7 @@ const PreviewText = () => {
 
   return (
     <Container>
-      <Chapter>CSS #2</Chapter>
+      <Chapter>#2 TEXT</Chapter>
       <GuideText>Text styling!</GuideText>
       <Bubble>
         <BubbleText

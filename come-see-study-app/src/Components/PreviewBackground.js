@@ -27,8 +27,8 @@ const BackgroundDiv = styled.div`
 `;
 
 const Chapter = styled.p`
-  font-size: 1rem;
-  margin-top: 45px;
+  font-size: 1.4rem;
+  margin-top: 55px;
   font-weight: 600;
   z-index: 1000;
 `;
@@ -83,7 +83,7 @@ const PreviewBackground = () => {
 
   return (
     <Container>
-      <Chapter>CSS #3</Chapter>
+      <Chapter>#3 BACKGROUND</Chapter>
       <GuideText>Change background attributes!</GuideText>
       <ButtonContainer>
         <LineWrapper>

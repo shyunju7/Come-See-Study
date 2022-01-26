@@ -13,8 +13,8 @@ const Container = styled.div`
 `;
 
 const Chapter = styled.p`
-  font-size: 1rem;
-  margin-top: 45px;
+  font-size: 1.4rem;
+  margin-top: 55px;
   font-weight: 600;
   line-height: 21.45px;
   font-style: normal;
@@ -167,7 +167,7 @@ const PreviewColor = () => {
 
   return (
     <Container>
-      <Chapter>CSS #1</Chapter>
+      <Chapter>#1 COLOR</Chapter>
       <GuideText>Change your color!</GuideText>
 
       <RangeSliderWrapper>

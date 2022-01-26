@@ -49,7 +49,7 @@ const MainPresenter = ({
         onMouseEnter={() => setCursorValue("menu")}
         onMouseLeave={() => setCursorValue("click")}
       >
-        <img src={MenuIcon} alt="menu" width="38px" />
+        <img src={MenuIcon} alt="menu" width="48px" />
       </S.Menu>
       <S.CursorDescription ref={textRef} id="custom-cursor">
         {cursorValue}
