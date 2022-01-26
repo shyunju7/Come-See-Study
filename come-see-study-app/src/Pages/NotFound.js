@@ -14,7 +14,7 @@ const Container = styled.div`
 `;
 
 const Text = styled.h2`
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: 600;
   color: rgba(0, 0, 0, 0.6);
   margin-top: 56px;

@@ -17,7 +17,7 @@ const TextWrapper = styled.div`
 
 const Text = styled.div`
   font-weight: 600;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   color: rgba(0, 0, 0, 0.6);
 
   animation: resizing 0.9s infinite alternate;
