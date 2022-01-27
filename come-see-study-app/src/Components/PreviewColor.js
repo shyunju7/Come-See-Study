@@ -184,7 +184,7 @@ const PreviewColor = () => {
           <RGBASlider
             type="range"
             min="0"
-            max="256"
+            max="255"
             step="1"
             defaultValue={circleRgba.r}
             onChange={(e) =>
@@ -195,7 +195,7 @@ const PreviewColor = () => {
           <RGBASlider
             type="range"
             min="0"
-            max="256"
+            max="255"
             step="1"
             defaultValue={circleRgba.g}
             onChange={(e) =>
@@ -230,7 +230,7 @@ const PreviewColor = () => {
           <RGBASlider
             type="range"
             min="0"
-            max="256"
+            max="255"
             step="1"
             defaultValue={rectRgba.r}
             onChange={(e) =>
@@ -240,7 +240,7 @@ const PreviewColor = () => {
           <RGBASlider
             type="range"
             min="0"
-            max="256"
+            max="255"
             step="1"
             defaultValue={rectRgba.g}
             onChange={(e) =>
@@ -250,7 +250,7 @@ const PreviewColor = () => {
           <RGBASlider
             type="range"
             min="0"
-            max="256"
+            max="255"
             step="1"
             defaultValue={rectRgba.b}
             onChange={(e) =>
@@ -275,7 +275,7 @@ const PreviewColor = () => {
           <RGBASlider
             type="range"
             min="0"
-            max="256"
+            max="255"
             step="1"
             defaultValue={triangleRgba.r}
             onChange={(e) =>
@@ -285,7 +285,7 @@ const PreviewColor = () => {
           <RGBASlider
             type="range"
             min="0"
-            max="256"
+            max="255"
             step="1"
             defaultValue={triangleRgba.g}
             onChange={(e) =>
@@ -295,7 +295,7 @@ const PreviewColor = () => {
           <RGBASlider
             type="range"
             min="0"
-            max="256"
+            max="255"
             step="1"
             defaultValue={triangleRgba.b}
             onChange={(e) =>
