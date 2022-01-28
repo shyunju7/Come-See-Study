@@ -1,10 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import StateButton from "./StateButton";
+import bubble from "../assets/bg-bubble-preview-text.png";
 
 const Container = styled.div`
   width: 100%;
-  background-color: transparent;
+  background-color: yellowgreen;
   display: flex;
   margin: 45px 0px;
   flex-direction: column;
@@ -41,6 +42,7 @@ const EditorInput = styled.textarea`
   height: 25%;
   margin-bottom: 12px;
   outline: none;
+  border-radius: 8px;
 `;
 
 const EditorContentWrapper = styled.div`
@@ -100,6 +102,15 @@ const StateWrapper = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
+`;
+
+const Text = styled.div`
+  font-size: 18px;
+  background-image: url(${bubble});
+  background-position: center center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  display: flex;
 `;
 
 const Editor = () => {
