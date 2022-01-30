@@ -24,6 +24,7 @@ const LectureContainer = ({ textRef }) => {
       isChecked={isChecked}
       setShowGuide={setShowGuide}
       showGuide={showGuide}
+      navigate={navigate}
     />
   );
 };

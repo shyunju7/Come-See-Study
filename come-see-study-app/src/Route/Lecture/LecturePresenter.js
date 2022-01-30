@@ -14,6 +14,7 @@ const LecturePresenter = ({
   setCheck,
   setShowGuide,
   showGuide,
+  navigate,
 }) => (
   <S.Container>
     {showGuide ? (
@@ -29,7 +30,11 @@ const LecturePresenter = ({
       <img src={PrevIcon} alt="Prev" width="32px" />
     </S.PrevButton>
     <S.NextButton
-      to={`/${attrId}/lecture/2`}
+      onClick={() => {
+        if (!showGuide) {
+          navigate(`/${attrId}/lecture/2`);
+        }
+      }}
       onMouseEnter={() => {
         isChecked ? setShowGuide(true) : setCursorValue("next");
       }}

@@ -28,7 +28,7 @@ export const PrevButton = styled(Link)`
   z-index: 1000;
 `;
 
-export const NextButton = styled(Link)`
+export const NextButton = styled.button`
   border: none;
   outline: none;
   position: absolute;
@@ -37,6 +37,7 @@ export const NextButton = styled(Link)`
   padding: 12px;
   background-color: transparent;
   z-index: 1000;
+  cursor: pointer;
 `;
 
 export const HomeButton = styled(Home)`
