@@ -15,13 +15,14 @@ const LecturePresenter = ({
   setShowGuide,
   showGuide,
   navigate,
+  testData,
 }) => (
   <S.Container>
     {showGuide ? (
       <S.GuideBox>You have to get it right to move on.</S.GuideBox>
     ) : null}
     <S.HomeButton onClick={handleOnClickHome} />
-    <Editor setCheck={setCheck} />
+    <Editor setCheck={setCheck} data={testData} />
     <S.PrevButton
       to={`/${attrId}/preview`}
       onMouseEnter={() => setCursorValue("prev")}

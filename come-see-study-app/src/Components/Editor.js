@@ -61,6 +61,7 @@ const QuizContentWrapper = styled.div`
   justify-content: center;
   align-items: center;
   background-color: transparent;
+  position: relative;
 `;
 
 const Title = styled.h2`
@@ -99,10 +100,13 @@ const StateGuide = styled.label`
   font-size: 18px;
 `;
 const StateWrapper = styled.div`
+  position: absolute;
   width: 100%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  margin-right: 30px;
+  bottom: 30px;
 `;
 
 const Text = styled.div`
@@ -127,10 +131,10 @@ const Editor = ({ data, setCheck }) => {
     element.current.style = e.target.value;
   };
 
+  // 정답화면 세팅
   useEffect(() => {
     if (answerElement) {
-      answerElement.current.style =
-        "border-radius:50%; background-color:rgb(248,112,96);";
+      answerElement.current.style = data.answerCss;
     }
   }, []);
 
@@ -142,7 +146,7 @@ const Editor = ({ data, setCheck }) => {
   const handleCheckedValue = () => {
     const element = document.querySelector("#container");
     const style = element.style;
-    style.cssText === "background-color: rgb(248, 112, 96);"
+    style.cssText == data.answerCss
       ? setButtonState("correct")
       : setButtonState("try-again");
   };
@@ -150,8 +154,16 @@ const Editor = ({ data, setCheck }) => {
   // 페이지별 문제 수만큼 input 수를 뽑아줌
   const handleMakeInputBox = () => {
     const result = [];
-    for (let i = 0; i < 3; i++) {
-      result.push(<EditorInput key={i} type="text" />);
+    for (let i = 0; i < data.quizCount; i++) {
+      result.push(
+        <EditorInput
+          key={i}
+          type="text"
+          value={code}
+          onChange={onChangeCode}
+          readOnly={readOnly}
+        />
+      );
     }
     return result;
   };
@@ -160,14 +172,11 @@ const Editor = ({ data, setCheck }) => {
       {/* 왼쪽 - editor */}
       <EditorWrapper>
         <EditorContentWrapper>
-          <Title>#1-1 RGB</Title>
-          <Description>
-            In CSS colors are specified using predefined color names, or RGB
-            values. <br />
-            An RGB color value is specified with: rgb(red, green, blue)
-          </Description>
+          <Title>{data.title}</Title>
+          <Description>{data.contents}</Description>
           <Question>
-            Type, following rgb value to get same color (rbg(248, 112, 96))
+            #Use the following properties to create the same image as the given
+            image.
           </Question>
         </EditorContentWrapper>
 
@@ -180,14 +189,7 @@ const Editor = ({ data, setCheck }) => {
       {/* 오른쪽 - quiz */}
       <QuizWrapper>
         <QuizContentWrapper>
-          <EditorInput
-            type="text"
-            value={code}
-            onChange={onChangeCode}
-            readOnly={readOnly}
-          />
           {handleMakeInputBox()}
-
           <StateWrapper>
             <StateGuide>
               {buttonState === "check" ? "" : buttonState}
@@ -198,7 +200,7 @@ const Editor = ({ data, setCheck }) => {
             />
           </StateWrapper>
         </QuizContentWrapper>
-        <AnswerImgWrapper bgColor="transparent">
+        <AnswerImgWrapper bgColor="#FFFDF1">
           <TargetElement ref={element} id="container" />
         </AnswerImgWrapper>
       </QuizWrapper>
