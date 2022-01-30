@@ -3,6 +3,7 @@ import Editor from "../../Components/Editor";
 import * as S from "./style";
 import PrevIcon from "../../assets/prev-icon.png";
 import NextIcon from "../../assets/next-icon.png";
+import EditorTest from "../../Components/EditorTest";
 
 const LecturePresenter = ({
   attrId,
@@ -16,13 +17,14 @@ const LecturePresenter = ({
   showGuide,
   navigate,
   testData,
+  classList,
 }) => (
   <S.Container>
     {showGuide ? (
       <S.GuideBox>You have to get it right to move on.</S.GuideBox>
     ) : null}
     <S.HomeButton onClick={handleOnClickHome} />
-    <Editor setCheck={setCheck} data={testData} />
+    <Editor setCheck={setCheck} data={testData} classList={classList} />
     <S.PrevButton
       to={`/${attrId}/preview`}
       onMouseEnter={() => setCursorValue("prev")}
