@@ -82,7 +82,7 @@ const LineWrapper = styled.div`
 `;
 
 const ButtonWrapper = styled.div`
-  width: 200px;
+  width: 300px;
   display: flex;
   justify-content: space-between;
   margin-bottom: 28px;
@@ -200,6 +200,17 @@ const PreviewText = () => {
                 handleChangeRadioButton={handleChangeRadioButton}
                 textStyle={{ textDecoration: "overline" }}
                 defaultCheck={false}
+              >
+                Ab
+              </RadioButton>
+              <RadioButton
+                type="radio"
+                id="decoration-none"
+                name="deco"
+                value="none"
+                handleChangeRadioButton={handleChangeRadioButton}
+                textStyle={{ textDecoration: "none" }}
+                defaultCheck={true}
               >
                 Ab
               </RadioButton>
