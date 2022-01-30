@@ -4,8 +4,15 @@ import * as S from "./style";
 import PrevIcon from "../../assets/prev-icon.png";
 import NextIcon from "../../assets/next-icon.png";
 
-const LecturePresenter = ({ attrId, setCursorValue, cursorValue, textRef }) => (
+const LecturePresenter = ({
+  attrId,
+  setCursorValue,
+  cursorValue,
+  textRef,
+  handleOnClickHome,
+}) => (
   <S.Container>
+    <S.HomeButton onClick={handleOnClickHome} />
     <Editor />
     <S.PrevButton
       to={`/${attrId}/preview`}

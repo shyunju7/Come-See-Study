@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { ReactComponent as Home } from "../../assets/menu-home.svg";
 
 export const Container = styled.div`
   width: 100vw;
@@ -36,4 +37,18 @@ export const NextButton = styled(Link)`
   padding: 12px;
   background-color: transparent;
   z-index: 1000;
+`;
+
+export const HomeButton = styled(Home)`
+  position: absolute;
+  top: 55px;
+  right: 50px;
+  width: 47px;
+  height: 49px;
+  cursor: pointer;
+  transition: 2s width height linear;
+  &:hover {
+    width: 58px;
+    height: 60px;
+  }
 `;

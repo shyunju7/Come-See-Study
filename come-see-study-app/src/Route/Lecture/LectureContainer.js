@@ -1,10 +1,15 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import LecturePresenter from "./LecturePresenter";
 
 const LectureContainer = ({ textRef }) => {
   const [cursorValue, setCursorValue] = useState("");
   const { attrId } = useParams();
+  const navigate = useNavigate();
+
+  const handleOnClickHome = () => {
+    navigate(`/${attrId}`);
+  };
 
   return (
     <LecturePresenter
@@ -12,6 +17,7 @@ const LectureContainer = ({ textRef }) => {
       textRef={textRef}
       cursorValue={cursorValue}
       setCursorValue={setCursorValue}
+      handleOnClickHome={handleOnClickHome}
     />
   );
 };
