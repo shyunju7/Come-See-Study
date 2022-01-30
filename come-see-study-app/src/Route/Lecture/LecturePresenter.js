@@ -10,10 +10,17 @@ const LecturePresenter = ({
   cursorValue,
   textRef,
   handleOnClickHome,
+  isChecked,
+  setCheck,
+  setShowGuide,
+  showGuide,
 }) => (
   <S.Container>
+    {showGuide ? (
+      <S.GuideBox>You have to get it right to move on.</S.GuideBox>
+    ) : null}
     <S.HomeButton onClick={handleOnClickHome} />
-    <Editor />
+    <Editor setCheck={setCheck} />
     <S.PrevButton
       to={`/${attrId}/preview`}
       onMouseEnter={() => setCursorValue("prev")}
@@ -23,8 +30,13 @@ const LecturePresenter = ({
     </S.PrevButton>
     <S.NextButton
       to={`/${attrId}/lecture/2`}
-      onMouseEnter={() => setCursorValue("next")}
-      onMouseLeave={() => setCursorValue("")}
+      onMouseEnter={() => {
+        isChecked ? setShowGuide(true) : setCursorValue("next");
+      }}
+      onMouseLeave={() => {
+        setShowGuide(false);
+        setCursorValue("");
+      }}
     >
       <img src={NextIcon} alt="Next" width="32px" />
     </S.NextButton>

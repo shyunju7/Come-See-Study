@@ -6,6 +6,8 @@ const LectureContainer = ({ textRef }) => {
   const [cursorValue, setCursorValue] = useState("");
   const { attrId } = useParams();
   const navigate = useNavigate();
+  const [isChecked, setCheck] = useState(false);
+  const [showGuide, setShowGuide] = useState(false);
 
   const handleOnClickHome = () => {
     navigate(`/${attrId}`);
@@ -18,6 +20,10 @@ const LectureContainer = ({ textRef }) => {
       cursorValue={cursorValue}
       setCursorValue={setCursorValue}
       handleOnClickHome={handleOnClickHome}
+      setCheck={setCheck}
+      isChecked={isChecked}
+      setShowGuide={setShowGuide}
+      showGuide={showGuide}
     />
   );
 };

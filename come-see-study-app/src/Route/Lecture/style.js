@@ -52,3 +52,19 @@ export const HomeButton = styled(Home)`
     height: 60px;
   }
 `;
+
+export const GuideBox = styled.div`
+  width: 322px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  font-weight: 100;
+  font-size: 17.6px;
+  line-height: 28px;
+  padding: 4px;
+  text-align: center;
+  position: absolute;
+  z-index: 1011;
+  top: 48%;
+  right: 50px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+`;

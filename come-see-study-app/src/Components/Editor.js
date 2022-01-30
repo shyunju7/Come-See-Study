@@ -5,7 +5,7 @@ import bubble from "../assets/bg-bubble-preview-text.png";
 
 const Container = styled.div`
   width: 100%;
-  background-color: yellowgreen;
+  background-color: transparent;
   display: flex;
   margin: 45px 0px;
   flex-direction: column;
@@ -24,7 +24,7 @@ const EditorWrapper = styled.div`
   width: 85%;
   height: 45vh;
   display: flex;
-  background-color: rgba(256, 256, 256, 0.6);
+  background-color: transparent;
   opacity: 0.8;
 `;
 
@@ -38,8 +38,8 @@ const QuizWrapper = styled.div`
 
 const EditorInput = styled.textarea`
   resize: none;
-  width: 90%;
-  height: 25%;
+  width: 70%;
+  height: 24px;
   margin-bottom: 12px;
   outline: none;
   border-radius: 8px;
@@ -86,7 +86,8 @@ const Question = styled.label`
 const AnswerImgWrapper = styled.div`
   width: 50%;
   height: 100%;
-  background-color: transparent;
+  background-color: ${(props) =>
+    props.bgColor ? props.bgColor : "transparent"};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -113,7 +114,7 @@ const Text = styled.div`
   display: flex;
 `;
 
-const Editor = () => {
+const Editor = ({ data, setCheck }) => {
   const [code, setCode] = useState("");
   const [buttonState, setButtonState] = useState("check");
   const [readOnly, setreadOnly] = useState(false);
@@ -135,6 +136,7 @@ const Editor = () => {
 
   useEffect(() => {
     buttonState === "correct" ? setreadOnly(true) : setreadOnly(false);
+    buttonState === "correct" ? setCheck(false) : setCheck(true);
   }, [buttonState]);
 
   const handleCheckedValue = () => {
@@ -144,8 +146,18 @@ const Editor = () => {
       ? setButtonState("correct")
       : setButtonState("try-again");
   };
+
+  // 페이지별 문제 수만큼 input 수를 뽑아줌
+  const handleMakeInputBox = () => {
+    const result = [];
+    for (let i = 0; i < 3; i++) {
+      result.push(<EditorInput key={i} type="text" />);
+    }
+    return result;
+  };
   return (
     <Container>
+      {/* 왼쪽 - editor */}
       <EditorWrapper>
         <EditorContentWrapper>
           <Title>#1-1 RGB</Title>
@@ -158,17 +170,23 @@ const Editor = () => {
             Type, following rgb value to get same color (rbg(248, 112, 96))
           </Question>
         </EditorContentWrapper>
-        <AnswerImgWrapper>
+
+        {/* 사용자가 만든 css 타겟 */}
+        <AnswerImgWrapper bgColor="transparent">
           <TargetElement ref={answerElement} />
         </AnswerImgWrapper>
       </EditorWrapper>
+
+      {/* 오른쪽 - quiz */}
       <QuizWrapper>
         <QuizContentWrapper>
           <EditorInput
+            type="text"
             value={code}
             onChange={onChangeCode}
             readOnly={readOnly}
           />
+          {handleMakeInputBox()}
 
           <StateWrapper>
             <StateGuide>
@@ -180,7 +198,7 @@ const Editor = () => {
             />
           </StateWrapper>
         </QuizContentWrapper>
-        <AnswerImgWrapper>
+        <AnswerImgWrapper bgColor="transparent">
           <TargetElement ref={element} id="container" />
         </AnswerImgWrapper>
       </QuizWrapper>
