@@ -12,6 +12,7 @@ const RadioLabel = styled.label`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-right: 20px;
   &:hover {
     background: #ffd05b;
   }

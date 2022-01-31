@@ -138,13 +138,13 @@ const testData = {
     "In CSS colors are specified using predefined color names, or RGB values. An RGB color value is specified with: rgb(red, green, blue)",
   settingsCss: "border-radius:50%; width:200px; height:200px;",
   answerCss: "background-color: rgb(248, 112, 96);",
-  quizCount: 3,
+  quizCount: 1,
   textArr: ["#blue-circle {", "} #red-circle {", "}#green-circle {", "}"],
 };
 
 const classList = {
-  bg: "border-style-bg",
-  e1: "border-style-e1",
+  bg: "border-sides-bg",
+  e1: "border-sides-e1",
   e2: "border-style-e2",
   e3: "border-style-e3",
 };

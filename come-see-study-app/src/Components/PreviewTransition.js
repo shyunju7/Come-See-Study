@@ -47,7 +47,7 @@ const Text = styled.label`
 `;
 
 const ButtonWrapper = styled.div`
-  width: 360px;
+  width: 400px;
   display: flex;
   justify-content: space-between;
   align-self: center;

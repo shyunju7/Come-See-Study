@@ -54,7 +54,6 @@ const LineWrapper = styled.div`
 const ButtonWrapper = styled.div`
   width: 330px;
   display: flex;
-  justify-content: space-between;
   margin-bottom: 28px;
   align-self: center;
 `;
