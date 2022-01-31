@@ -117,42 +117,42 @@
   text-decoration: underline;
 }
 
-text-alignment-e1::before {
+#text-decoration-e1::before {
   content: "WRITING A LETTER";
 }
-#text-alignment-e2 {
+#text-decoration-e2 {
   width: 80%;
   text-align: right;
   text-decoration: none;
   font-size: 16px;
   margin-bottom: 20px;
 }
-#text-alignment-e2::before {
+#text-decoration-e2::before {
   content: "SENDER’s ADDRESS";
 }
-#text-alignment-e3 {
+#text-decoration-e3 {
   width: 80%;
   text-align: left;
   font-size: 16px;
   text-decoration: none;
   margin-bottom: 20px;
 }
-#text-alignment-e3::before {
+#text-decoration-e3::before {
   content: "recipient’s ADDRESS";
 }
-#text-alignment-e4 {
+#text-decoration-e4 {
   width: 80%;
   text-align: justify;
   font-size: 16px;
   text-decoration: none;
   margin-bottom: 32px;
 }
-#text-alignment-e4::before {
+#text-decoration-e4::before {
   content: "lorem ipsum dolor sit amet, consectetur adipiscing elit. nullam posuere leo mi, vitae pretium urna finibus eget. morbi fringilla iaculis fringilla. vestibulum dignissim tempus pellentesque. aenean sagittis aliquet tempus. Proin eu iaculis dolor. Etiam lacinia nunc eu enim egestas, quis viverra elit aliquam. ";
 }
 
 /* TEXT - TRANSFORM */
-#text-decoration-bg {
+#text-transform-bg {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -165,7 +165,7 @@ text-alignment-e1::before {
   border: none;
 }
 
-#text-decoration-e1 {
+#text-transform-e1 {
   width: 80%;
   text-align: center;
   font-size: 16px;
@@ -175,10 +175,10 @@ text-alignment-e1::before {
   text-transform: uppercase;
 }
 
-#text-decoration-e1::before {
+#text-transform-e1::before {
   content: "WRITING A LETTER";
 }
-#text-decoration-e2 {
+#text-transform-e2 {
   width: 80%;
   text-align: right;
   text-decoration: none;
@@ -186,10 +186,10 @@ text-alignment-e1::before {
   margin-bottom: 20px;
   text-transform: uppercase;
 }
-#text-decoration-e2::before {
+#text-transform-e2::before {
   content: "SENDER’s ADDRESS";
 }
-#text-decoration-e3 {
+#text-transform-e3 {
   width: 80%;
   text-align: left;
   font-size: 16px;
@@ -197,10 +197,10 @@ text-alignment-e1::before {
   margin-bottom: 20px;
   text-transform: lowercase;
 }
-#text-decoration-e3::before {
+#text-transform-e3::before {
   content: "recipient’s ADDRESS";
 }
-#text-decoration-e4 {
+#text-transform-e4 {
   width: 80%;
   text-align: justify;
   font-size: 16px;
@@ -208,7 +208,7 @@ text-alignment-e1::before {
   margin-bottom: 32px;
   text-transform: capitalize;
 }
-#text-decoration-e4::before {
+#text-transform-e4::before {
   content: "lorem ipsum dolor sit amet, consectetur adipiscing elit. nullam posuere leo mi, vitae pretium urna finibus eget. morbi fringilla iaculis fringilla. vestibulum dignissim tempus pellentesque. aenean sagittis aliquet tempus. Proin eu iaculis dolor. Etiam lacinia nunc eu enim egestas, quis viverra elit aliquam. ";
 }
 
@@ -269,6 +269,22 @@ text-alignment-e1::before {
   background-repeat: no-repeat;
   background-image: url("../../assets/triangle-img.png");
 }
+#background-position-e2 {
+  width: 100%;
+  height: 100%;
+  background-size: 141px;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-image: url("../../assets/triangle-img.png");
+}
+#background-position-e3 {
+  width: 100%;
+  height: 100%;
+  background-size: 141px;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-image: url("../../assets/triangle-img.png");
+}
 
 /* BORDER - WIDTH */
 #border-width-bg {
@@ -303,11 +319,12 @@ text-alignment-e1::before {
   background-position: center;
   background-size: 240px;
   background-image: url("../../assets/round-img.svg");
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 /* BORDER - STYLE */
 #border-style-bg {
-  background-color: transparent;
+  background-color: #fffdf1;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -318,10 +335,13 @@ text-alignment-e1::before {
   width: 132px;
   height: 132px;
   border-radius: 50%;
+  border-color: teal;
+  border-width: 30px;
   background-color: #0e438b;
   background-position: center;
   background-size: 132px;
   background-image: url("../../assets/round-img.svg");
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   margin-right: 50px;
 }
 
@@ -329,10 +349,13 @@ text-alignment-e1::before {
   width: 132px;
   height: 132px;
   border-radius: 50%;
+  border-color: teal;
+  border-width: 30px;
   background-color: #f87060;
   background-position: center;
   background-size: 132px;
   background-image: url("../../assets/round-img.svg");
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   margin-right: 50px;
 }
 
@@ -340,8 +363,69 @@ text-alignment-e1::before {
   width: 132px;
   height: 132px;
   border-radius: 50%;
+  border-color: teal;
+  border-width: 30px;
   background-color: #24942f;
   background-position: center;
   background-size: 132px;
   background-image: url("../../assets/round-img.svg");
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
+
+/* BORDER - SHORTHAND */
+#border-shorthand-bg {
+  background-color: #fffdf1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#border-shorthand-e1 {
+  width: 240px;
+  height: 240px;
+  background-color: #feeb83;
+  background-position: center;
+  background-size: 240px;
+  background-image: url("../../assets/round-img.svg");
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+/* BORDER - SIDES */
+#border-sides-bg {
+  background-color: #fffdf1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#border-sides-e1 {
+  width: 240px;
+  height: 240px;
+  background-size: 240px;
+  background-color: #24942f;
+  background-position: center;
+  background-image: url("../../assets/round-img.svg");
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+/* TRANSITION - PROPERTY */
+/* #transition-property-bg {
+}
+#transition-property-e1 {
+} */
+
+/* TRANSITION - DURATION */
+/* #transition-duration-bg {
+}
+#transition-duration-e1 {
+} */
+
+/* TRANSITION - TIMING - FUNCTION */
+/* #transition-timing-function-bg {
+}
+#transition-timing-function-e1 {
+}
+#transition-timing-function-e2 {
+}
+#transition-timing-function-e2 {
+} */
