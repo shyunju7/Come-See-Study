@@ -60,7 +60,7 @@ const MenuItemContainer = styled.li`
 const MenuItem = styled.div`
   font-weight: 400;
   font-size: 1rem;
-  line-height: 28px;
+  line-height: 32px;
   &:first-child {
     margin-top: 12px;
   }
@@ -92,6 +92,7 @@ const Menu = ({ setShow }) => {
         <NavLink to={`/color`} onClick={closeMenu}>
           <MenuItemContainer>
             COLOR
+            <MenuItem>rgb</MenuItem>
             <MenuItem>rgba</MenuItem>
             <MenuItem>hex</MenuItem>
           </MenuItemContainer>
@@ -108,22 +109,23 @@ const Menu = ({ setShow }) => {
           <MenuItemContainer>
             BACKGROUND
             <MenuItem>background-color</MenuItem>
-            <MenuItem>background-image</MenuItem>
             <MenuItem>background-repeat</MenuItem>
+            <MenuItem>background-position</MenuItem>
           </MenuItemContainer>
         </NavLink>
         <NavLink to={`/border`} onClick={closeMenu}>
           <MenuItemContainer>
             BORDER
-            <MenuItem>border-style</MenuItem>
+            <MenuItem>border-radius</MenuItem>
             <MenuItem>border-width</MenuItem>
-            <MenuItem>border-color</MenuItem>
+            <MenuItem>border-style</MenuItem>
+            <MenuItem>border</MenuItem>
           </MenuItemContainer>
         </NavLink>
         <NavLink to={`/transition`} onClick={closeMenu}>
           <MenuItemContainer>
             TRANSITION
-            <MenuItem>transition</MenuItem>
+            <MenuItem>transition-property</MenuItem>
             <MenuItem>transition-duration</MenuItem>
             <MenuItem>transition-timing-function</MenuItem>
           </MenuItemContainer>

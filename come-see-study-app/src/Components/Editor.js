@@ -123,6 +123,15 @@ const EditorInput = styled.textarea`
   outline: none;
   border-radius: 8px;
 `;
+
+const CodeText = styled.p`
+  width: 72%;
+  font-size: 18px;
+  text-align: start;
+  margin-bottom: 8px;
+  color: #fef6c9;
+`;
+
 const testData = {
   title: "#1-1 RGB",
   contents:
@@ -130,6 +139,7 @@ const testData = {
   settingsCss: "border-radius:50%; width:200px; height:200px;",
   answerCss: "background-color: rgb(248, 112, 96);",
   quizCount: 3,
+  textArr: ["#blue-circle {", "} #red-circle {", "}#green-circle {", "}"],
 };
 
 const classList = {
@@ -137,7 +147,6 @@ const classList = {
   e1: "border-style-e1",
   e2: "border-style-e2",
   e3: "border-style-e3",
-  e4: "text-decoration-e4",
 };
 
 const Editor = ({ data, setCheck }) => {
@@ -210,16 +219,22 @@ const Editor = ({ data, setCheck }) => {
     const result = [];
     for (let i = 0; i < testData.quizCount; i++) {
       result.push(
-        <EditorInput
-          key={i}
-          type="text"
-          value={code[`i` + (i + 1)]}
-          onChange={onChangeCode}
-          readOnly={readOnly}
-          name={"i" + `${i + 1}`}
-        />
+        <>
+          <CodeText key={i}>{testData.textArr[i]}</CodeText>
+          <EditorInput
+            key={testData.title}
+            type="text"
+            value={code[`i` + (i + 1)]}
+            onChange={onChangeCode}
+            readOnly={readOnly}
+            name={"i" + `${i + 1}`}
+          />
+        </>
       );
     }
+    result.push(
+      <CodeText>{testData.textArr[testData.textArr.length - 1]}</CodeText>
+    );
     return result;
   };
 
