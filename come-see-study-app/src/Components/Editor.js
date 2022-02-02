@@ -14,12 +14,7 @@ const Container = styled.div`
   align-items: center;
 `;
 
-const TargetElement = styled.div`
-  width: 250px;
-  height: 250px;
-  background-color: #757575;
-  border-radius: 50%;
-`;
+const TargetElement = styled.div``;
 
 const EditorWrapper = styled.div`
   width: 85%;
@@ -52,8 +47,9 @@ const QuizContentWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: transparent;
+  background-color: transprearent;
   position: relative;
+  overflow-y: scroll;
 `;
 
 const Title = styled.h2`
@@ -117,19 +113,22 @@ const TargetElementBackground = styled.div`
 
 const EditorInput = styled.textarea`
   resize: none;
-  width: 70%;
+  width: 60%;
   height: 24px;
+  background-color: #f8f8f8;
   margin-bottom: 12px;
   outline: none;
   border-radius: 8px;
 `;
 
-const CodeText = styled.p`
+const CodeText = styled.div`
   width: 72%;
   font-size: 18px;
   text-align: start;
   margin-bottom: 8px;
+  background-color: transparent;
   color: #fef6c9;
+  white-space: pre-wrap;
 `;
 
 const testData = {
@@ -138,18 +137,12 @@ const testData = {
     "In CSS colors are specified using predefined color names, or RGB values. An RGB color value is specified with: rgb(red, green, blue)",
   settingsCss: "border-radius:50%; width:200px; height:200px;",
   answerCss: "background-color: rgb(248, 112, 96);",
-  quizCount: 1,
+  quizCount: 4,
   textArr: ["#blue-circle {", "} #red-circle {", "}#green-circle {", "}"],
 };
 
-const classList = {
-  bg: "border-sides-bg",
-  e1: "border-sides-e1",
-  e2: "border-style-e2",
-  e3: "border-style-e3",
-};
-
 const Editor = ({ data, setCheck }) => {
+  console.log(`data,`, data);
   const [code, setCode] = useState({
     i1: "",
     i2: "",
@@ -185,7 +178,7 @@ const Editor = ({ data, setCheck }) => {
   // 정답화면 세팅
   useEffect(() => {
     if (answerElement) {
-      answerElement.current.style = data.answerCss;
+      answerElement.current.style = "background-color:red;";
     }
   }, []);
 
@@ -203,26 +196,33 @@ const Editor = ({ data, setCheck }) => {
 
   const handleMakeTargetBox = () => {
     const result = [];
-    for (let i = 0; i < testData.quizCount; i++) {
-      result.push(
-        <div
-          key={i}
-          id={`${styles[`${classList[`e` + (i + 1)]}`]}`}
-          name={"e" + `${i + 1}`}
-        />
-      );
+
+    if (data.requiredElements) {
+      console.log(`dd: `, data.requiredElements);
+      for (let i = 0; i < data.quizNum; i++) {
+        result.push(
+          <div
+            key={i}
+            id={`${styles[`${data.requiredElements[`e` + (i + 1)]}`]}`}
+            name={"e" + `${i + 1}`}
+          />
+        );
+      }
+      return result;
     }
-    return result;
   };
 
   const handleMakeInputBox = () => {
     const result = [];
-    for (let i = 0; i < testData.quizCount; i++) {
+    for (let i = 0; i < data.quizNum; i++) {
       result.push(
         <>
-          <CodeText key={i}>{testData.textArr[i]}</CodeText>
+          <CodeText key={data.settingCodes[i] + i}>
+            {data.settingCodes[i]}
+          </CodeText>
+
           <EditorInput
-            key={testData.title}
+            key={data.attrTitle + "input"}
             type="text"
             value={code[`i` + (i + 1)]}
             onChange={onChangeCode}
@@ -232,9 +232,11 @@ const Editor = ({ data, setCheck }) => {
         </>
       );
     }
-    result.push(
-      <CodeText>{testData.textArr[testData.textArr.length - 1]}</CodeText>
-    );
+    if (data.settingCodes) {
+      result.push(
+        <CodeText>{data.settingCodes[data.settingCodes.length - 1]}</CodeText>
+      );
+    }
     return result;
   };
 
@@ -243,17 +245,22 @@ const Editor = ({ data, setCheck }) => {
       {/* 왼쪽 - editor */}
       <EditorWrapper>
         <EditorContentWrapper>
-          <Title>{data.title}</Title>
-          <Description>{data.contents}</Description>
-          <Question>
-            #Use the following properties to create the same image as the given
-            image.
-          </Question>
+          <Title>{data.contentTitle}</Title>
+          <Description>{data.contentDesc}</Description>
+          <Question>{data.quizValue}</Question>
         </EditorContentWrapper>
 
         {/* 사용자가 만든 css 타겟 */}
         <AnswerImgWrapper bgColor="transparent">
-          <TargetElement ref={answerElement} />
+          <TargetElementBackground
+            id={
+              data.requiredElements
+                ? `${styles[`${data.requiredElements.bg}`]}`
+                : ""
+            }
+          >
+            <TargetElement ref={answerElement} />
+          </TargetElementBackground>
         </AnswerImgWrapper>
       </EditorWrapper>
 
@@ -272,7 +279,13 @@ const Editor = ({ data, setCheck }) => {
           </StateWrapper>
         </QuizContentWrapper>
         <AnswerImgWrapper bgColor="#FFFDF1">
-          <TargetElementBackground id={`${styles[`${classList.bg}`]}`}>
+          <TargetElementBackground
+            id={
+              data.requiredElements
+                ? `${styles[`${data.requiredElements.bg}`]}`
+                : ""
+            }
+          >
             {handleMakeTargetBox()}
           </TargetElementBackground>
         </AnswerImgWrapper>

@@ -26,12 +26,26 @@
 /* TEXT - COLOR */
 
 #text-color-bg {
+  width: 593px;
+  height: 424px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-position: center;
+  background-image: url("../../assets/bg-editor-text.png");
+  background-size: 514px 300px;
+  background-repeat: no-repeat;
+  border-radius: 8px;
+  border: none;
 }
 
 #text-color-e1 {
-  color: #dddddd;
+  color: #595959;
+}
+
+#text-color-e1::before {
+  content: "WRITING A LETTER";
 }
 
 /* TEXT - ALGINMENT */
@@ -48,7 +62,7 @@
   background-size: 514px 300px;
   background-repeat: no-repeat;
   border-radius: 8px;
-  border: 2px solid #dddddd;
+  border: none;
 }
 
 #text-alignment-e1 {

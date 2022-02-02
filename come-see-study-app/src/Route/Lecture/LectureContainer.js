@@ -17,7 +17,7 @@ const LectureContainer = ({ textRef }) => {
 
   useEffect(() => {
     learningApi
-      .getLearningPageSettings(attrId, 2)
+      .getLearningPageSettings(attrId, 1)
       .then((value) => {
         setData(value.data);
       })

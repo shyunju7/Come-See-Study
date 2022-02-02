@@ -21,7 +21,7 @@ const AppRouter = ({ textRef }) => {
           element={<Preview textRef={textRef} />}
         />
         <Route
-          path="/:attrId/lecture/:lectureNum"
+          path="/:attrId/lecture/:pageNo"
           element={<Lecture textRef={textRef} />}
         />
       </Routes>

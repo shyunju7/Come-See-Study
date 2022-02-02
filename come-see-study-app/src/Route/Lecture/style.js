@@ -43,7 +43,7 @@ export const NextButton = styled.button`
 export const HomeButton = styled(Home)`
   position: absolute;
   top: 55px;
-  right: 50px;
+  left: 50px;
   width: 47px;
   height: 49px;
   cursor: pointer;
