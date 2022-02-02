@@ -1,22 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { learningApi } from "../../api";
 import LecturePresenter from "./LecturePresenter";
-
-const testData = {
-  title: "#1-1 RGB",
-  contents:
-    "In CSS colors are specified using predefined color names, or RGB values. An RGB color value is specified with: rgb(red, green, blue)",
-  settingsCss: "border-radius:50%; width:200px; height:200px;",
-  answerCss: "background-color: rgb(248, 112, 96);",
-  quizCount: 4,
-};
-
-const classList = {
-  bg: "text-alignment-bg",
-  e1: "text-alignment-e1",
-  e2: "text-alignment-e2",
-  e3: "text-alignment-e3",
-};
 
 const LectureContainer = ({ textRef }) => {
   const [cursorValue, setCursorValue] = useState("");
@@ -24,10 +9,23 @@ const LectureContainer = ({ textRef }) => {
   const navigate = useNavigate();
   const [isChecked, setCheck] = useState(false);
   const [showGuide, setShowGuide] = useState(false);
-
+  const [isLoading, setLoading] = useState(false);
+  const [data, setData] = useState({});
   const handleOnClickHome = () => {
     navigate(`/${attrId}`);
   };
+
+  useEffect(() => {
+    learningApi
+      .getLearningPageSettings(attrId, 2)
+      .then((value) => {
+        setData(value.data);
+      })
+      .catch(function (e) {
+        console.log("error! ", e);
+      })
+      .finally(setLoading(false));
+  }, []);
 
   return (
     <LecturePresenter
@@ -41,8 +39,7 @@ const LectureContainer = ({ textRef }) => {
       setShowGuide={setShowGuide}
       showGuide={showGuide}
       navigate={navigate}
-      testData={testData}
-      classList={classList}
+      data={data}
     />
   );
 };
