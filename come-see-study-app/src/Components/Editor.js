@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import styled, { createGlobalStyle } from "styled-components";
+import styled from "styled-components";
 import StateButton from "./StateButton";
 import styles from "../Route/Lecture/lecture.module.css";
 import { learningApi } from "../api";
@@ -166,8 +166,10 @@ const Editor = ({ data, setCheck, attrId, pageNo }) => {
 
   const onChangeCode = (e) => {
     const { name, value } = e.target;
-    setCode({ ...code, [name]: value });
+    setCode({ ...code, [name]: value.replace(/\s|　/gi, "") });
     setButtonState("check");
+
+    console.log(name, value);
 
     if (e1 && name === "i1") {
       e1[0].style = e.target.value;
