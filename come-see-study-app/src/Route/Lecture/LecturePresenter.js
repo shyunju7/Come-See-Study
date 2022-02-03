@@ -45,14 +45,19 @@ const LecturePresenter = ({
       </S.PrevButton>
       <S.NextButton
         onClick={() => {
-          if (pageNo < totalPage) {
+          if (isChecked && !showGuide && pageNo < totalPage) {
             navigate(`/${attrId}/lecture/${Number(pageNo) + 1}`);
             handleSetPage(attrId, Number(pageNo) + 1);
           }
         }}
-        // onMouseEnter={() => {
-        //   isChecked ? setShowGuide(true) : setCursorValue("next");
-        // }}
+        onMouseEnter={() => {
+          // isChecked ? setShowGuide(true) : setCursorValue("next");
+          if (isChecked && !showGuide) {
+            setCursorValue("next");
+          } else if (!isChecked || showGuide) {
+            setShowGuide(true);
+          }
+        }}
         onMouseLeave={() => {
           setShowGuide(false);
           setCursorValue("");

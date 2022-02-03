@@ -8,10 +8,16 @@ const LectureContainer = ({ textRef }) => {
   const { attrId, pageNo } = useParams();
   const navigate = useNavigate();
   const [isChecked, setCheck] = useState(false);
-  const [showGuide, setShowGuide] = useState(false);
+  const [showGuide, setShowGuide] = useState(true);
   const [isLoading, setLoading] = useState(false);
   const [totalPage, setTotalPage] = useState(-1);
   const [data, setData] = useState({});
+
+  useEffect(() => {
+    if (isChecked) {
+      setShowGuide(false);
+    }
+  }, [isChecked]);
 
   const handleOnClickHome = () => {
     navigate(`/${attrId}`);
@@ -22,7 +28,8 @@ const LectureContainer = ({ textRef }) => {
       navigate(`/${attrId}/preview`);
       return;
     }
-
+    setCheck(false);
+    setShowGuide(true);
     learningApi
       .getLearningPageSettings(attrId, pageNo)
       .then((value) => {

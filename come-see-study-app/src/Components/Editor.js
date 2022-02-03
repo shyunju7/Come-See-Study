@@ -145,6 +145,7 @@ const Editor = ({ data, setCheck }) => {
   const onChangeCode = (e) => {
     const { name, value } = e.target;
     setCode({ ...code, [name]: value });
+    setButtonState("click");
 
     if (e1 && name === "i1") {
       e1[0].style = e.target.value;
@@ -160,6 +161,9 @@ const Editor = ({ data, setCheck }) => {
   };
 
   useEffect(() => {
+    console.log(`chage Page!`);
+    setCode({ i1: "", i2: "", i3: "", i4: "" });
+    setButtonState("check");
     const answerE1 = document.getElementsByName("answer-e1");
     const answerE2 = document.getElementsByName("answer-e2");
     const answerE3 = document.getElementsByName("answer-e3");
@@ -181,14 +185,13 @@ const Editor = ({ data, setCheck }) => {
 
   useEffect(() => {
     buttonState === "correct" ? setreadOnly(true) : setreadOnly(false);
-    buttonState === "correct" ? setCheck(false) : setCheck(true);
+    buttonState === "correct" ? setCheck(true) : setCheck(false);
   }, [buttonState]);
 
   const handleCheckedValue = () => {
-    // 정답비교
-    // "" == testData.answerCss
-    //   ? setButtonState("correct")
-    //   : setButtonState("try-again");
+    code.i1 == data.answerCodes.e1
+      ? setButtonState("correct")
+      : setButtonState("try-again");
   };
 
   const handleMakeAnswerBox = () => {
