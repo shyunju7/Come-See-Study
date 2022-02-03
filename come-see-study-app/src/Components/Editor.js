@@ -1,7 +1,6 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import StateButton from "./StateButton";
-import bubble from "../assets/bg-bubble-preview-text.png";
 import styles from "../Route/Lecture/lecture.module.css";
 
 const Container = styled.div`

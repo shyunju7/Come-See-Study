@@ -4,14 +4,12 @@ import {
   Navigate,
   Route,
   Routes,
-  useParams,
 } from "react-router-dom";
 import Main from "../src/Route/Main";
 import Lecture from "../src/Route/Lecture";
 import Preview from "../src/Route/Preview";
 import NotFound from "../src/Pages/NotFound";
 const AppRouter = ({ textRef }) => {
-  const { attrId, pageNo } = useParams();
   return (
     <Router>
       <Routes>
