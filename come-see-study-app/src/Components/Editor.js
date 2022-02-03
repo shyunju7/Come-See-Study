@@ -14,8 +14,6 @@ const Container = styled.div`
   align-items: center;
 `;
 
-const TargetElement = styled.div``;
-
 const EditorWrapper = styled.div`
   width: 85%;
   height: 45vh;
@@ -97,18 +95,16 @@ const StateWrapper = styled.div`
   bottom: 30px;
 `;
 
-const Text = styled.div`
-  font-size: 18px;
-  background-image: url(${bubble});
-  background-position: center center;
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  display: flex;
-`;
-
 const TargetElementBackground = styled.div`
   width: 592px;
   height: 324px;
+`;
+
+const Div = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const EditorInput = styled.textarea`
@@ -131,18 +127,7 @@ const CodeText = styled.div`
   white-space: pre-wrap;
 `;
 
-const testData = {
-  title: "#1-1 RGB",
-  contents:
-    "In CSS colors are specified using predefined color names, or RGB values. An RGB color value is specified with: rgb(red, green, blue)",
-  settingsCss: "border-radius:50%; width:200px; height:200px;",
-  answerCss: "background-color: rgb(248, 112, 96);",
-  quizCount: 4,
-  textArr: ["#blue-circle {", "} #red-circle {", "}#green-circle {", "}"],
-};
-
 const Editor = ({ data, setCheck }) => {
-  console.log(`data,`, data);
   const [code, setCode] = useState({
     i1: "",
     i2: "",
@@ -192,9 +177,6 @@ const Editor = ({ data, setCheck }) => {
     if (answerE4[0]) {
       answerE4[0].style = data.answerCodes.e4;
     }
-
-    //answerE1[0].classList.add(styles["answer-border-style-e1"]);
-    // answerE1[0].classList.add(styles[`${data.answerCodes.e1}`]);
   }, [data]);
 
   useEffect(() => {
@@ -204,9 +186,9 @@ const Editor = ({ data, setCheck }) => {
 
   const handleCheckedValue = () => {
     // 정답비교
-    "" == testData.answerCss
-      ? setButtonState("correct")
-      : setButtonState("try-again");
+    // "" == testData.answerCss
+    //   ? setButtonState("correct")
+    //   : setButtonState("try-again");
   };
 
   const handleMakeAnswerBox = () => {
@@ -214,7 +196,6 @@ const Editor = ({ data, setCheck }) => {
 
     if (data.answerCodes) {
       for (let i = 0; i < data.quizNum; i++) {
-        console.log(`e's name: `, data.requiredElements[`e` + (i + 1)]);
         result.push(
           <div
             key={"answer" + i}
@@ -231,7 +212,6 @@ const Editor = ({ data, setCheck }) => {
     const result = [];
 
     if (data.requiredElements) {
-      console.log(`dd: `, data.requiredElements);
       for (let i = 0; i < data.quizNum; i++) {
         result.push(
           <div
@@ -249,25 +229,27 @@ const Editor = ({ data, setCheck }) => {
     const result = [];
     for (let i = 0; i < data.quizNum; i++) {
       result.push(
-        <>
+        <Div key={i}>
           <CodeText key={data.settingCodes[i] + i}>
             {data.settingCodes[i]}
           </CodeText>
 
           <EditorInput
-            key={data.attrTitle + "input"}
+            key={data.attrTitle + "input" + i}
             type="text"
             value={code[`i` + (i + 1)]}
             onChange={onChangeCode}
             readOnly={readOnly}
             name={"i" + `${i + 1}`}
           />
-        </>
+        </Div>
       );
     }
     if (data.settingCodes) {
       result.push(
-        <CodeText>{data.settingCodes[data.settingCodes.length - 1]}</CodeText>
+        <CodeText key="settingCodes-last">
+          {data.settingCodes[data.settingCodes.length - 1]}
+        </CodeText>
       );
     }
     return result;
@@ -275,7 +257,6 @@ const Editor = ({ data, setCheck }) => {
 
   return (
     <Container>
-      {/* 왼쪽 - editor */}
       <EditorWrapper>
         <EditorContentWrapper>
           <Title>{data.contentTitle}</Title>
@@ -293,12 +274,10 @@ const Editor = ({ data, setCheck }) => {
             }
           >
             {handleMakeAnswerBox()}
-            {/* <TargetElement ref={answerElement} /> */}
           </TargetElementBackground>
         </AnswerImgWrapper>
       </EditorWrapper>
 
-      {/* 오른쪽 - quiz */}
       <QuizWrapper>
         <QuizContentWrapper>
           {handleMakeInputBox()}

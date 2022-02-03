@@ -54,6 +54,7 @@ const LectureContainer = ({ textRef }) => {
       handleSetPage={handleSetPage}
       pageNo={pageNo}
       totalPage={totalPage}
+      setPageNo={setPageNo}
     />
   );
 };

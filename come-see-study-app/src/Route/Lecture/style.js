@@ -17,7 +17,7 @@ export const CursorDescription = styled.div`
   font-size: 18px;
 `;
 
-export const PrevButton = styled(Link)`
+export const PrevButton = styled.button`
   border: none;
   outline: none;
   position: absolute;

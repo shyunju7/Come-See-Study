@@ -19,6 +19,7 @@ const LecturePresenter = ({
   handleSetPage,
   pageNo,
   totalPage,
+  setPageNo,
 }) => (
   <S.Container>
     {showGuide ? (
@@ -27,6 +28,13 @@ const LecturePresenter = ({
     <S.HomeButton onClick={handleOnClickHome} />
     <Editor setCheck={setCheck} data={data} />
     <S.PrevButton
+      onClick={() => {
+        if (pageNo >= 1) {
+          console.log(pageNo - 1);
+          navigate(`/${attrId}/lecture/${pageNo - 1}`);
+          handleSetPage(attrId, pageNo);
+        }
+      }}
       to={`/${attrId}/preview`}
       onMouseEnter={() => setCursorValue("prev")}
       onMouseLeave={() => setCursorValue("")}
