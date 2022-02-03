@@ -166,7 +166,7 @@ const Editor = ({ data, setCheck, attrId, pageNo }) => {
 
   const onChangeCode = (e) => {
     const { name, value } = e.target;
-    setCode({ ...code, [name]: value.replace(/\s|　/gi, "") });
+    setCode({ ...code, [name]: value });
     setButtonState("check");
 
     console.log(name, value);
