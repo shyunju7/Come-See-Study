@@ -71,6 +71,7 @@ const Description = styled.label`
   line-height: 21px;
   letter-spacing: -0.015em;
   width: 80%;
+  white-space: pre-wrap;
 `;
 
 const Question = styled.label`
@@ -80,6 +81,7 @@ const Question = styled.label`
   font-weight: bold;
   font-size: 16px;
   line-height: 25px;
+  white-space: pre-wrap;
 `;
 
 const AnswerImgWrapper = styled.div`
@@ -255,8 +257,12 @@ const Editor = ({ data, setCheck, attrId, pageNo }) => {
       console.log(`?? ${i}+1`, checkedValue[`e` + (i + 1)]);
     }
 
-    allCheck ? setButtonState("correct") : setButtonState("try-again");
-    window.localStorage.setItem(`${attrId}`, pageNo);
+    if (allCheck) {
+      setButtonState("correct");
+      window.localStorage.setItem(`${attrId}`, pageNo);
+    } else {
+      setButtonState("try-again");
+    }
   }, [checkedValue]);
 
   const handleMakeAnswerBox = () => {

@@ -51,9 +51,10 @@ const LectureContainer = ({ textRef }) => {
     } else if (window.localStorage.getItem(attrId) == 0) {
       if (pageNo > 1) {
         navigate(`/${attrId}`);
+      } else {
+        setShowGuide(true);
+        setCheck(false);
       }
-      setShowGuide(true);
-      setCheck(false);
     } else {
       navigate(`/${attrId}`);
     }
