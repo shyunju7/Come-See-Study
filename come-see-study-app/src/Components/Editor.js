@@ -28,6 +28,7 @@ const QuizWrapper = styled.div`
   display: flex;
   flex-direction: row;
   background-color: #806d40;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 `;
 
 // 문제 설명
@@ -163,6 +164,7 @@ const Editor = ({ data, setCheck }) => {
   };
 
   useEffect(() => {
+    console.log(`prev code..`, code);
     console.log(`chage Page!`);
     setCode({ i1: "", i2: "", i3: "", i4: "" });
     setButtonState("check");
@@ -171,7 +173,9 @@ const Editor = ({ data, setCheck }) => {
     const answerE3 = document.getElementsByName("answer-e3");
     const answerE4 = document.getElementsByName("answer-e4");
 
+    console.log(`current code..`, code);
     if (answerE1[0]) {
+      console.log(`answerE1[0] code..`, code);
       answerE1[0].style = data.answerCodes.e1;
     }
     if (answerE2[0]) {
