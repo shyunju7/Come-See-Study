@@ -16,6 +16,9 @@ const LecturePresenter = ({
   showGuide,
   navigate,
   data,
+  handleSetPage,
+  pageNo,
+  totalPage,
 }) => (
   <S.Container>
     {showGuide ? (
@@ -32,8 +35,9 @@ const LecturePresenter = ({
     </S.PrevButton>
     <S.NextButton
       onClick={() => {
-        if (!showGuide) {
-          navigate(`/${attrId}/lecture/2`);
+        if (showGuide && pageNo <= totalPage) {
+          navigate(`/${attrId}/lecture/${pageNo}`);
+          handleSetPage(attrId, pageNo);
         }
       }}
       onMouseEnter={() => {

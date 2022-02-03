@@ -10,21 +10,32 @@ const LectureContainer = ({ textRef }) => {
   const [isChecked, setCheck] = useState(false);
   const [showGuide, setShowGuide] = useState(false);
   const [isLoading, setLoading] = useState(false);
+  const [pageNo, setPageNo] = useState(1);
+  const [totalPage, setTotalPage] = useState(-1);
   const [data, setData] = useState({});
   const handleOnClickHome = () => {
     navigate(`/${attrId}`);
+    setPageNo(1);
   };
 
-  useEffect(() => {
+  const handleSetPage = (attrId, pageNo) => {
     learningApi
-      .getLearningPageSettings(attrId, 1)
+      .getLearningPageSettings(attrId, pageNo)
       .then((value) => {
         setData(value.data);
+        setTotalPage(value.data.totalPage);
       })
       .catch(function (e) {
         console.log("error! ", e);
       })
-      .finally(setLoading(false));
+      .finally(
+        setLoading(false),
+        setPageNo((prev) => prev + 1)
+      );
+  };
+
+  useEffect(() => {
+    handleSetPage(attrId, 1);
   }, []);
 
   return (
@@ -40,6 +51,9 @@ const LectureContainer = ({ textRef }) => {
       showGuide={showGuide}
       navigate={navigate}
       data={data}
+      handleSetPage={handleSetPage}
+      pageNo={pageNo}
+      totalPage={totalPage}
     />
   );
 };
