@@ -70,7 +70,7 @@ const Description = styled.label`
   font-size: 17.6px;
   line-height: 21px;
   letter-spacing: -0.015em;
-  width: 80%;
+  width: 90%;
   white-space: pre-wrap;
 `;
 
