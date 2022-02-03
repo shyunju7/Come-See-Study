@@ -169,8 +169,6 @@ const Editor = ({ data, setCheck, attrId, pageNo }) => {
     setCode({ ...code, [name]: value });
     setButtonState("check");
 
-    console.log(name, value);
-
     if (e1 && name === "i1") {
       e1[0].style = e.target.value;
     } else if (e2 && name === "i2") {
