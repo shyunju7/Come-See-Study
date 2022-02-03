@@ -19,9 +19,9 @@ const EditorWrapper = styled.div`
   height: 45vh;
   display: flex;
   background-color: transparent;
-  opacity: 0.8;
 `;
 
+// 코드창
 const QuizWrapper = styled.div`
   width: 85%;
   height: 45vh;
@@ -30,6 +30,7 @@ const QuizWrapper = styled.div`
   background-color: #806d40;
 `;
 
+// 문제 설명
 const EditorContentWrapper = styled.div`
   width: 50%;
   height: 100%;
@@ -68,6 +69,7 @@ const Description = styled.label`
 const Question = styled.label`
   font-size: 16px;
   margin-left: 24px;
+  font-weight: bold;
 `;
 
 const AnswerImgWrapper = styled.div`

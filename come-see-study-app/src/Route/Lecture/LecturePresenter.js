@@ -51,7 +51,6 @@ const LecturePresenter = ({
           }
         }}
         onMouseEnter={() => {
-          // isChecked ? setShowGuide(true) : setCursorValue("next");
           if (isChecked && !showGuide) {
             setCursorValue("next");
           } else if (!isChecked || showGuide) {

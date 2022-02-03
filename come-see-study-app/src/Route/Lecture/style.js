@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 import { ReactComponent as Home } from "../../assets/menu-home.svg";
 
 export const Container = styled.div`
