@@ -138,6 +138,7 @@ const CodeText = styled.div`
   background-color: transparent;
   color: #fef6c9;
   white-space: pre-wrap;
+  line-height: 26px;
 `;
 
 const Editor = ({ data, setCheck, attrId, pageNo }) => {
@@ -164,7 +165,7 @@ const Editor = ({ data, setCheck, attrId, pageNo }) => {
   const onChangeCode = (e) => {
     const { name, value } = e.target;
     setCode({ ...code, [name]: value });
-    setButtonState("click");
+    setButtonState("check");
 
     if (e1 && name === "i1") {
       e1[0].style = e.target.value;

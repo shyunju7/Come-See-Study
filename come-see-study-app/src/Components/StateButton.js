@@ -25,7 +25,7 @@ const StateButton = ({ stateText, handleCheckedValue }) => {
   const [textColor, setTextColor] = useState("#fef6c9");
   useEffect(() => {
     switch (stateText) {
-      case "click":
+      case "check":
         setTextColor("#fef6c9");
         break;
       case "correct":
@@ -43,7 +43,7 @@ const StateButton = ({ stateText, handleCheckedValue }) => {
   return (
     <Container color={textColor} onClick={handleCheckedValue}>
       {stateText === "check" ? (
-        "click"
+        "check"
       ) : stateText === "correct" ? (
         <IoCheckmark size="24px" />
       ) : (
