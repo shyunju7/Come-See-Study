@@ -29,11 +29,11 @@ const LecturePresenter = ({
         <S.GuideBox>You have to get it right to move on.</S.GuideBox>
       ) : null}
       <S.HomeButton onClick={handleOnClickHome} />
-      <Editor setCheck={setCheck} data={data} />
+      <Editor setCheck={setCheck} data={data} attrId={attrId} pageNo={pageNo} />
       <S.PrevButton
         onClick={() => {
           if (pageNo >= 1) {
-            navigate(`/${attrId}/lecture/${Number(pageNo) - 1}`);
+            navigate(`/${attrId}/learning/${Number(pageNo) - 1}`);
             handleSetPage(attrId, Number(pageNo) - 1);
           }
         }}
@@ -46,7 +46,11 @@ const LecturePresenter = ({
       <S.NextButton
         onClick={() => {
           if (isChecked && !showGuide && pageNo < totalPage) {
-            navigate(`/${attrId}/lecture/${Number(pageNo) + 1}`);
+            navigate(`/${attrId}/learning/${Number(pageNo) + 1}`);
+            handleSetPage(attrId, Number(pageNo) + 1);
+          }
+          if (window.localStorage.getItem(attrId) >= pageNo) {
+            navigate(`/${attrId}/learning/${Number(pageNo) + 1}`);
             handleSetPage(attrId, Number(pageNo) + 1);
           }
         }}

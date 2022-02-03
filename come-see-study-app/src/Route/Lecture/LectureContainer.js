@@ -44,6 +44,16 @@ const LectureContainer = ({ textRef }) => {
 
   useEffect(() => {
     handleSetPage(attrId, pageNo);
+
+    if (window.localStorage.getItem(attrId) >= pageNo) {
+      setShowGuide(false);
+      setCheck(true);
+    } else if (window.localStorage.getItem(attrId) == 0) {
+      setShowGuide(true);
+      setCheck(false);
+    } else {
+      navigate(`/${attrId}`);
+    }
   }, []);
 
   return (

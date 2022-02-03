@@ -11,6 +11,10 @@ const PreviewContainer = ({ textRef }) => {
     setTimeout(() => {
       setLoading(false);
     }, 500);
+
+    if (window.localStorage.getItem(attrId) == null) {
+      window.localStorage.setItem(attrId, 0);
+    }
   }, []);
 
   return (

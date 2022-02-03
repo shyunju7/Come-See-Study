@@ -140,7 +140,7 @@ const CodeText = styled.div`
   white-space: pre-wrap;
 `;
 
-const Editor = ({ data, setCheck }) => {
+const Editor = ({ data, setCheck, attrId, pageNo }) => {
   const [code, setCode] = useState({
     i1: "",
     i2: "",
@@ -219,6 +219,9 @@ const Editor = ({ data, setCheck }) => {
     code.i1 == data.answerCodes.e1
       ? setButtonState("correct")
       : setButtonState("try-again");
+
+    console.log(`정답 페이지? `, attrId, pageNo);
+    window.localStorage.setItem(`${attrId}`, pageNo);
   };
 
   const handleMakeAnswerBox = () => {

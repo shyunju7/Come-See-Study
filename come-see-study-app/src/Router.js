@@ -4,12 +4,14 @@ import {
   Navigate,
   Route,
   Routes,
+  useParams,
 } from "react-router-dom";
 import Main from "../src/Route/Main";
 import Lecture from "../src/Route/Lecture";
 import Preview from "../src/Route/Preview";
 import NotFound from "../src/Pages/NotFound";
 const AppRouter = ({ textRef }) => {
+  const { attrId, pageNo } = useParams();
   return (
     <Router>
       <Routes>
@@ -21,7 +23,7 @@ const AppRouter = ({ textRef }) => {
           element={<Preview textRef={textRef} />}
         />
         <Route
-          path="/:attrId/lecture/:pageNo"
+          path="/:attrId/learning/:pageNo"
           element={<Lecture textRef={textRef} />}
         />
       </Routes>

@@ -14,7 +14,6 @@ function App() {
 
   useEffect(() => {
     document.addEventListener("mousemove", handleMouseMove);
-
     return () => {
       document.removeEventListener("mousemove", handleMouseMove);
     };
