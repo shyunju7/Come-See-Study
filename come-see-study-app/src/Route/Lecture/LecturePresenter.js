@@ -16,11 +16,9 @@ const LecturePresenter = ({
   showGuide,
   navigate,
   data,
-  handleSetNextPage,
-  handleSetPrevPage,
   pageNo,
+  handleSetPage,
   totalPage,
-  setPageNo,
   isLoading,
 }) =>
   isLoading ? (
@@ -35,8 +33,8 @@ const LecturePresenter = ({
       <S.PrevButton
         onClick={() => {
           if (pageNo >= 1) {
-            navigate(`/${attrId}/lecture/${pageNo}`);
-            handleSetPrevPage(attrId, pageNo);
+            navigate(`/${attrId}/lecture/${Number(pageNo) - 1}`);
+            handleSetPage(attrId, Number(pageNo) - 1);
           }
         }}
         to={`/${attrId}/preview`}
@@ -47,14 +45,14 @@ const LecturePresenter = ({
       </S.PrevButton>
       <S.NextButton
         onClick={() => {
-          if (showGuide && pageNo <= totalPage) {
-            navigate(`/${attrId}/lecture/${pageNo}`);
-            handleSetNextPage(attrId, pageNo);
+          if (pageNo < totalPage) {
+            navigate(`/${attrId}/lecture/${Number(pageNo) + 1}`);
+            handleSetPage(attrId, Number(pageNo) + 1);
           }
         }}
-        onMouseEnter={() => {
-          isChecked ? setShowGuide(true) : setCursorValue("next");
-        }}
+        // onMouseEnter={() => {
+        //   isChecked ? setShowGuide(true) : setCursorValue("next");
+        // }}
         onMouseLeave={() => {
           setShowGuide(false);
           setCursorValue("");

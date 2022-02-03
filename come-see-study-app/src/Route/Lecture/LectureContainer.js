@@ -5,22 +5,26 @@ import LecturePresenter from "./LecturePresenter";
 
 const LectureContainer = ({ textRef }) => {
   const [cursorValue, setCursorValue] = useState("");
-  const { attrId } = useParams();
+  const { attrId, pageNo } = useParams();
   const navigate = useNavigate();
   const [isChecked, setCheck] = useState(false);
   const [showGuide, setShowGuide] = useState(false);
   const [isLoading, setLoading] = useState(false);
-  const [pageNo, setPageNo] = useState(1);
   const [totalPage, setTotalPage] = useState(-1);
   const [data, setData] = useState({});
+
   const handleOnClickHome = () => {
     navigate(`/${attrId}`);
-    setPageNo(1);
   };
 
-  const handleSetPrevPage = (attrId, pageNo) => {
+  const handleSetPage = (attrId, pageNo) => {
+    if (pageNo === 0) {
+      navigate(`/${attrId}/preview`);
+      return;
+    }
+
     learningApi
-      .getLearningPageSettings(attrId, pageNo - 1)
+      .getLearningPageSettings(attrId, pageNo)
       .then((value) => {
         setData(value.data);
         setTotalPage(value.data.totalPage);
@@ -28,29 +32,11 @@ const LectureContainer = ({ textRef }) => {
       .catch(function (e) {
         console.log("error! ", e);
       })
-      .finally(
-        setLoading(false),
-        setPageNo((prev) => prev - 1)
-      );
-  };
-  const handleSetNextPage = (attrId, pageNo) => {
-    learningApi
-      .getLearningPageSettings(attrId, pageNo + 1)
-      .then((value) => {
-        setData(value.data);
-        setTotalPage(value.data.totalPage);
-      })
-      .catch(function (e) {
-        console.log("error! ", e);
-      })
-      .finally(
-        setLoading(false),
-        setPageNo((prev) => prev + 1)
-      );
+      .finally(setLoading(false));
   };
 
   useEffect(() => {
-    handleSetNextPage(attrId, 1);
+    handleSetPage(attrId, pageNo);
   }, []);
 
   return (
@@ -67,11 +53,9 @@ const LectureContainer = ({ textRef }) => {
       navigate={navigate}
       data={data}
       isLoading={isLoading}
-      handleSetNextPage={handleSetNextPage}
-      handleSetPrevPage={handleSetPrevPage}
-      pageNo={pageNo}
+      handleSetPage={handleSetPage}
       totalPage={totalPage}
-      setPageNo={setPageNo}
+      pageNo={pageNo}
     />
   );
 };
