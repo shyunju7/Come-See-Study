@@ -157,7 +157,6 @@ const Editor = ({ data, setCheck }) => {
   const e3 = document.getElementsByName("e3");
   const e4 = document.getElementsByName("e4");
 
-  let answerElement = useRef();
   const onChangeCode = (e) => {
     const { name, value } = e.target;
     setCode({ ...code, [name]: value });
@@ -175,12 +174,28 @@ const Editor = ({ data, setCheck }) => {
     }
   };
 
-  // 정답화면 세팅
   useEffect(() => {
-    if (answerElement) {
-      answerElement.current.style = "background-color:red;";
+    const answerE1 = document.getElementsByName("answer-e1");
+    const answerE2 = document.getElementsByName("answer-e2");
+    const answerE3 = document.getElementsByName("answer-e3");
+    const answerE4 = document.getElementsByName("answer-e4");
+
+    if (answerE1[0]) {
+      answerE1[0].style = data.answerCodes.e1;
     }
-  }, []);
+    if (answerE2[0]) {
+      answerE2[0].style = data.answerCodes.e2;
+    }
+    if (answerE3[0]) {
+      answerE3[0].style = data.answerCodes.e3;
+    }
+    if (answerE4[0]) {
+      answerE4[0].style = data.answerCodes.e4;
+    }
+
+    //answerE1[0].classList.add(styles["answer-border-style-e1"]);
+    // answerE1[0].classList.add(styles[`${data.answerCodes.e1}`]);
+  }, [data]);
 
   useEffect(() => {
     buttonState === "correct" ? setreadOnly(true) : setreadOnly(false);
@@ -192,6 +207,24 @@ const Editor = ({ data, setCheck }) => {
     "" == testData.answerCss
       ? setButtonState("correct")
       : setButtonState("try-again");
+  };
+
+  const handleMakeAnswerBox = () => {
+    const result = [];
+
+    if (data.answerCodes) {
+      for (let i = 0; i < data.quizNum; i++) {
+        console.log(`e's name: `, data.requiredElements[`e` + (i + 1)]);
+        result.push(
+          <div
+            key={"answer" + i}
+            id={`${styles[`${data.requiredElements[`e` + (i + 1)]}`]}`}
+            name={"answer-e" + `${i + 1}`}
+          />
+        );
+      }
+      return result;
+    }
   };
 
   const handleMakeTargetBox = () => {
@@ -250,7 +283,7 @@ const Editor = ({ data, setCheck }) => {
           <Question>{data.quizValue}</Question>
         </EditorContentWrapper>
 
-        {/* 사용자가 만든 css 타겟 */}
+        {/* 정답 이미지 */}
         <AnswerImgWrapper bgColor="transparent">
           <TargetElementBackground
             id={
@@ -259,7 +292,8 @@ const Editor = ({ data, setCheck }) => {
                 : ""
             }
           >
-            <TargetElement ref={answerElement} />
+            {handleMakeAnswerBox()}
+            {/* <TargetElement ref={answerElement} /> */}
           </TargetElementBackground>
         </AnswerImgWrapper>
       </EditorWrapper>

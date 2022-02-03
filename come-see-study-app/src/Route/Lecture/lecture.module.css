@@ -1,6 +1,9 @@
 /* COLOR - RGB */
 #color-rgb-bg {
   background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #color-rgb-e1 {
@@ -15,6 +18,9 @@
 
 #color-rgba-bg {
   background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #color-rgba-e1 {
@@ -357,6 +363,10 @@
   background-image: url("../../assets/round-img.svg");
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   margin-right: 50px;
+}
+
+.answer-border-style-e1 {
+  border-style: solid;
 }
 
 #border-style-e2 {
