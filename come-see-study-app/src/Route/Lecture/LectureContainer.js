@@ -18,9 +18,24 @@ const LectureContainer = ({ textRef }) => {
     setPageNo(1);
   };
 
-  const handleSetPage = (attrId, pageNo) => {
+  const handleSetPrevPage = (attrId, pageNo) => {
     learningApi
-      .getLearningPageSettings(attrId, pageNo)
+      .getLearningPageSettings(attrId, pageNo - 1)
+      .then((value) => {
+        setData(value.data);
+        setTotalPage(value.data.totalPage);
+      })
+      .catch(function (e) {
+        console.log("error! ", e);
+      })
+      .finally(
+        setLoading(false),
+        setPageNo((prev) => prev - 1)
+      );
+  };
+  const handleSetNextPage = (attrId, pageNo) => {
+    learningApi
+      .getLearningPageSettings(attrId, pageNo + 1)
       .then((value) => {
         setData(value.data);
         setTotalPage(value.data.totalPage);
@@ -35,7 +50,7 @@ const LectureContainer = ({ textRef }) => {
   };
 
   useEffect(() => {
-    handleSetPage(attrId, 1);
+    handleSetNextPage(attrId, 1);
   }, []);
 
   return (
@@ -51,7 +66,9 @@ const LectureContainer = ({ textRef }) => {
       showGuide={showGuide}
       navigate={navigate}
       data={data}
-      handleSetPage={handleSetPage}
+      isLoading={isLoading}
+      handleSetNextPage={handleSetNextPage}
+      handleSetPrevPage={handleSetPrevPage}
       pageNo={pageNo}
       totalPage={totalPage}
       setPageNo={setPageNo}
