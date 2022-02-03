@@ -264,7 +264,7 @@
 #background-color-bg {
   width: 100%;
   height: 100%;
-  background-color: #feeb83;
+  background-color: #24942f;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -284,7 +284,7 @@
 #background-repeat-bg {
   width: 100%;
   height: 100%;
-  background-color: #feeb83;
+  background-color: #fffdf1;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -302,7 +302,7 @@
 #background-position-bg {
   width: 100%;
   height: 100%;
-  background-color: #feeb83;
+  background-color: #fffdf1;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -345,6 +345,8 @@
   width: 240px;
   height: 240px;
   background-size: 240px;
+  border-color: #f87060;
+  border-style: solid;
   border-radius: 50%;
   background-position: center;
   background-repeat: no-repeat;
@@ -371,7 +373,7 @@
 
 /* BORDER - STYLE */
 #border-style-bg {
-  background-color: #fffdf1;
+  background-color: transparent;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -382,8 +384,8 @@
   width: 132px;
   height: 132px;
   border-radius: 50%;
-  border-color: teal;
-  border-width: 30px;
+  border-color: #000;
+  border-width: 15px;
   background-color: #0e438b;
   background-position: center;
   background-size: 132px;
@@ -400,8 +402,8 @@
   width: 132px;
   height: 132px;
   border-radius: 50%;
-  border-color: teal;
-  border-width: 30px;
+  border-color: #000;
+  border-width: 15px;
   background-color: #f87060;
   background-position: center;
   background-size: 132px;
@@ -414,8 +416,8 @@
   width: 132px;
   height: 132px;
   border-radius: 50%;
-  border-color: teal;
-  border-width: 30px;
+  border-color: #000;
+  border-width: 15px;
   background-color: #24942f;
   background-position: center;
   background-size: 132px;
@@ -425,7 +427,7 @@
 
 /* BORDER - SHORTHAND */
 #border-shorthand-bg {
-  background-color: #fffdf1;
+  background-color: transparent;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -443,7 +445,7 @@
 
 /* BORDER - SIDES */
 #border-sides-bg {
-  background-color: #fffdf1;
+  background-color: transparent;
   display: flex;
   justify-content: center;
   align-items: center;
