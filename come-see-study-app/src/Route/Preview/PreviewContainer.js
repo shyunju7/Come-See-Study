@@ -13,7 +13,7 @@ const PreviewContainer = ({ textRef }) => {
     }, 500);
 
     if (window.localStorage.getItem(attrId) == null) {
-      window.localStorage.setItem(attrId, 0);
+      window.localStorage.setItem(attrId, 3);
     }
   }, []);
 

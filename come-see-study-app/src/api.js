@@ -11,4 +11,6 @@ export const attrApi = {
 export const learningApi = {
   getLearningPageSettings: (attr, pageNo) =>
     api.get(`css/learning/?attr=${attr}&pageNo=${pageNo}`, {}),
+
+  checkQuizValue: (answers) => api.post(`css/check`, answers, {}),
 };

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import styled from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 import StateButton from "./StateButton";
 import styles from "../Route/Lecture/lecture.module.css";
+import { learningApi } from "../api";
 
 const Container = styled.div`
   width: 100%;
@@ -148,6 +149,12 @@ const Editor = ({ data, setCheck, attrId, pageNo }) => {
   });
   const [readOnly, setreadOnly] = useState(false);
   const [buttonState, setButtonState] = useState("check");
+  let [checkedValue, setCheckedValue] = useState({
+    e1: false,
+    e2: false,
+    e3: false,
+    e4: false,
+  });
 
   const e1 = document.getElementsByName("e1");
   const e2 = document.getElementsByName("e2");
@@ -215,13 +222,41 @@ const Editor = ({ data, setCheck, attrId, pageNo }) => {
   }, [buttonState]);
 
   const handleCheckedValue = () => {
-    code.i1 == data.answerCodes.e1
-      ? setButtonState("correct")
-      : setButtonState("try-again");
-
-    console.log(`정답 페이지? `, attrId, pageNo);
-    window.localStorage.setItem(`${attrId}`, pageNo);
+    learningApi
+      .checkQuizValue({
+        attrName: attrId,
+        pageNo: pageNo,
+        answers: {
+          e1: code.i1,
+          e2: code.i2,
+          e3: code.i3,
+          e4: code.i4,
+        },
+      })
+      .then((value) => {
+        console.log(`value.data.answerCheck: `, value.data.answerCheck);
+        setCheckedValue({
+          e1: value.data.answerCheck.e1,
+          e2: value.data.answerCheck.e2,
+          e3: value.data.answerCheck.e3,
+          e4: value.data.answerCheck.e4,
+        });
+      })
+      .catch(function (e) {
+        console.log("error! ", e);
+      });
   };
+
+  useEffect(() => {
+    let allCheck = false;
+    for (let i = 0; i < data.quizNum; i++) {
+      checkedValue[`e` + (i + 1)] ? (allCheck = true) : (allCheck = false);
+      console.log(`?? ${i}+1`, checkedValue[`e` + (i + 1)]);
+    }
+
+    allCheck ? setButtonState("correct") : setButtonState("try-again");
+    window.localStorage.setItem(`${attrId}`, pageNo);
+  }, [checkedValue]);
 
   const handleMakeAnswerBox = () => {
     const result = [];
