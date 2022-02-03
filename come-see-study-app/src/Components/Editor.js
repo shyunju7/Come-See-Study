@@ -37,6 +37,7 @@ const EditorContentWrapper = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   background-color: transparent;
 `;
 
@@ -53,24 +54,32 @@ const QuizContentWrapper = styled.div`
 `;
 
 const Title = styled.h2`
-  font-size: 1.125rem;
+  font-size: 22.5px;
   font-weight: 600;
-  margin-bottom: 36px;
+  margin-bottom: 44px;
   margin-left: 24px;
   margin-top: 24px;
 `;
 
 const Description = styled.label`
-  font-size: 16px;
+  font-size: 17.6px;
   margin-bottom: 12px;
-  line-height: 24px;
   margin-left: 24px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 17.6px;
+  line-height: 21px;
+  letter-spacing: -0.015em;
+  width: 80%;
 `;
 
 const Question = styled.label`
-  font-size: 16px;
   margin-left: 24px;
   font-weight: bold;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 25px;
 `;
 
 const AnswerImgWrapper = styled.div`
@@ -118,6 +127,7 @@ const EditorInput = styled.textarea`
   margin-bottom: 12px;
   outline: none;
   border-radius: 8px;
+  font-size: 18px;
 `;
 
 const CodeText = styled.div`
@@ -164,8 +174,21 @@ const Editor = ({ data, setCheck }) => {
   };
 
   useEffect(() => {
-    console.log(`prev code..`, code);
-    console.log(`chage Page!`);
+    if (e1[0]) {
+      e1[0].style = "";
+    }
+    if (e2[0]) {
+      e2[0].style = "";
+    }
+    if (e3[0]) {
+      e3[0].style = "";
+    }
+    if (e4[0]) {
+      e4[0].style = "";
+    }
+  }, [data]);
+
+  useEffect(() => {
     setCode({ i1: "", i2: "", i3: "", i4: "" });
     setButtonState("check");
     const answerE1 = document.getElementsByName("answer-e1");
@@ -173,9 +196,7 @@ const Editor = ({ data, setCheck }) => {
     const answerE3 = document.getElementsByName("answer-e3");
     const answerE4 = document.getElementsByName("answer-e4");
 
-    console.log(`current code..`, code);
     if (answerE1[0]) {
-      console.log(`answerE1[0] code..`, code);
       answerE1[0].style = data.answerCodes.e1;
     }
     if (answerE2[0]) {
