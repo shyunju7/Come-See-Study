@@ -16,7 +16,7 @@ const AppRouter = ({ textRef }) => {
       <Routes>
         <Route path="*" element={<NotFound />} />
         <Route path="/" element={<Navigate replace to="/color" />} />
-        <Route path="/syntax" element={<Syntax />} />
+        <Route path="/:attrId/syntax" element={<Syntax textRef={textRef} />} />
         <Route path="/:attrId" element={<Main textRef={textRef} />} />
         <Route
           path="/:attrId/preview/*"

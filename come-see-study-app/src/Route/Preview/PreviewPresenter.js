@@ -40,7 +40,7 @@ const PreviewPresenter = ({
         <img src={PrevIcon} alt="Prev" width="32px" />
       </S.PrevButton>
       <S.NextButton
-        to={`/${attrId}/learning/1`}
+        to={`/${attrId}/syntax`}
         onMouseEnter={() => setCursorValue("next")}
         onMouseLeave={() => setCursorValue("")}
       >

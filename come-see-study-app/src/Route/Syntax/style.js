@@ -52,3 +52,32 @@ export const Text = styled.label`
   color: #333333;
   margin-bottom: 100px;
 `;
+
+export const CursorDescription = styled.div`
+  position: absolute;
+  z-index: 1000;
+  cursor: default;
+  font-size: 18px;
+`;
+
+export const PrevButton = styled(Link)`
+  border: none;
+  outline: none;
+  position: absolute;
+  top: 50%;
+  left: 50px;
+  padding: 12px;
+  background-color: transparent;
+  z-index: 1000;
+`;
+
+export const NextButton = styled(Link)`
+  border: none;
+  outline: none;
+  position: absolute;
+  top: 50%;
+  right: 50px;
+  padding: 12px;
+  background-color: transparent;
+  z-index: 1000;
+`;
