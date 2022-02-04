@@ -130,7 +130,6 @@ const EditorInput = styled.textarea`
   outline: none;
   border-radius: 8px;
   font-size: 18px;
-  border: ${(props) => (props.borderColor ? props.borderColor : "none")};
 `;
 
 const CodeText = styled.div`
@@ -148,22 +147,16 @@ const Editor = ({ data, setCheck, attrId, pageNo }) => {
   const [code, setCode] = useState({
     i1: "",
     i2: "",
-    i3: "",
-    i4: "",
   });
   const [readOnly, setreadOnly] = useState(false);
   const [buttonState, setButtonState] = useState("check");
   let [checkedValue, setCheckedValue] = useState({
     e1: false,
     e2: false,
-    e3: false,
-    e4: false,
   });
 
   const e1 = document.getElementsByName("e1");
   const e2 = document.getElementsByName("e2");
-  const e3 = document.getElementsByName("e3");
-  const e4 = document.getElementsByName("e4");
 
   const i1 = document.getElementsByName("i1");
   const i2 = document.getElementsByName("i2");
@@ -201,10 +194,6 @@ const Editor = ({ data, setCheck, attrId, pageNo }) => {
       e1[0].style = e.target.value;
     } else if (e2 && name === "i2") {
       e2[0].style = e.target.value;
-    } else if (e3 && name === "i3") {
-      e3[0].style = e.target.value;
-    } else if (e4 && name === "i4") {
-      e4[0].style = e.target.value;
     } else {
       return;
     }
@@ -217,33 +206,19 @@ const Editor = ({ data, setCheck, attrId, pageNo }) => {
     if (e2[0]) {
       e2[0].style = "";
     }
-    if (e3[0]) {
-      e3[0].style = "";
-    }
-    if (e4[0]) {
-      e4[0].style = "";
-    }
   }, [data]);
 
   useEffect(() => {
-    setCode({ i1: "", i2: "", i3: "", i4: "" });
+    setCode({ i1: "", i2: "" });
     setButtonState("check");
     const answerE1 = document.getElementsByName("answer-e1");
     const answerE2 = document.getElementsByName("answer-e2");
-    const answerE3 = document.getElementsByName("answer-e3");
-    const answerE4 = document.getElementsByName("answer-e4");
 
     if (answerE1[0]) {
       answerE1[0].style = data.answerCodes.e1;
     }
     if (answerE2[0]) {
       answerE2[0].style = data.answerCodes.e2;
-    }
-    if (answerE3[0]) {
-      answerE3[0].style = data.answerCodes.e3;
-    }
-    if (answerE4[0]) {
-      answerE4[0].style = data.answerCodes.e4;
     }
   }, [data]);
 
@@ -260,17 +235,12 @@ const Editor = ({ data, setCheck, attrId, pageNo }) => {
         answers: {
           e1: code.i1,
           e2: code.i2,
-          e3: code.i3,
-          e4: code.i4,
         },
       })
       .then((value) => {
-        console.log(`value.data.answerCheck: `, value.data.answerCheck);
         setCheckedValue({
           e1: value.data.answerCheck.e1,
           e2: value.data.answerCheck.e2,
-          e3: value.data.answerCheck.e3,
-          e4: value.data.answerCheck.e4,
         });
       })
       .catch(function (e) {
@@ -355,7 +325,6 @@ const Editor = ({ data, setCheck, attrId, pageNo }) => {
             onChange={onChangeCode}
             readOnly={readOnly}
             name={"i" + `${i + 1}`}
-            borderColor="none"
           />
         </Div>
       );
