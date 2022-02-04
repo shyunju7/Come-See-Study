@@ -43,12 +43,11 @@ const EditorContentWrapper = styled.div`
 
 const QuizContentWrapper = styled.div`
   width: 50%;
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: transprearent;
+  background-color: transparent;
   position: relative;
   overflow-y: scroll;
 `;
@@ -119,6 +118,7 @@ const Div = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 2px;
 `;
 
 const EditorInput = styled.textarea`
@@ -130,13 +130,14 @@ const EditorInput = styled.textarea`
   outline: none;
   border-radius: 8px;
   font-size: 18px;
+  border: ${(props) => (props.borderColor ? props.borderColor : "none")};
 `;
 
 const CodeText = styled.div`
   width: 72%;
-  font-size: 18px;
+  font-size: 16px;
   text-align: start;
-  margin-bottom: 8px;
+  justify-content: center;
   background-color: transparent;
   color: #fef6c9;
   white-space: pre-wrap;
@@ -164,11 +165,38 @@ const Editor = ({ data, setCheck, attrId, pageNo }) => {
   const e3 = document.getElementsByName("e3");
   const e4 = document.getElementsByName("e4");
 
+  const i1 = document.getElementsByName("i1");
+  const i2 = document.getElementsByName("i2");
+
+  const handleSetBorder = (state) => {
+    switch (state) {
+      case "check":
+        if (i1[0]) {
+          i1[0].style.border = "none";
+        }
+
+        if (i2[0]) {
+          i2[0].style.border = "none";
+        }
+        break;
+
+      case "correct":
+        if (i1[0]) {
+          i1[0].style.border = "2px solid #6CE433";
+        }
+
+        if (i2[0]) {
+          i2[0].style.border = "2px solid #6CE433";
+        }
+        break;
+    }
+  };
+
   const onChangeCode = (e) => {
     const { name, value } = e.target;
     setCode({ ...code, [name]: value });
     setButtonState("check");
-
+    handleSetBorder("check");
     if (e1 && name === "i1") {
       e1[0].style = e.target.value;
     } else if (e2 && name === "i2") {
@@ -254,14 +282,26 @@ const Editor = ({ data, setCheck, attrId, pageNo }) => {
     let allCheck = false;
     for (let i = 0; i < data.quizNum; i++) {
       checkedValue[`e` + (i + 1)] ? (allCheck = true) : (allCheck = false);
-      console.log(`?? ${i}+1`, checkedValue[`e` + (i + 1)]);
     }
 
     if (allCheck) {
       setButtonState("correct");
+      handleSetBorder("correct");
       window.localStorage.setItem(`${attrId}`, pageNo);
     } else {
       setButtonState("try-again");
+
+      if (i1[0]) {
+        !checkedValue.e1
+          ? (i1[0].style.border = "2px solid #F87060")
+          : (i1[0].style.border = "2px solid #6CE433");
+      }
+
+      if (i2[0]) {
+        checkedValue.e2
+          ? (i2[0].style.border = "2px solid #F87060")
+          : (i2[0].style.border = "2px solid #6CE433");
+      }
     }
   }, [checkedValue]);
 
@@ -315,6 +355,7 @@ const Editor = ({ data, setCheck, attrId, pageNo }) => {
             onChange={onChangeCode}
             readOnly={readOnly}
             name={"i" + `${i + 1}`}
+            borderColor="none"
           />
         </Div>
       );
