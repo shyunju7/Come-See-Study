@@ -4,7 +4,7 @@ import styled from "styled-components";
 export const Container = styled.div`
   width: 100vw;
   height: 100vh;
-  background-color: #fef6c9;
+  background-color: #ffffff;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -57,27 +57,16 @@ export const CursorDescription = styled.div`
   position: absolute;
   z-index: 1000;
   cursor: default;
-  font-size: 18px;
+  font-size: 22px;
 `;
 
-export const PrevButton = styled(Link)`
-  border: none;
+export const Button = styled.button`
   outline: none;
-  position: absolute;
-  top: 50%;
-  left: 50px;
-  padding: 12px;
-  background-color: transparent;
-  z-index: 1000;
-`;
-
-export const NextButton = styled(Link)`
   border: none;
-  outline: none;
   position: absolute;
-  top: 50%;
+  top: 50px;
   right: 50px;
-  padding: 12px;
   background-color: transparent;
-  z-index: 1000;
+  color: #fff;
+  cursor: pointer;
 `;
