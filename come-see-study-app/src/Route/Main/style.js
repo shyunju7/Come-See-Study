@@ -16,6 +16,15 @@ export const Menu = styled.div`
   z-index: 1000;
 `;
 
+export const Icon = styled.img`
+  width: ${(props) => (props.iconWidth ? props.iconWidth : "32px")};
+
+  transition: 2s width height linear;
+  &:hover {
+    width: ${(props) => (props.iconWidth ? "58px" : "42px")};
+  }
+`;
+
 export const PrevButton = styled(Link)`
   border: none;
   outline: none;

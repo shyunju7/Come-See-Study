@@ -49,7 +49,7 @@ const MainPresenter = ({
         onMouseEnter={() => setCursorValue("menu")}
         onMouseLeave={() => setCursorValue("click")}
       >
-        <img src={MenuIcon} alt="menu" width="48px" />
+        <S.Icon src={MenuIcon} alt="menu" iconWidth="48px" />
       </S.Menu>
       <S.CursorDescription ref={textRef} id="custom-cursor">
         {cursorValue}
@@ -59,14 +59,14 @@ const MainPresenter = ({
         onMouseEnter={() => setCursorValue("prev")}
         onMouseLeave={() => setCursorValue("click")}
       >
-        <img src={PrevIcon} alt="Prev" width="32px" />
+        <S.Icon src={PrevIcon} alt="Prev" width="32px" />
       </S.PrevButton>
       <S.NextButton
         to={`/${data.nextAttr}`}
         onMouseEnter={() => setCursorValue("next")}
         onMouseLeave={() => setCursorValue("click")}
       >
-        <img src={NextIcon} alt="Next" width="32px" />
+        <S.Icon src={NextIcon} alt="Next" width="32px" />
       </S.NextButton>
       <S.NavLink to={`/${attrId}/preview`}>
         <S.ContentsContainer>
