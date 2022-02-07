@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ReactComponent as Home } from "../../assets/menu-home.svg";
+import { ReactComponent as Home } from "../../assets/home-icon.svg";
 
 export const Container = styled.div`
   width: 100vw;
@@ -13,7 +13,7 @@ export const CursorDescription = styled.div`
   position: absolute;
   z-index: 1000;
   cursor: default;
-  font-size: 18px;
+  font-size: 22px;
 `;
 
 export const PrevButton = styled.button`
@@ -67,4 +67,13 @@ export const GuideBox = styled.div`
   top: 48%;
   right: 50px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+`;
+
+export const Icon = styled.img`
+  width: 47px;
+
+  transition: 2s width height linear;
+  &:hover {
+    width: 58px;
+  }
 `;

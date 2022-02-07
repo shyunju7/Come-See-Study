@@ -3,6 +3,7 @@ import Editor from "../../Components/Editor";
 import * as S from "./style";
 import PrevIcon from "../../assets/prev-icon.png";
 import NextIcon from "../../assets/next-icon.png";
+import PreviewIcon from "../../assets/preview-icon.svg";
 import Loader from "../../Components/Loader";
 const LecturePresenter = ({
   attrId,
@@ -41,7 +42,11 @@ const LecturePresenter = ({
         onMouseEnter={() => setCursorValue("prev")}
         onMouseLeave={() => setCursorValue("")}
       >
-        <img src={PrevIcon} alt="Prev" width="32px" />
+        <img
+          src={pageNo === "1" ? PreviewIcon : PrevIcon}
+          alt="Prev"
+          width={pageNo === "1" ? "52px" : "32px"}
+        />
       </S.PrevButton>
       <S.NextButton
         onClick={() => {

@@ -15,7 +15,7 @@ const Container = styled.div`
 `;
 
 const EditorWrapper = styled.div`
-  width: 85%;
+  width: 80%;
   height: 45vh;
   display: flex;
   background-color: transparent;
@@ -23,7 +23,7 @@ const EditorWrapper = styled.div`
 
 // 코드창
 const QuizWrapper = styled.div`
-  width: 85%;
+  width: 80%;
   height: 45vh;
   display: flex;
   flex-direction: row;
@@ -55,7 +55,7 @@ const QuizContentWrapper = styled.div`
 const Title = styled.h2`
   font-size: 22.5px;
   font-weight: 600;
-  margin-bottom: 44px;
+  margin-bottom: 20px;
   margin-left: 24px;
   margin-top: 24px;
 `;

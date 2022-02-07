@@ -11,7 +11,7 @@ export const CursorDescription = styled.div`
   position: absolute;
   z-index: 1000;
   cursor: default;
-  font-size: 22px;
+  font-size: 18px;
 `;
 
 export const PrevButton = styled(Link)`
@@ -42,5 +42,6 @@ export const Icon = styled.img`
   transition: 2s width height linear;
   &:hover {
     width: 58px;
+    height: 60px;
   }
 `;
