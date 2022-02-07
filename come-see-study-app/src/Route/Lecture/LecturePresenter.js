@@ -42,10 +42,10 @@ const LecturePresenter = ({
         onMouseEnter={() => setCursorValue("prev")}
         onMouseLeave={() => setCursorValue("")}
       >
-        <img
+        <S.Icon
           src={pageNo === "1" ? PreviewIcon : PrevIcon}
           alt="Prev"
-          width={pageNo === "1" ? "52px" : "32px"}
+          iconWidth={pageNo === "1" ? "52px" : "32px"}
         />
       </S.PrevButton>
       <S.NextButton
@@ -71,7 +71,7 @@ const LecturePresenter = ({
           setCursorValue("");
         }}
       >
-        <img src={NextIcon} alt="Next" width="32px" />
+        <S.Icon src={NextIcon} alt="Next" width="32px" />
       </S.NextButton>
       <S.CursorDescription ref={textRef}>{cursorValue}</S.CursorDescription>
     </S.Container>

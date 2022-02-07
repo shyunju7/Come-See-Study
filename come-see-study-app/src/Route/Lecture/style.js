@@ -42,7 +42,7 @@ export const NextButton = styled.button`
 export const HomeButton = styled(Home)`
   position: absolute;
   top: 55px;
-  left: 50px;
+  left: 60px;
   width: 47px;
   height: 49px;
   cursor: pointer;
@@ -70,10 +70,10 @@ export const GuideBox = styled.div`
 `;
 
 export const Icon = styled.img`
-  width: 47px;
+  width: ${(props) => (props.iconWidth ? props.iconWidth : "32px")};
 
   transition: 2s width height linear;
   &:hover {
-    width: 58px;
+    width: ${(props) => (props.iconWidth === "52px" ? "62px" : "42px")};
   }
 `;
