@@ -11,7 +11,7 @@ export const CursorDescription = styled.div`
   position: absolute;
   z-index: 1000;
   cursor: default;
-  font-size: 18px;
+  font-size: 22px;
 `;
 
 export const PrevButton = styled(Link)`
@@ -34,4 +34,13 @@ export const NextButton = styled(Link)`
   padding: 12px;
   background-color: transparent;
   z-index: 1000;
+`;
+
+export const Icon = styled.img`
+  width: 47px;
+
+  transition: 2s width height linear;
+  &:hover {
+    width: 58px;
+  }
 `;

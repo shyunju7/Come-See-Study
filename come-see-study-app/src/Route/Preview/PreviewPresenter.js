@@ -5,8 +5,9 @@ import PreviewBackground from "../../Components/PreviewBackground";
 import PreviewBorder from "../../Components/PreviewBorder";
 import PreviewTransition from "../../Components/PreviewTransition";
 import * as S from "./style";
-import PrevIcon from "../../assets/prev-icon.png";
-import NextIcon from "../../assets/next-icon.png";
+import HomeIcon from "../../assets/home-icon.svg";
+import LearningIcon from "../../assets/learning-icon.svg";
+
 import NotFound from "../../Pages/NotFound";
 import Loader from "../../Components/Loader";
 const pagePreview = {
@@ -37,14 +38,14 @@ const PreviewPresenter = ({
         onMouseEnter={() => setCursorValue("prev")}
         onMouseLeave={() => setCursorValue("")}
       >
-        <img src={PrevIcon} alt="Prev" width="32px" />
+        <S.Icon src={HomeIcon} alt="Prev" width="47px" />
       </S.PrevButton>
       <S.NextButton
         to={`/${attrId}/syntax`}
         onMouseEnter={() => setCursorValue("next")}
         onMouseLeave={() => setCursorValue("")}
       >
-        <img src={NextIcon} alt="Next" width="32px" />
+        <S.Icon src={LearningIcon} alt="Next" width="47px" />
       </S.NextButton>
     </div>
   );
