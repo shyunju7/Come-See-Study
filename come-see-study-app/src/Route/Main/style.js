@@ -5,7 +5,7 @@ export const CursorDescription = styled.div`
   position: absolute;
   z-index: 1000;
   cursor: default;
-  font-size: 18px;
+  font-size: 22px;
 `;
 
 export const Menu = styled.div`
