@@ -62,7 +62,7 @@ const LecturePresenter = ({
             navigate(`/${attrId}/learning/${Number(pageNo) + 1}`);
             handleSetPage(attrId, Number(pageNo) + 1);
           }
-          if (Number(pageNo) === totalPage) {
+          if (isChecked && !showGuide && Number(pageNo) === totalPage) {
             navigate(`/${attrId}/`);
           }
         }}
