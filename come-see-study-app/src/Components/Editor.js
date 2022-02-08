@@ -166,11 +166,12 @@ const Editor = ({ data, setCheck, attrId, pageNo }) => {
       case "check":
         if (i1[0]) {
           i1[0].style.border = "none";
+
+          if (i2[0]) {
+            i2[0].style.border = "none";
+          }
         }
 
-        if (i2[0]) {
-          i2[0].style.border = "none";
-        }
         break;
 
       case "correct":
@@ -190,6 +191,7 @@ const Editor = ({ data, setCheck, attrId, pageNo }) => {
     setCode({ ...code, [name]: value });
     setButtonState("check");
     handleSetBorder("check");
+
     if (e1 && name === "i1") {
       e1[0].style = e.target.value;
     } else if (e2 && name === "i2") {
@@ -200,6 +202,7 @@ const Editor = ({ data, setCheck, attrId, pageNo }) => {
   };
 
   useEffect(() => {
+    handleSetBorder("check");
     if (e1[0]) {
       e1[0].style = "";
     }
