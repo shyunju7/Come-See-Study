@@ -82,7 +82,7 @@ const PreviewTransition = () => {
     setTransitionTiming(value);
 
     if (rectRef) {
-      rectRef.current.style.transform = `translate(72vw, -50%)`;
+      rectRef.current.style.transform = `translate(68vw, -50%)`;
     }
   };
 
