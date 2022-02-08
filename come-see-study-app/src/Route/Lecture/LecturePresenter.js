@@ -62,6 +62,14 @@ const LecturePresenter = ({
             navigate(`/${attrId}/learning/${Number(pageNo) + 1}`);
             handleSetPage(attrId, Number(pageNo) + 1);
           }
+          if (
+            window.localStorage.getItem(attrId) >= pageNo &&
+            Number(pageNo) === totalPage
+          ) {
+            navigate(`/${attrId}/`);
+            handleSetPage(attrId, Number(pageNo) + 1);
+          }
+
           if (isChecked && !showGuide && Number(pageNo) === totalPage) {
             navigate(`/${attrId}/`);
           }
