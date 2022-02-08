@@ -3,6 +3,7 @@ import Editor from "../../Components/Editor";
 import * as S from "./style";
 import PrevIcon from "../../assets/prev-icon.png";
 import NextIcon from "../../assets/next-icon.png";
+import HomeIcon from "../../assets/home-icon.svg";
 import PreviewIcon from "../../assets/preview-icon.svg";
 import Loader from "../../Components/Loader";
 const LecturePresenter = ({
@@ -50,13 +51,19 @@ const LecturePresenter = ({
       </S.PrevButton>
       <S.NextButton
         onClick={() => {
-          if (isChecked && !showGuide && pageNo < totalPage) {
+          if (isChecked && !showGuide && Number(pageNo) < totalPage) {
             navigate(`/${attrId}/learning/${Number(pageNo) + 1}`);
             handleSetPage(attrId, Number(pageNo) + 1);
           }
-          if (window.localStorage.getItem(attrId) >= pageNo) {
+          if (
+            window.localStorage.getItem(attrId) >= pageNo &&
+            Number(pageNo) < totalPage
+          ) {
             navigate(`/${attrId}/learning/${Number(pageNo) + 1}`);
             handleSetPage(attrId, Number(pageNo) + 1);
+          }
+          if (Number(pageNo) === totalPage) {
+            navigate(`/${attrId}/`);
           }
         }}
         onMouseEnter={() => {
@@ -71,7 +78,11 @@ const LecturePresenter = ({
           setCursorValue("");
         }}
       >
-        <S.Icon src={NextIcon} alt="Next" width="32px" />
+        <S.Icon
+          src={pageNo === totalPage.toString() ? HomeIcon : NextIcon}
+          alt="home"
+          iconWidth={pageNo === totalPage.toString() ? "52px" : "32px"}
+        />
       </S.NextButton>
       <S.CursorDescription ref={textRef}>{cursorValue}</S.CursorDescription>
     </S.Container>

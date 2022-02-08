@@ -61,7 +61,6 @@ const Title = styled.h2`
 `;
 
 const Description = styled.label`
-  font-size: 17.6px;
   margin-bottom: 12px;
   margin-left: 24px;
   font-style: normal;
@@ -123,17 +122,18 @@ const Div = styled.div`
 
 const EditorInput = styled.textarea`
   resize: none;
-  width: 60%;
-  height: 24px;
+  width: 65%;
+  height: ${(props) => (props.quizNum === 1 ? "48px" : "24px")};
   background-color: #f8f8f8;
-  margin-bottom: 12px;
+  margin-top: 4px;
+  margin-bottom: 2px;
   outline: none;
   border-radius: 8px;
   font-size: 18px;
 `;
 
 const CodeText = styled.div`
-  width: 72%;
+  width: 76%;
   font-size: 16px;
   text-align: start;
   justify-content: center;
@@ -328,6 +328,7 @@ const Editor = ({ data, setCheck, attrId, pageNo }) => {
             onChange={onChangeCode}
             readOnly={readOnly}
             name={"i" + `${i + 1}`}
+            quizNum={data.quizNum}
           />
         </Div>
       );
