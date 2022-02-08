@@ -144,11 +144,11 @@
 #text-decoration-e1 {
   width: 80%;
   text-align: center;
-  font-size: 16px;
+  font-size: 64px;
   font-weight: bold;
   margin-top: 12px;
   margin-bottom: 20px;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 #text-decoration-e1::before {
@@ -156,10 +156,10 @@
 }
 #text-decoration-e2 {
   width: 80%;
-  text-align: right;
+  text-align: center;
   text-decoration: none;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 64px;
   margin-bottom: 20px;
 }
 #text-decoration-e2::before {
@@ -183,12 +183,12 @@
 #text-transform-e1 {
   width: 80%;
   text-align: center;
-  font-size: 16px;
+  font-size: 64px;
   font-weight: bold;
   margin-top: 12px;
   margin-bottom: 20px;
-  text-decoration: underline;
-  text-transform: uppercase;
+  text-decoration: none;
+  text-transform: none;
 }
 
 #text-transform-e1::before {
@@ -196,37 +196,15 @@
 }
 #text-transform-e2 {
   width: 80%;
-  text-align: right;
-  text-decoration: none;
-  font-size: 16px;
+  text-align: center;
+  font-size: 64px;
   font-weight: bold;
   margin-bottom: 20px;
-  text-transform: uppercase;
+  text-decoration: none;
+  text-transform: none;
 }
 #text-transform-e2::before {
   content: "mMm";
-}
-#text-transform-e3 {
-  width: 80%;
-  text-align: left;
-  font-size: 16px;
-  text-decoration: none;
-  margin-bottom: 20px;
-  text-transform: lowercase;
-}
-#text-transform-e3::before {
-  content: "recipient’s ADDRESS";
-}
-#text-transform-e4 {
-  width: 80%;
-  text-align: justify;
-  font-size: 16px;
-  text-decoration: none;
-  margin-bottom: 32px;
-  text-transform: capitalize;
-}
-#text-transform-e4::before {
-  content: "lorem ipsum dolor sit amet, consectetur adipiscing elit. nullam posuere leo mi, vitae pretium urna finibus eget. morbi fringilla iaculis fringilla. vestibulum dignissim tempus pellentesque. aenean sagittis aliquet tempus. Proin eu iaculis dolor. Etiam lacinia nunc eu enim egestas, quis viverra elit aliquam. ";
 }
 
 /* BACKGROUND - COLOR */
@@ -282,17 +260,17 @@
   width: 100%;
   height: 100%;
   background-size: 141px;
-  background-position: center;
+  background-position: left;
   background-repeat: no-repeat;
-  background-image: url("../../assets/triangle-img.png");
+  background-image: url("../../assets/triangle-red.svg");
 }
 #background-position-e2 {
   width: 100%;
   height: 100%;
   background-size: 141px;
-  background-position: center;
+  background-position: right;
   background-repeat: no-repeat;
-  background-image: url("../../assets/triangle-img.svg");
+  background-image: url("../../assets/triangle-img.png");
 }
 
 /* BORDER - WIDTH */
