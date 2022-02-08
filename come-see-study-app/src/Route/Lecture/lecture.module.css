@@ -76,13 +76,14 @@
 
 #text-color-e1 {
   color: #595959;
-  font-size: 36px;
+  font-size: 64px;
+  font-weight: bold;
   text-align: center;
   width: 80%;
 }
 
 #text-color-e1::before {
-  content: "Hello!";
+  content: "HELLO!";
 }
 /* TEXT - ALGINMENT */
 
@@ -104,42 +105,24 @@
 #text-alignment-e1 {
   width: 80%;
   text-align: left;
-  font-size: 16px;
+  font-size: 64px;
+  font-weight: bold;
   margin-top: 12px;
   margin-bottom: 20px;
 }
 #text-alignment-e1::before {
-  content: "WRITING A LETTER";
+  content: "LEFT";
 }
 #text-alignment-e2 {
   width: 80%;
   text-align: left;
-  text-decoration: line-through;
-  font-size: 16px;
+  text-decoration: none;
+  font-size: 64px;
+  font-weight: bold;
   margin-bottom: 20px;
 }
 #text-alignment-e2::before {
-  content: "SENDER’s ADDRESS";
-}
-#text-alignment-e3 {
-  width: 80%;
-  text-align: left;
-  font-size: 16px;
-  text-decoration: underline;
-  margin-bottom: 20px;
-}
-#text-alignment-e3::before {
-  content: "recipient’s ADDRESS";
-}
-#text-alignment-e4 {
-  width: 80%;
-  text-align: left;
-  font-size: 16px;
-  text-decoration: line-through;
-  margin-bottom: 32px;
-}
-#text-alignment-e4::before {
-  content: "lorem ipsum dolor sit amet, consectetur adipiscing elit. nullam posuere leo mi, vitae pretium urna finibus eget. morbi fringilla iaculis fringilla. vestibulum dignissim tempus pellentesque. aenean sagittis aliquet tempus. Proin eu iaculis dolor. Etiam lacinia nunc eu enim egestas, quis viverra elit aliquam. ";
+  content: "RIGHT";
 }
 
 /* TEXT - DECORATION */
@@ -162,43 +145,25 @@
   width: 80%;
   text-align: center;
   font-size: 16px;
+  font-weight: bold;
   margin-top: 12px;
   margin-bottom: 20px;
   text-decoration: underline;
 }
 
 #text-decoration-e1::before {
-  content: "WRITING A LETTER";
+  content: "OVER";
 }
 #text-decoration-e2 {
   width: 80%;
   text-align: right;
   text-decoration: none;
+  font-weight: bold;
   font-size: 16px;
   margin-bottom: 20px;
 }
 #text-decoration-e2::before {
-  content: "SENDER’s ADDRESS";
-}
-#text-decoration-e3 {
-  width: 80%;
-  text-align: left;
-  font-size: 16px;
-  text-decoration: none;
-  margin-bottom: 20px;
-}
-#text-decoration-e3::before {
-  content: "recipient’s ADDRESS";
-}
-#text-decoration-e4 {
-  width: 80%;
-  text-align: justify;
-  font-size: 16px;
-  text-decoration: none;
-  margin-bottom: 32px;
-}
-#text-decoration-e4::before {
-  content: "lorem ipsum dolor sit amet, consectetur adipiscing elit. nullam posuere leo mi, vitae pretium urna finibus eget. morbi fringilla iaculis fringilla. vestibulum dignissim tempus pellentesque. aenean sagittis aliquet tempus. Proin eu iaculis dolor. Etiam lacinia nunc eu enim egestas, quis viverra elit aliquam. ";
+  content: "UNDER";
 }
 
 /* TEXT - TRANSFORM */
@@ -219,6 +184,7 @@
   width: 80%;
   text-align: center;
   font-size: 16px;
+  font-weight: bold;
   margin-top: 12px;
   margin-bottom: 20px;
   text-decoration: underline;
@@ -226,18 +192,19 @@
 }
 
 #text-transform-e1::before {
-  content: "WRITING A LETTER";
+  content: "Ovo";
 }
 #text-transform-e2 {
   width: 80%;
   text-align: right;
   text-decoration: none;
   font-size: 16px;
+  font-weight: bold;
   margin-bottom: 20px;
   text-transform: uppercase;
 }
 #text-transform-e2::before {
-  content: "SENDER’s ADDRESS";
+  content: "mMm";
 }
 #text-transform-e3 {
   width: 80%;
@@ -315,7 +282,7 @@
   width: 100%;
   height: 100%;
   background-size: 141px;
-  background-position: bottom center;
+  background-position: center;
   background-repeat: no-repeat;
   background-image: url("../../assets/triangle-img.png");
 }
@@ -323,17 +290,9 @@
   width: 100%;
   height: 100%;
   background-size: 141px;
-  background-position: bottom center;
+  background-position: center;
   background-repeat: no-repeat;
-  background-image: url("../../assets/triangle-img.png");
-}
-#background-position-e3 {
-  width: 100%;
-  height: 100%;
-  background-size: 141px;
-  background-position: bottom center;
-  background-repeat: no-repeat;
-  background-image: url("../../assets/triangle-img.png");
+  background-image: url("../../assets/triangle-img.svg");
 }
 
 /* BORDER - WIDTH */
@@ -465,23 +424,56 @@
 }
 
 /* TRANSITION - PROPERTY */
-/* #transition-property-bg {
+#transition-property-bg {
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 #transition-property-e1 {
-} */
+  width: 144px;
+  height: 144px;
+  background-color: #f87060;
+  background-position: center;
+  background-image: url("../../assets/round-img.svg");
+  transition-duration: 3s;
+}
+
+#transition-property-e1:hover {
+  background-color: #0e438b;
+}
 
 /* TRANSITION - DURATION */
-/* #transition-duration-bg {
+#transition-duration-bg {
+  background-color: transparent;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 32px;
+  align-items: center;
 }
 #transition-duration-e1 {
-} */
+  width: 144px;
+  height: 144px;
+  background-color: #24942f;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("../../assets/round-img.svg");
+}
+
+#transition-duration-e1:hover {
+  width: 512px;
+  background-position: left;
+}
 
 /* TRANSITION - TIMING - FUNCTION */
 /* #transition-timing-function-bg {
+  background-color: transparent;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 32px;
+  align-items: center;
 }
 #transition-timing-function-e1 {
-}
-#transition-timing-function-e2 {
 }
 #transition-timing-function-e2 {
 } */
