@@ -35,14 +35,14 @@ const PreviewPresenter = ({
       <S.CursorDescription ref={textRef}>{cursorValue}</S.CursorDescription>
       <S.PrevButton
         to={`/${attrId}`}
-        onMouseEnter={() => setCursorValue("prev")}
+        onMouseEnter={() => setCursorValue("home")}
         onMouseLeave={() => setCursorValue("")}
       >
         <S.Icon src={HomeIcon} alt="Prev" width="47px" />
       </S.PrevButton>
       <S.NextButton
         to={`/${attrId}/syntax`}
-        onMouseEnter={() => setCursorValue("next")}
+        onMouseEnter={() => setCursorValue("learn")}
         onMouseLeave={() => setCursorValue("")}
       >
         <S.Icon src={LearningIcon} alt="Next" width="47px" />
