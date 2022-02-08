@@ -401,57 +401,84 @@
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
-/* TRANSITION - PROPERTY */
+/* TRANSITION - PROPERTY & DURATION */
 #transition-property-bg {
   background-color: transparent;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  padding-left: 32px;
   align-items: center;
 }
 #transition-property-e1 {
   width: 144px;
-  height: 144px;
+  height: 134px;
+  text-align: center;
+  padding-top: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
   background-color: #f87060;
+  background-repeat: no-repeat;
   background-position: center;
   background-image: url("../../assets/round-img.svg");
-  transition-duration: 3s;
+}
+
+#transition-property-e1::before {
+  content: "Hover Me!";
 }
 
 #transition-property-e1:hover {
   background-color: #0e438b;
-}
-
-/* TRANSITION - DURATION */
-#transition-duration-bg {
-  background-color: transparent;
-  display: flex;
-  justify-content: flex-start;
-  padding-left: 32px;
-  align-items: center;
-}
-#transition-duration-e1 {
-  width: 144px;
-  height: 144px;
-  background-color: #24942f;
-  background-position: center;
+  width: 520px;
   background-repeat: no-repeat;
-  background-image: url("../../assets/round-img.svg");
-}
-
-#transition-duration-e1:hover {
-  width: 512px;
-  background-position: left;
 }
 
 /* TRANSITION - TIMING - FUNCTION */
-/* #transition-timing-function-bg {
+#transition-timing-function-bg {
   background-color: transparent;
   display: flex;
-  justify-content: flex-start;
+  flex-direction: column;
+  justify-content: center;
   padding-left: 32px;
-  align-items: center;
+  align-items: flex-start;
 }
 #transition-timing-function-e1 {
+  width: 100px;
+  height: 90px;
+  text-align: center;
+  padding-top: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 40px;
+  background-color: #0e438b;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("../../assets/round-img.svg");
+  transition-property: width;
+  transition-duration: 3s;
 }
+#transition-timing-function-e1:hover {
+  width: 510px;
+  background-position: left;
+}
+
+#transition-timing-function-e1::before {
+  content: "Hover Me!";
+}
+
 #transition-timing-function-e2 {
-} */
+  width: 100px;
+  height: 100px;
+  background-color: #f87060;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("../../assets/round-img.svg");
+  transition-property: width;
+  transition-duration: 3s;
+}
+
+#transition-timing-function-e1:hover + #transition-timing-function-e2 {
+  width: 510px;
+  background-position: left;
+}
