@@ -124,6 +124,7 @@ const EditorInput = styled.textarea`
   resize: none;
   width: 65%;
   height: ${(props) => (props.quizNum === 1 ? "48px" : "24px")};
+  font-family: "Roboto Mono";
   background-color: #f8f8f8;
   margin-top: 4px;
   margin-bottom: 2px;
@@ -139,6 +140,7 @@ const CodeText = styled.div`
   justify-content: center;
   background-color: transparent;
   color: #fef6c9;
+  font-family: "Roboto Mono";
   white-space: pre-wrap;
   line-height: 26px;
 `;
@@ -149,6 +151,7 @@ const Editor = ({ data, setCheck, attrId, pageNo }) => {
     i2: "",
   });
   const [readOnly, setreadOnly] = useState(false);
+  const [isAllChecked, setAllCheck] = useState(false);
   const [buttonState, setButtonState] = useState("check");
   let [checkedValue, setCheckedValue] = useState({
     e1: false,
@@ -214,6 +217,7 @@ const Editor = ({ data, setCheck, attrId, pageNo }) => {
   useEffect(() => {
     setCode({ i1: "", i2: "" });
     setButtonState("check");
+    setAllCheck(false);
     const answerE1 = document.getElementsByName("answer-e1");
     const answerE2 = document.getElementsByName("answer-e2");
 
@@ -241,6 +245,7 @@ const Editor = ({ data, setCheck, attrId, pageNo }) => {
         },
       })
       .then((value) => {
+        console.log(value.data);
         setCheckedValue({
           e1: value.data.answerCheck.e1,
           e2: value.data.answerCheck.e2,
@@ -252,16 +257,19 @@ const Editor = ({ data, setCheck, attrId, pageNo }) => {
   };
 
   useEffect(() => {
-    let allCheck = false;
-    for (let i = 0; i < data.quizNum; i++) {
-      checkedValue[`e` + (i + 1)] ? (allCheck = true) : (allCheck = false);
+    console.log(`checkedV: `, checkedValue);
+
+    for (let i = 1; i <= data.quizNum; i++) {
+      console.log(`checkedValue[e${i}]: `, checkedValue[`e` + i]);
+      checkedValue[`e` + i] ? setAllCheck(true) : setAllCheck(false);
     }
 
-    if (allCheck) {
+    if (isAllChecked) {
       setButtonState("correct");
       handleSetBorder("correct");
       window.localStorage.setItem(`${attrId}`, pageNo);
     } else {
+      console.log(`all 체크 안됨 `, checkedValue);
       setButtonState("try-again");
 
       if (i1[0]) {
@@ -271,7 +279,7 @@ const Editor = ({ data, setCheck, attrId, pageNo }) => {
       }
 
       if (i2[0]) {
-        checkedValue.e2
+        !checkedValue.e2
           ? (i2[0].style.border = "2px solid #F87060")
           : (i2[0].style.border = "2px solid #6CE433");
       }

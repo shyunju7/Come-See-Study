@@ -3,8 +3,8 @@ import Editor from "../../Components/Editor";
 import * as S from "./style";
 import PrevIcon from "../../assets/prev-icon.png";
 import NextIcon from "../../assets/next-icon.png";
-import HomeIcon from "../../assets/home-icon.svg";
 import PreviewIcon from "../../assets/preview-icon.svg";
+import GoalIcon from "../../assets/goal-img.svg";
 import Loader from "../../Components/Loader";
 const LecturePresenter = ({
   attrId,
@@ -79,7 +79,7 @@ const LecturePresenter = ({
         }}
       >
         <S.Icon
-          src={pageNo === totalPage.toString() ? HomeIcon : NextIcon}
+          src={pageNo === totalPage.toString() ? GoalIcon : NextIcon}
           alt="home"
           iconWidth={pageNo === totalPage.toString() ? "52px" : "32px"}
         />
