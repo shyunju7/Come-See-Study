@@ -257,19 +257,16 @@ const Editor = ({ data, setCheck, attrId, pageNo }) => {
   };
 
   useEffect(() => {
-    console.log(`checkedV: `, checkedValue);
-
+    let allCheck = false;
     for (let i = 1; i <= data.quizNum; i++) {
       console.log(`checkedValue[e${i}]: `, checkedValue[`e` + i]);
-      checkedValue[`e` + i] ? setAllCheck(true) : setAllCheck(false);
+      checkedValue[`e` + i] ? (allCheck = true) : (allCheck = false);
     }
-
-    if (isAllChecked) {
+    if (allCheck) {
       setButtonState("correct");
       handleSetBorder("correct");
       window.localStorage.setItem(`${attrId}`, pageNo);
     } else {
-      console.log(`all 체크 안됨 `, checkedValue);
       setButtonState("try-again");
 
       if (i1[0]) {
