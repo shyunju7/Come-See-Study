@@ -10,7 +10,7 @@ export const attrApi = {
 
 export const learningApi = {
   getLearningPageSettings: (attr, pageNo) =>
-    api.get(`css/learning/?attr=${attr}&pageNo=${pageNo}`, {}),
+    api.get(`css/learning/load?attr=${attr}&pageNo=${pageNo}`, {}),
 
-  checkQuizValue: (answers) => api.post(`css/check`, answers, {}),
+  checkQuizValue: (answers) => api.post(`css/learning/check`, answers, {}),
 };
