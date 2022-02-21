@@ -186,6 +186,9 @@ const Editor = ({ data, setCheck, attrId, pageNo }) => {
           i2[0].style.border = "2px solid #6CE433";
         }
         break;
+
+      default:
+        return;
     }
   };
 
