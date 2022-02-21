@@ -150,13 +150,9 @@ const Editor = ({ data, setCheck, attrId, pageNo }) => {
     i1: "",
     i2: "",
   });
-  const [readOnly, setreadOnly] = useState(false);
-  const [isAllChecked, setAllCheck] = useState(false);
+  const [readOnly, setReadOnly] = useState(false);
   const [buttonState, setButtonState] = useState("check");
-  let [checkedValue, setCheckedValue] = useState({
-    e1: false,
-    e2: false,
-  });
+  let [checkedValue, setCheckedValue] = useState({});
 
   const e1 = document.getElementsByName("e1");
   const e2 = document.getElementsByName("e2");
@@ -220,7 +216,6 @@ const Editor = ({ data, setCheck, attrId, pageNo }) => {
   useEffect(() => {
     setCode({ i1: "", i2: "" });
     setButtonState("check");
-    setAllCheck(false);
     const answerE1 = document.getElementsByName("answer-e1");
     const answerE2 = document.getElementsByName("answer-e2");
 
@@ -233,7 +228,7 @@ const Editor = ({ data, setCheck, attrId, pageNo }) => {
   }, [data]);
 
   useEffect(() => {
-    buttonState === "correct" ? setreadOnly(true) : setreadOnly(false);
+    buttonState === "correct" ? setReadOnly(true) : setReadOnly(false);
     buttonState === "correct" ? setCheck(true) : setCheck(false);
   }, [buttonState]);
 
@@ -248,11 +243,12 @@ const Editor = ({ data, setCheck, attrId, pageNo }) => {
         },
       })
       .then((value) => {
-        console.log(value.data);
-        setCheckedValue({
-          e1: value.data.answerCheck.e1,
-          e2: value.data.answerCheck.e2,
-        });
+        console.log(value.data.answerCheck);
+        setCheckedValue(value.data.answerCheck);
+        // setCheckedValue({
+        //   e1: value.data.answerCheck.e1,
+        //   e2: value.data.answerCheck.e2,
+        // });
       })
       .catch(function (e) {
         console.log("error! ", e);
@@ -261,10 +257,13 @@ const Editor = ({ data, setCheck, attrId, pageNo }) => {
 
   useEffect(() => {
     let allCheck = false;
+
     for (let i = 1; i <= data.quizNum; i++) {
-      console.log(`checkedValue[e${i}]: `, checkedValue[`e` + i]);
-      checkedValue[`e` + i] ? (allCheck = true) : (allCheck = false);
+      checkedValue["e1"] && checkedValue[`e` + i]
+        ? (allCheck = true)
+        : (allCheck = false);
     }
+
     if (allCheck) {
       setButtonState("correct");
       handleSetBorder("correct");
