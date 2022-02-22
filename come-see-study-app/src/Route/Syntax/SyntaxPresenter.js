@@ -33,12 +33,16 @@ const SyntaxPresenter = ({
       </S.Button>
       <S.CursorDescription ref={textRef}>{cursorValue}</S.CursorDescription>
 
-      <input
-        type="checkbox"
-        value={popupCookie}
-        onChange={() => setPopupCookie((prev) => !prev)}
-      />
-      <label>Do not open for a day</label>
+      <S.PopupCookieWrapper>
+        <label>
+          <S.CheckBox
+            type="checkbox"
+            value={popupCookie}
+            onChange={() => setPopupCookie((prev) => !prev)}
+          />
+          Do not open for a day
+        </label>
+      </S.PopupCookieWrapper>
     </S.Container>
   );
 };

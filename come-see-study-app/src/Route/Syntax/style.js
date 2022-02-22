@@ -60,6 +60,18 @@ export const CursorDescription = styled.div`
   font-size: 22px;
 `;
 
+export const PopupCookieWrapper = styled.div`
+  position: absolute;
+  align-self: flex-end;
+  display: flex;
+  font-size: 20px;
+  color: #595959;
+  justify-content: center;
+  align-items: center;
+  right: 10px;
+  bottom: 10px;
+`;
+
 export const Button = styled.button`
   outline: none;
   border: none;
@@ -69,4 +81,10 @@ export const Button = styled.button`
   background-color: transparent;
   color: #fff;
   cursor: pointer;
+`;
+
+export const CheckBox = styled.input`
+  display: inline-block;
+  width: 20px;
+  height: 20px;
 `;
