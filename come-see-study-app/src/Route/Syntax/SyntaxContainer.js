@@ -5,10 +5,18 @@ const SyntaxContainer = ({ textRef }) => {
   const { attrId } = useParams();
   const [cursorValue, setCursorValue] = useState("");
   const navigate = useNavigate();
+  const [popupCookie, setPopupCookie] = useState(false);
 
   const handleLocateLearningPage = () => {
     navigate(`/${attrId}/learning/1`);
+
+    if (popupCookie) {
+      const today = new Date();
+      console.log(today.getDate() + 1);
+      window.localStorage.setItem("expires", today.getDate() + 1);
+    }
   };
+
   return (
     <SyntaxPresenter
       textRef={textRef}
@@ -16,6 +24,8 @@ const SyntaxContainer = ({ textRef }) => {
       setCursorValue={setCursorValue}
       attrId={attrId}
       handleLocateLearningPage={handleLocateLearningPage}
+      popupCookie={popupCookie}
+      setPopupCookie={setPopupCookie}
     />
   );
 };
