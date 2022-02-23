@@ -243,7 +243,6 @@ const Editor = ({ data, setCheck, attrId, pageNo }) => {
         },
       })
       .then((value) => {
-        console.log(value.data.answerCheck);
         setCheckedValue(value.data.answerCheck);
       })
       .catch(function (e) {

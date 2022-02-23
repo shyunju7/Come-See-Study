@@ -41,7 +41,11 @@ const PreviewPresenter = ({
         <S.Icon src={HomeIcon} alt="Prev" width="47px" />
       </S.PrevButton>
       <S.NextButton
-        to={`/${attrId}/syntax`}
+        to={
+          window.localStorage.getItem("expires") === new Date().getDate() + 1
+            ? `/${attrId}/learning/1`
+            : `/${attrId}/syntax`
+        }
         onMouseEnter={() => setCursorValue("learn")}
         onMouseLeave={() => setCursorValue("")}
       >

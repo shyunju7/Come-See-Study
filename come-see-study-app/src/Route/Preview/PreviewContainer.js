@@ -8,6 +8,8 @@ const PreviewContainer = ({ textRef }) => {
   const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
+    console.log(window.localStorage.getItem("expires"));
+
     setTimeout(() => {
       setLoading(false);
     }, 500);
